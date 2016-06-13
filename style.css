@@ -1,53 +1,9 @@
-.hsContainer {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.hsContent {
-    max-width: 450px;
-    margin: -150px auto 0 auto;
-    display: table-cell;
-    vertical-align: middle;
-    color: #ebebeb;
-    padding: 0 8%;
-    text-align: center
-}
-.bcg {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-}
-
 body, html {
-	height: 100%;
-	min-height: 100%;
-	background-color: #000000;
+    height: 100%;
+    min-height: 100%;
+    background-color: #FFFFFF;
 }
 
-.loading {
-	background: url('img/ico_loading.gif') no-repeat center center;
-}
-
-section {
-	/*min-width: 960px;*/
-	opacity: 0;
-}
-
-.loaded section,
-.no-js section {
-	opacity: 1;
-	-webkit-transition: opacity 300ms ease-out;
-	-moz-transition: opacity 300ms ease-out;
-	transition: opacity 300ms ease-out;
-}
-
-/*Header*/
 .application-logo {
     max-height: 50px;
     margin-right: 10px;
@@ -58,175 +14,186 @@ section {
     max-height: 50px;
 }
 
-.nonvisible-link {
-    display: initial;
+#section-title {
+    background-image: url('img/paris.jpg');
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    margin-top: 53px;
+    padding-top: 100px;
+    text-align: center;
 }
 
-/*Slide 1*/
 #logo {
-	height: 128px;
-	width:128px;
-	background: url('img/icon_256.png') no-repeat; 
-	background-size: 100%;
-}
-
-#title {
-	font-size: 80px;
-	color:black;
-	vertical-align:middle;
-	margin-left: 25px;
-}
-
-#sub-title {
-	font-size: 60px;
-	color:black;
-	margin-bottom: 40px;
+    height: 100px;
+    width: 100px;
+    background: url('img/icon_256.png') no-repeat;
+    background-size: 100%;
+    margin-right: 20px;
+    margin-top: 10px;
 }
 
 #chevron {
-	font-size: 80px;
+    font-size: 80px;
 }
 
-#slide-1 .bcg {
-	background-image:url('img/paris.jpg');
+#section-title h1 {
+    font-size: 80px;
+    color: black;
+    vertical-align: middle;
+    margin-left: 25px;
+    text-align: center;
 }
 
-/*Slide 2*/
-
-#logoSF {
-	height: 64px;
-	width:64px;
-	background: url('img/sf-footer-logo.png') no-repeat; 
-	background-size: 100%;
-	float: left;
+#section-title h2 {
+    font-size: 60px;
+    color: black;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-#slide-2 .bcg {
-    background: none;
-    /*background-color: #5cb85c;*/
-    background-color: black;
-    height: 310px;
-    text-align: center
+/*Licensing*/
+
+#section-licensing {
+    text-align: center;
+    height: 50%;
+    min-height: 400px;
+    padding: 50px;
 }
 
-#slide-2 .h2 {
-	color:black;
+    #section-licensing h2 {
+        margin-bottom: 50px;
+    }
+
+    #section-licensing .octocat {
+        height: 80px;
+    }
+
+/*control your house*/
+
+#section-control {
+    background-image: url('img/control.jpg');
+    width: 100%;
+    height: 70%;
+    min-height: 500px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    margin-top: 50px;
+    padding-right: 100px;
+    padding-top: 100px;
+    text-align: right;
+    color: #F0F8FF;
 }
 
-#slide-2 .small {
-	color: #4C4646;
+/*automate your house*/
+
+#section-automate {
+    background-image: url('img/clock.jpg');
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    text-align: center;
+    padding-left: 40%;
+    margin-top: 50px;
 }
 
-/* Slide Control your house*/
-#slide-control-house {
-	background-image:url('img/control.jpg');
-	background-position-y:center;
+    #section-automate .blockly {
+        margin-top: 50px;
+    }
+
+/*acquire*/
+
+#section-acquire {
+    width: 100%;
+    height: 60%;
+    min-height: 500px;
+    text-align: center;
 }
 
-/* Slide Automate your house */
-#slide-automate-house .bcg {
-	background-image:url('img/clock.jpg');
+    #section-acquire .chart {
+        margin-top: 50px;
+    }
+
+    #section-acquire .text {
+        margin-top: 100px;
+    }
+
+/*be notified*/
+
+#section-be-notified {
+    background-image: url('img/mobile-phone2.jpg');
+    width: 100%;
+    height: 80%;
+    min-height: 700px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding-top: 200px;
+    text-align: center;
+    color: #FFFFFF;
 }
 
-/*Slide Acquire*/
-#slide-acquire .bcg {
-    background: none;
-    background-color: black;
-    height: 500px;
-    text-align: center
+/*ownership*/
+
+#section-ownership {
+    background-image: url('img/hands.jpg');
+    width: 100%;
+    height: 100%;
+    min-height: 950px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding-top: 400px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 50px;
 }
 
-#slide-acquire .h2 {
-	color:black;
+
+/*many devices*/
+#section-many-devices {
+    width: 100%;
+    height: 80%;
+    min-height: 800px;
+    text-align: center;
+    margin-top: 50px;
 }
 
-#slide-acquire .small {
-	color: #4C4646;
+/*everywhere*/
+#section-everywhere {
+    width: 100%;
+    height: 80%;
+    min-height: 800px;
+    background-image: url('img/mac.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 200px;
+    color: #FFFFFF;
 }
 
-#slide-acquire img {
-	margin-right: 25px;
+/*expand*/
+#section-expand {
+    width: 100%;
+    height: 80%;
+    min-height: 800px;
+    background-image: url('img/desk.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 200px;
+    color: #FFFFFF;
+    margin-top: 50px;
 }
-
-/* Slide Be notified */
-#slide-be-notified {
-	position: relative;
-}
-#slide-be-notified .bcg {
-	background-image:url('img/mobile-phone2.jpg');
-}
-#slide-be-notified .bcg2 {
-    background-image:url('img/mobile-phone2-b.jpg');
-    position: fixed; bottom: 0; left: 0;
-    opacity: 0; z-index: 1
-}
-
-/*Slide data ownership*/
-#slide-data-ownership .bcg {
-    background-position-y:center;
-	background-image:url('img/hands.jpg');
-}
-
-#slide-data-ownership h2 {
-	color:white;
-}
-
-#slide-data-ownership small {
-	color:white;
-}
-
-/*Slide Many Devices*/
-#slide-many-devices .bcg {
-    background: none;
-    background-color: black;
-    height: 650px;
-    text-align: center
-}
-
-#slide-many-devices .h2 {
-	color:black;
-}
-
-#slide-many-devices .small {
-	color: #4C4646;
-}
-
-#slide-many-devices img {
-	margin-top: 50px;
-}
-
-/* Slide Everywhere */
-#slide-everywhere .bcg {
-	background-image:url('img/mac.jpg');
-}
-
-#slide-everywhere .h2 {
-	color:black;
-}
-
-#slide-everywhere .small {
-	color: black;
-}
-
-/* Slide Expand */
-#slide-expand .bcg {
-	background-image:url('img/desk.jpg');
-	background-position-y:center;
-}
-
-/*General*/
-.btn-group-lg > .btn, .btn-xlg {
-    padding: 15px 24px;
-    font-size: 24px;
-    line-height: 1.3333333;
-    border-radius: 6px;
-	margin: 10px;
-}
-
-.inverted-h2 {
-	color:black;
-}
-
-.inverted-h2 small {
-	color: #4C4C4C;
-}	
