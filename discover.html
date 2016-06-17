@@ -1,0 +1,119 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Yadoms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="fancyBox-2.1.5/source/jquery.fancybox.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="fancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+</head>
+
+<body>
+    <div id="header"></div>
+
+<div class="section-discover container">
+    <h2>Discover a set of Yadoms features</h2>
+    <div class="row">
+        <div class='list-group gallery'>
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/1.png">
+                    <img class="img-responsive" alt="" src="img/screenshot/1.png"/>
+                    <div class='text-right'>
+                        <small class='text-muted'>Home screen</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image2.png">
+                    <img class="img-responsive" alt="" src="img/screenshot/image2.png"/>
+                    <div class='text-right'>
+                        <small class='text-muted'>Application Dashboard</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image3.png">
+                    <img class="img-responsive" alt="" src="img/screenshot/image3.png"/>
+                    <div class='text-right'>
+                        <small class='text-muted'>Dashboard allows you to personnalize all your data</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image4.png">
+                    <img class="img-responsive" alt="" src="img/screenshot/image4.png"/>
+                    <div class='text-right'>
+                        <small class='text-muted'>Powerful charts</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image5.png">
+                    <img class="img-responsive" alt="" src="img/screenshot/image5.png"/>
+                    <div class='text-right'>
+                        <small class='text-muted'>Automation center</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image6.png">
+                    <img class="img-responsive" alt="" src="img/screenshot/image6.png"/>
+                    <div class='text-right'>
+                        <small class='text-muted'>Really fun and easy to use automation rule editor</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image7.png">
+                    <img class="img-responsive" alt="" src="img/screenshot/image7.png" />
+                    <div class='text-right'>
+                        <small class='text-muted'>Advanced python online editor for complex automation rules</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+        </div> <!-- list-group / end -->
+    </div> <!-- row / end -->
+    <h3>It remains a lot of feature that you can discover by yourself ...</h3>
+</div> <!-- container / end -->
+
+    <div id="footer"></div>
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="js/yadoms.js"></script>
+    <script type="text/javascript" src="fancyBox-2.1.5/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="fancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <script>
+        $(document).ready(function () {
+            //FANCYBOX
+            //https://github.com/fancyapps/fancyBox
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none",
+
+                helpers: {
+                    thumbs: {
+                        width: 50,
+                        height: 50
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

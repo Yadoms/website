@@ -37,6 +37,8 @@ body, html {
 
 #chevron {
     font-size: 80px;
+    margin-top: 30px;
+    color: #337ab7;
 }
 
 #section-title h1 {
@@ -196,4 +198,18 @@ body, html {
     padding-top: 200px;
     color: #FFFFFF;
     margin-top: 50px;
+}
+
+/*discover page*/
+.gallery {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.section-discover {
+    margin-top: 53px;
+}
+
+.gallery a {
+    height: 200px;
 }
