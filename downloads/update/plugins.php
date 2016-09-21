@@ -8,8 +8,9 @@ require('helper.inc');
 $os = $_GET["os"];
 $arch = $_GET["arch"];
 $lang = $_GET["lang"];
+$devMode = $_GET["devMode"];
 
-$answer = array( 'inputParameters' => array('os' => $os, 'arch' => $arch));
+$answer = array( 'inputParameters' => array('os' => $os, 'arch' => $arch, 'devMode' => $devMode));
 
 if (($os == null) || ($arch == null))
 	sendAnswerAndExit(false, "os and arch GET parameters must be defined", $answer);
@@ -24,10 +25,17 @@ $arch = matchInArray($arch, $archX64, "x64");
 
 //we look for all directories located in /plugins/$os/$arch/
 	
-$dirName = "plugins/" . $os;
+if (isset ($devMode)){
+   $dirName = "dev/";   
+}
+else{
+   $dirName = "";
+}
+
+$dirName .= "plugins/" . $os;
 
 if (!is_dir($dirName))
-	sendAnswerAndExit(false, "os folder not found : " . $dirName, $answer);
+	sendAnswerAndExit(false, "Folder not found : " . $dirName, $answer);
 
 $dirName .= "/" . $arch;
 
