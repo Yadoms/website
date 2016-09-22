@@ -232,6 +232,67 @@ function buildItemList($dirName, $lang)
 	return $itemList;
 }
 
+function findOs($os)
+{
+   $osWin = array( "windows", "win");
+   $osLinux = array("linux", "unix");
+   $osMac = array("darwin", "mac", "osx");
+   
+   $os = matchInArray($os, $osWin, "windows");
+   $os = matchInArray($os, $osLinux, "linux");
+   $os = matchInArray($os, $osMac, "darwin");
+   
+   return $os;
+}
+
+function findArch($arch)
+{
+   $archX86 = array("x86", "ia32", "i686");
+   $archX64 = array("x64", "ia64");
+   
+   $arch = matchInArray($arch, $archX86, "x86");
+   $arch = matchInArray($arch, $archX64, "x64");
+   
+   return $arch;
+}
+
+
+// List native sub-packages (plugins, widgets, scriptInterpreters)
+function listNativeSubPackages($subPackagesType, $os, $arch, $lang, $devMode)
+{
+   $answer = array( 'inputParameters' => array('os' => $os, 'arch' => $arch, 'lang' => $lang, 'devMode' => $devMode));
+   
+   $os = findOs($os);
+   $arch = findArch($arch);
+
+   if (($os == null) || ($arch == null))
+      throw new Exception('os and arch GET parameters must be defined');
+
+   //we look for all directories located in /plugins/$os/$arch/ or /dev/plugins/$os/$arch/ in developper mode
+   if (isset ($devMode)){
+      $dirName = "dev/";   
+   }
+   else{
+      $dirName = "";
+   }
+
+   $dirName .= $subPackagesType . "/" . $os;
+
+   if (!is_dir($dirName))
+      throw new Exception('Folder not found : ' . $dirName);
+
+   $dirName .= "/" . $arch;
+
+   if (!is_dir($dirName))
+      throw new Exception('Folder not found : ' . $dirName);
+
+   $dirName .= '/';
+
+   $answer[$subPackagesType] = buildItemList($dirName, $lang);
+
+   return $answer;
+}
+
 
 function buildItemListForYadoms($dirName, $lang)
 {
@@ -312,14 +373,5 @@ function buildItemListForYadoms($dirName, $lang)
 	
 	return $versionList;
 }
-
-
-//variables initialization
-$osWin = array( "windows", "win");
-$osLinux = array("linux", "unix");
-$osMac = array("darwin", "mac", "osx");
-
-$archX86 = array("x86", "ia32", "i686");
-$archX64 = array("x64", "ia64");
 
 ?>
