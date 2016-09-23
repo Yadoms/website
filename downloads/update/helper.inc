@@ -257,11 +257,9 @@ function findArch($arch)
 }
 
 
-// List native sub-packages (plugins, widgets, scriptInterpreters)
-function listNativeSubPackages($subPackagesType, $os, $arch, $lang, $devMode)
+// Get native sub-packages path (plugins, widgets, scriptInterpreters)
+function getNativeSubPackagesPath($subPackagesType, $os, $arch, $devMode)
 {
-   $answer = array( 'inputParameters' => array('os' => $os, 'arch' => $arch, 'lang' => $lang, 'devMode' => $devMode));
-   
    $os = findOs($os);
    $arch = findArch($arch);
 
@@ -287,10 +285,8 @@ function listNativeSubPackages($subPackagesType, $os, $arch, $lang, $devMode)
       throw new Exception('Folder not found : ' . $dirName);
 
    $dirName .= '/';
-
-   $answer[$subPackagesType] = buildItemList($dirName, $lang);
-
-   return $answer;
+   
+   return $dirName;
 }
 
 

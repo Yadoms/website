@@ -5,9 +5,13 @@ require('helper.inc');
 
 <?
 
+$answer = array( 'inputParameters' => array('os' => $_GET["os"], 'arch' => $_GET["arch"], 'lang' => $_GET["lang"], 'devMode' => $_GET["devMode"]));
+
 try
 {
-   sendAnswerAndExit(true, "", listNativeSubPackages("plugins", $_GET["os"], $_GET["arch"], $_GET["lang"], $_GET["devMode"]));
+   $subPackagesPath = getNativeSubPackagesPath("plugins", $_GET["os"], $_GET["arch"], $_GET["devMode"]);
+   $answer["plugins"] = buildItemList($subPackagesPath, $_GET["lang"]);
+   sendAnswerAndExit(true, "", $answer);
 }
 catch (Exception $e)
 {
