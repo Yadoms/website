@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Yadoms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="download.css" rel="stylesheet">
+    <link rel="stylesheet" href="fancyBox-2.1.5/source/jquery.fancybox.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="fancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div id="download-section">
+        <h1>Downloads</h1>
+        <h4>Download the version of yadoms you need</h4>
+        <div class="row">
+            <div class="col-md-3 os">
+                <img class="img-platform" src="img/windows.png" width="140" height="140">
+                <h2>Windows</h2>
+                <p>Choose if you want installer version to use as a service or portable version</p>
+                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-win32.exe" class="btn btn-lg btn-success btn-download">
+                    <span class="glyphicon glyphicon-save"></span>Installer version <br><small>v1.0.0 Beta</small>
+                </a>
+                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-win32.zip" class="btn btn-lg btn-default btn-download">
+                    <span class="glyphicon glyphicon-save"></span>Portable version <br><small>v1.0.0 Beta</small>
+                </a>
+            </div>
+            <div class="col-md-3 os">
+                <img class="img-platform" src="img/linux.jpg" width="140" height="140">
+                <h2>Linux</h2>
+                <p>Download right version based on you Linux distribution</p>
+                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.tar.gz" class="btn btn-lg btn-success btn-download">
+                    <span class="glyphicon glyphicon-save"></span>Compressed package <br><small>v1.0.0 Beta</small>
+                </a>
+                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.deb" class="btn btn-lg btn-default btn-download">
+                    <span class="glyphicon glyphicon-save"></span>Debian package <br><small>v1.0.0 Beta</small>
+                </a>
+                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.rpm" class="btn btn-lg btn-default btn-download">
+                    <span class="glyphicon glyphicon-save"></span>Rpm package <br><small>v1.0.0 Beta</small>
+                </a>
+            </div>
+            <div class="col-md-3 os">
+                <img class="img-platform" src="img/apple.jpg" width="140" height="140">
+                <h2>Mac</h2>
+                <p>This is an experimental package. You will have to make some skilled manipulation to make it works.</p>
+                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Darwin-experimental.tar.gz" class="btn btn-lg btn-success btn-download">
+                    <span class="glyphicon glyphicon-save"></span>Compressed package <br><small>v1.0.0 Beta</small>
+                </a>
+            </div>
+            <div class="col-md-3 os">
+                <img class="img-platform" src="img/raspberry-pi-logo.png" height="140">
+                <h2>Raspberry PI</h2>
+                <p>Extract the packge on your PI, and have fun</p>
+                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-RaspberryPI.tar.gz" class="btn btn-lg btn-success btn-download">
+                    <span class="glyphicon glyphicon-save"></span>Compressed package <br><small>v1.0.0 Beta</small>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h5>All files are provided "as is" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.</h5>
+
+    <div id="footer"></div>
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="js/yadoms.js"></script>
+    <script type="text/javascript" src="fancyBox-2.1.5/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="fancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <script>
+        $(document).ready(function () {
+            //FANCYBOX
+            //https://github.com/fancyapps/fancyBox
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none",
+
+                helpers: {
+                    thumbs: {
+                        width: 50,
+                        height: 50
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

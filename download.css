@@ -1,0 +1,19 @@
+#download-section {
+    padding-top: 50px;
+}
+.os {
+    text-align: center;
+}
+
+.os p {
+    height: 50px;
+}
+
+.btn-download span.glyphicon {
+    margin-right: 10px;
+}
+
+.btn-download {
+    margin-bottom: 10px;
+    width: 80%;
+}

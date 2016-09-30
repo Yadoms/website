@@ -1,0 +1,12 @@
+.gallery {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.section-discover {
+    margin-top: 53px;
+}
+
+.gallery a {
+    height: 200px;
+}
