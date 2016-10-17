@@ -1,0 +1,114 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Yadoms downloads statistics">
+    <meta name="author" content="Yadoms team">
+    <link rel="icon" href="img/_yadoms.png">
+
+    <title>Yadoms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <div id="section-licensing">
+        <img id="logo" src="img/_yadoms.png" />
+        <h2>Yadoms statistics</h2>
+        <div class="container">
+         <h2>Liste des releases</h2>
+         <div id="content"></div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="moment/moment-with-locales.min.js"></script>
+
+    <script>
+      //configure momentjs to use browser locale
+      moment.locale(window.navigator.language);
+      
+      /**
+       * Function that converts file size to human readable string
+       * @param bytes {Number} The file size in bytes
+       * @param si {Boolean} true to use classic display (Ko, Mo) or false to use (Kio, Mio)
+       * @return The file size in human readable string format
+       */
+      function humanFileSize(bytes, si) {
+          var thresh = si ? 1000 : 1024;
+          if(Math.abs(bytes) < thresh) {
+              return bytes + ' B';
+          }
+          var units = si
+              ? ['ko','Mo','Go','To','Po','Eo','Zo','Yo']
+              : ['Kio','Mio','Gio','Tio','Pio','Eio','Zio','Yio'];
+          var u = -1;
+          do {
+              bytes /= thresh;
+              ++u;
+          } while(Math.abs(bytes) >= thresh && u < units.length - 1);
+          return bytes.toFixed(1)+' '+units[u];
+      }
+    
+    /**
+     * Function that create a panel for a release and add the table of each file
+     * @param release {JSON} The release content
+     * @return The string to append to html (html string)
+     */
+    function createRelease(release) {
+      //create panel with header
+      var result = '<div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#collapse1">' 
+      + release.name 
+      + ' ( '
+      + moment(release.published_at, "YYYYMMDD[T]HHmmss").format("LLL")
+      + ') '
+      + '</a>'
+      + '<a href="' + release.html_url + '" target="_blank" class="pull-right" style="margin-top: -7px;"><i class="fa fa-github fa-2x"></i></a>'
+      + '</h4></div><div id="collapse1" class="panel-collapse collapse"><div class="panel-body">';
+      
+      //add table with header
+      result += '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Size</th><th>Download count</th></tr></thead><tbody>';
+
+      //add a line for each file in release
+      for(var file of release.assets) {
+         result += '<tr><th scope="row">' + file.name + '</th><td>' + humanFileSize(file.size, true) + '</td><td>' + file.download_count + '</td></tr>';
+      }
+
+      //end table
+      result += '</tbody></table>';
+      
+      //end of panel
+      result += '</div></div></div></div>';
+      return result;
+    }
+    
+    //get the Yadoms releases information
+    //see : https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
+    $.getJSON("https://api.github.com/repos/Yadoms/yadoms/releases", function(data) {
+   
+      //create panel for each release found
+      for(var release of data) {
+         $("#content").append(createRelease(release));
+      }
+    });
+    
+    </script>
+</body>
+</html>

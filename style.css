@@ -28,7 +28,7 @@ body, html {
 #logo {
     height: 100px;
     width: 100px;
-    background: url('img/icon_256.png') no-repeat;
+    background: url('img/_yadoms.png') no-repeat;
     background-size: 100%;
     margin-right: 20px;
     margin-top: 10px;
@@ -141,7 +141,7 @@ body, html {
 #section-ownership {
     background-image: url('img/hands.jpg');
     width: 100%;
-    min-height: 700px;
+    min-height: 400px;
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: center;

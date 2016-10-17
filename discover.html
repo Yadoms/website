@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="img/_yadoms.png">
 
     <title>Yadoms</title>
 
@@ -24,14 +24,14 @@
     <div id="header"></div>
 
 <div class="section-discover container">
-    <h2>Discover a set of Yadoms features</h2>
+    <h2 data-i18n="discover.title">Discover a set of Yadoms features</h2>
     <div class="row">
         <div class='list-group gallery'>
             <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
                 <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/1.png">
                     <img class="img-responsive" alt="" src="img/screenshot/1.png"/>
                     <div class='text-right'>
-                        <small class='text-muted'>Home screen</small>
+                        <small class='text-muted' data-i18n="discover.home">Home screen</small>
                     </div> <!-- text-right / end -->
                 </a>
             </div> <!-- col-6 / end -->
@@ -39,7 +39,7 @@
                 <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image2.png">
                     <img class="img-responsive" alt="" src="img/screenshot/image2.png"/>
                     <div class='text-right'>
-                        <small class='text-muted'>Application Dashboard</small>
+                        <small class='text-muted' data-i18n="discover.dashboard">Application Dashboard</small>
                     </div> <!-- text-right / end -->
                 </a>
             </div> <!-- col-6 / end -->
@@ -47,7 +47,7 @@
                 <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image3.png">
                     <img class="img-responsive" alt="" src="img/screenshot/image3.png"/>
                     <div class='text-right'>
-                        <small class='text-muted'>Dashboard allows you to personnalize all your data</small>
+                        <small class='text-muted' data-i18n="discover.customize">Dashboard allows you to personnalize all your data</small>
                     </div> <!-- text-right / end -->
                 </a>
             </div> <!-- col-6 / end -->
@@ -55,7 +55,7 @@
                 <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image4.png">
                     <img class="img-responsive" alt="" src="img/screenshot/image4.png"/>
                     <div class='text-right'>
-                        <small class='text-muted'>Powerful charts</small>
+                        <small class='text-muted' data-i18n="discover.charts">Powerful charts</small>
                     </div> <!-- text-right / end -->
                 </a>
             </div> <!-- col-6 / end -->
@@ -63,7 +63,7 @@
                 <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image5.png">
                     <img class="img-responsive" alt="" src="img/screenshot/image5.png"/>
                     <div class='text-right'>
-                        <small class='text-muted'>Automation center</small>
+                        <small class='text-muted' data-i18n="discover.automation">Automation center</small>
                     </div> <!-- text-right / end -->
                 </a>
             </div> <!-- col-6 / end -->
@@ -71,7 +71,7 @@
                 <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image6.png">
                     <img class="img-responsive" alt="" src="img/screenshot/image6.png"/>
                     <div class='text-right'>
-                        <small class='text-muted'>Really fun and easy to use automation rule editor</small>
+                        <small class='text-muted' data-i18n="discover.blockly">Really fun and easy to use automation rule editor</small>
                     </div> <!-- text-right / end -->
                 </a>
             </div> <!-- col-6 / end -->
@@ -79,13 +79,13 @@
                 <a class="thumbnail fancybox" rel="ligthbox" href="img/screenshot/image7.png">
                     <img class="img-responsive" alt="" src="img/screenshot/image7.png" />
                     <div class='text-right'>
-                        <small class='text-muted'>Advanced python online editor for complex automation rules</small>
+                        <small class='text-muted' data-i18n="discover.python">Advanced python online editor for complex automation rules</small>
                     </div> <!-- text-right / end -->
                 </a>
             </div> <!-- col-6 / end -->
         </div> <!-- list-group / end -->
     </div> <!-- row / end -->
-    <h3>It remains a lot of feature that you can discover by yourself ...</h3>
+    <h3 data-i18n="discover.final">It remains a lot of feature that you can discover by yourself ...</h3>
 </div> <!-- container / end -->
 
     <div id="footer"></div>
@@ -116,5 +116,18 @@
         });
 
     </script>
+    
+    <script src="i18next/js/i18next-1.7.2.min.js"></script>
+
+    <script>
+    
+      var option = { resGetPath: "locales/__lng__.json", fallbackLng: "en", useDataAttrOptions: true, debug: false, fallbackNS: "translation" };
+      i18n.init(option, function () {
+         i18n.setLng(window.navigator.userLanguage || window.navigator.language, function () {
+            $("html").i18n();
+         });
+      });
+
+    </script>    
 </body>
 </html>

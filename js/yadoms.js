@@ -14,6 +14,9 @@ $(function () {
                 $("#mainMenu li.download").addClass("active");
         },
             100);
+			
+		//apply traduction
+		$("#header").i18n();
     });
 
     $("#footer").load("footer.html");

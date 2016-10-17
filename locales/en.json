@@ -1,0 +1,135 @@
+﻿{
+  "title": {
+    "ultimate": "The ultimate house automation solution",
+	"button" : {
+		"discover" : " Discover",
+		"download" : "Download",
+		"download-small" : "(First version available !)"
+	}
+  },
+  "licensing" : {
+	"is-free" : "Yadoms is free !",
+	"part1" : "Forget pricing and proprietary softwares, Yadoms is fully open source and fully free. Download and use it.",
+	"part2" : "If you want the source code, no problem, go on our ",
+	"part3" : "github page",
+	"part4" : ", download it and help us to make it better !",
+	"part5" : "Yadoms is released under GPL v3 licence.",
+	"part6" : "All plugins, widgets and scripts developped are released under LGPL v3 licence."
+  },
+  "control" : {
+	"title" : "Control your house",
+	"subtitle" : "Your home obeys your every orders"
+  },
+  "automate" : {
+	"title" : "Automate your house",
+	"line1" : "Build scenarii to automate tasks like watering your garden",
+	"line2" : "or auto-close blinds when night is falling.",
+	"line3" : "You can also ask to Yadoms to send you an SMS",
+	"line4" : "if you forget to close garage door at night fall.",
+	"line5" : "With Yadoms, Automation is as simple as a puzzle game !"
+  },
+  "acquire" : {
+	"line1" : "Acquire,",
+	"line2" : "Follow,",
+	"line3" : "Analyze,",
+	"line4" : "Visualize your data"
+  },
+  "be-notified" : {
+	"title" : "Be notified",
+	"subtitle" : "Receive notification when someone rings to your door or when your house plants needs water !"
+  },  
+  "ownership" : {
+	"title" : "Keep ownership of your data",
+	"subtitle" : "Because your privacy is important, Yadoms keeps your data in your house"
+  },
+  "many-devices" : {
+	"title" : "One solution to rule them all",
+	"subtitle" : "Collect and Drive all your devices from many brands with only one software"
+  },
+  "everywhere" : {
+	"title" : "Run on many devices",
+	"subtitle-line1" : "You can run Yadoms server on many devices like an old Windows XP machine,",
+	"subtitle-line2" : "a Linux machine, a raspberry PI even on a Mac.",
+	"windows" : {
+		"title" : "Windows",
+		"subtitle" : "Yadoms supports a wide range of Windows version from Windows XP&trade; to Windows 10&trade;"
+	},
+	"linux" : {
+		"title" : "Linux",
+		"subtitle" : "Yadoms supports many Linux distribution like Ubuntu, Debian, Fedora, ..."
+	},
+	"mac" : {
+		"title" : "MacOS",
+		"subtitle" : "Yadoms supports many OSx version from Maverick&trade; to newest"
+	},
+	"hardwares" : {
+		"title" : "Light weight Hardwares",
+		"subtitle" : "Yadoms is very light and uses only standard libraries that can be rebuilt to run on lightweight hardware like a raspberry PI."
+	}
+  },
+  "expand" : {
+	"title" : "Expand features",
+	"subtitle-line1" : "Many Plugins available to expand server functionnalities and device communication.",
+	"subtitle-line2" : "Lots of widgets to display your customized dashboard."
+  },
+  "discover" : {
+	"title" : "Discover a set of Yadoms features",
+	"home" : "Home screen",
+	"dashboard" : "Application Dashboard",
+	"customize" : "Dashboard allows you to personnalize all your data",
+	"charts" : "Powerful charts",
+	"automation" : "Automation center",
+	"blockly" : "Really fun and easy to use automation rule editor",
+	"python" : "Advanced python online editor for complex automation rules",
+	"final" : "It remains a lot of feature that you can discover by yourself ..."
+  },
+  "menu" : {
+	"presentation" : "Presentation",
+	"discover" : "Discover",
+	"download" : "Download",
+	"doc" : "Documentation",
+	"forum" : "Forum",
+	"sources" : "Sources"
+  },
+  "download" : {
+	"title" : "Downloads",
+	"subtitle" : "Download the version of yadoms you need",
+	"windows" : {
+		"title" : "Windows",
+		"subtitle" : "Choose if you want installer version to use as a service or portable version",
+		"installer" : "Installer version",
+		"installer-version" : "v1.0.0 Beta",
+		"portable" : "Portable version",
+		"portable-version" : "v1.0.0 Beta"
+	},
+	"linux" : {
+		"title" : "Linux",
+		"subtitle" : "Download right version based on you Linux distribution",
+		"targz" : "Compressed package",
+		"targz-version" : "v1.0.0 Beta",
+		"deb" : "Debian package",
+		"deb-version" : "v1.0.0 Beta",
+		"rpm" : "RPM package",
+		"rpm-version" : "v1.0.0 Beta"
+	},
+	"mac" : {
+		"title" : "Mac OSX",
+		"subtitle" : "This is an experimental package. You will have to make some skilled manipulation to make it works.",
+		"targz" : "Compressed package",
+		"targz-version" : "v1.0.0 Beta"
+	},
+	"rpi" : {
+		"title" : "Raspberry PI",
+		"subtitle" : "Extract the packge on your PI, and have fun.",
+		"targz" : "Compressed package",
+		"targz-version" : "v1.0.0 Beta"
+	},
+	"legal" : "All files are provided \"as is\" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.",
+	"build" : {
+		"title" : "Your platform is not listed here  ?",
+		"subtitle" : "Yadoms is multiplatform; that is to say, it is possible to generate for any hardware target (or almost).",
+		"wiki" : "Go to wiki"
+	}
+
+  }
+}

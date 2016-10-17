@@ -1,0 +1,135 @@
+﻿{
+  "title": {
+    "ultimate": "La solution domotique ultime",
+	"button" : {
+		"discover" : " Découvrir",
+		"download" : "Télécharger",
+		"download-small" : "(Première version disponible !)"
+	}
+  },
+  "licensing" : {
+	"is-free" : "Yadoms est libre !",
+	"part1" : "Oubliez le prix et les logiciels propriétaires, Yadoms est completement open-source et gratuit. Téléchargez et utilisez-le.",
+	"part2" : "Si vous voulez le code source, pas de problème, allez sur notre ",
+	"part3" : "page GitHub",
+	"part4" : ", téléchargez-le et aidez-nous à le rendre meilleur !",
+	"part5" : "Yadoms est délivré sous licence GPL v3.",
+	"part6" : "Tous les plugins, widgets et scripts développés sont sous licence LGPL v3."
+  },
+  "control" : {
+	"title" : "Contrôllez votre maison",
+	"subtitle" : "Votre maison obéi à tous vos ordres"
+  },
+  "automate" : {
+	"title" : "Automatisez votre maison",
+	"line1" : "Construisez des scénarios pour automatiser des tâches comme l'arrosage du jardin",
+	"line2" : "ou bien la fermeture automatique des volets lorsque le soleil se couche.",
+	"line3" : "Vous pouvez aussi demander à Yadoms de vous envoyer un SMS",
+	"line4" : "si vous oubliez de fermer la porte de votre garage lorsque la nuit tombe",
+	"line5" : "Avec Yadoms, l'automatisation est simple comme un puzzle !"
+  },
+  "acquire" : {
+	"line1" : "Acquérir,",
+	"line2" : "Suivre,",
+	"line3" : "Analiser,",
+	"line4" : "Visualiser vos données"
+  },
+  "be-notified" : {
+	"title" : "Soyez notifié",
+	"subtitle" : "Recevez une notification lorsque quelqu'un sonne à la porte ou bien lorsque vos plantes manquent d'eau !"
+  },  
+  "ownership" : {
+	"title" : "Conservez la propriété de vos données",
+	"subtitle" : "Parce que votre vie privée est importante, Yadoms conserve les données dans votre maison"
+  },
+  "many-devices" : {
+	"title" : "Une solution pour les gouverner tous",
+	"subtitle" : "Recueilliez et pilotez tous vos appareils de toutes marques avec un seul logiciel"
+  },
+  "everywhere" : {
+	"title" : "Multiplateformes",
+	"subtitle-line1" : "Vous pouvez exécuter le serveur Yadoms sur de nombreux appareils comme une vieille machine Windows XP,",
+	"subtitle-line2" : "une machine Linux, sur RaspberryPI, et même sur un Mac.",
+	"windows" : {
+		"title" : "Windows",
+		"subtitle" : "Yadoms supporte la plupart des versions de Windows, à partir de Windows XP SP3&trade; jusqu'à Windows 10&trade;"
+	},
+	"linux" : {
+		"title" : "Linux",
+		"subtitle" : "Yadoms supporte la plupart des distributions Linux comme Ubuntu, Debian, Fedora, ..."
+	},
+	"mac" : {
+		"title" : "MacOS",
+		"subtitle" : "Yadoms supporte la plupart des version de MacOSX, depuis Maverick&trade; jusqu'aux plus récentes"
+	},
+	"hardwares" : {
+		"title" : "Matériel léger",
+		"subtitle" : "Yadoms est très léger et utilise des bibliothèques standard qui peuvent être reconstruites pour fonctionner sur du matériel léger comme sur RaspberryPI"
+	}
+  },
+  "expand" : {
+	"title" : "Etendre les fonctionnalités",
+	"subtitle-line1" : "De nombreux plugins sont disponibles pour étendre les fonctionnalités du serveur ou bien supporter de nouveaux périphériques domotique.",
+	"subtitle-line2" : "Beaucoup de widgets pour afficher votre tableau de bord personnalisé."
+  },
+  "discover" : {
+	"title" : "Découvrez les fonctionnalités de Yadoms",
+	"home" : "Page d'accueil",
+	"dashboard" : "Tableau de bord",
+	"customize" : "Possibilité de personnaliser le tableau de bord",
+	"charts" : "Des graphiques puissants",
+	"automation" : "Cente d'automatisation",
+	"blockly" : "Un éditeur de règles d'automatisation vraiment amusant et facile à utiliser",
+	"python" : "Editeur de code python en ligne pour des règles plus complexes",
+	"final" : "Il reste beaucoup de fonctionnalité que vous pouvez découvrir par vous-même ..."
+  },
+  "menu" : {
+	"presentation" : "Présentation",
+	"discover" : "Découvrir",
+	"download" : "Télécharger",
+	"doc" : "Documentation",
+	"forum" : "Forum",
+	"sources" : "Sources"
+  },
+  "download" : {
+	"title" : "Téléchargements",
+	"subtitle" : "Téléchargez la version de Yadoms dont vous avez besoin",
+	"windows" : {
+		"title" : "Windows",
+		"subtitle" : "Choisissez la version \"installeur automatique\" pour l'utiliser comme un service ou bien la version portable",
+		"installer" : "Installeur automatique",
+		"installer-version" : "v1.0.0 Beta",
+		"portable" : "Portable",
+		"portable-version" : "v1.0.0 Beta"
+	},
+	"linux" : {
+		"title" : "Linux",
+		"subtitle" : "Téléchargez la version correspondant à votre distribution",
+		"targz" : "Binaires compressés",
+		"targz-version" : "v1.0.0 Beta",
+		"deb" : "Paquet Debian",
+		"deb-version" : "v1.0.0 Beta",
+		"rpm" : "Paquet RPM",
+		"rpm-version" : "v1.0.0 Beta"
+	},
+	"mac" : {
+		"title" : "Mac OSX",
+		"subtitle" : "C'est un paquet expérimental. Vous devrez effectuer des manipulations relativement complexes pour le faire fonctionner. (lignes de commandes)",
+		"targz" : "Binaires compressés",
+		"targz-version" : "v1.0.0 Beta"
+	},
+	"rpi" : {
+		"title" : "Raspberry PI",
+		"subtitle" : "réalisez l'extraction sur votre RaspberryPI et amusez vous ;-)",
+		"targz" : "Binaires compressés",
+		"targz-version" : "v1.0.0 Beta"
+	},
+	"legal" : "Le logiciel et ses fichiers sont fournis \"comme ça\". Aucune des personnes de l'équipe Yadoms ne pourra être tenue responsable des dommages causés par le logiciel. Utilisez-le à vos propres risques.",
+	"build" : {
+		"title" : "Votre plateforme n'est pas listée ici ?",
+		"subtitle" : "Yadoms est multiplateformes; c'est-à-dire qu'il est possible de le générer pour n'importe quelle cible matérielle (ou presque).",
+		"wiki" : "Aller sur le wiki"
+	}
+  }
+  
+}
