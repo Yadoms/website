@@ -188,7 +188,6 @@ function buildItemList($dirName, $lang)
 						
 						$dir["description"] = $json["description"];
 						$dir["version"] = $json["version"];
-						$dir["releaseType"] = $json["releaseType"];
 						$dir["author"] = $json["author"];
 						$dir["url"] = $json["url"];
 						$dir["credits"] = $json["credits"];
