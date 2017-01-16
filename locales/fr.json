@@ -7,6 +7,12 @@
 		"download-small" : "(Première version disponible !)"
 	}
   },
+	"presentation" : {
+	"title" : "Yadoms : La solution domotique unique pour piloter tous vos équipements avec un seul logiciel",
+	"part1" : "Lassés d'avoir une application pour piloter vos stores, une autre pour les lumières et encore une pour votre portail ?",
+	"part2" : "Aujourd'hui chaque fabriquant de matériel développe son produit avec ses interfaces propriétaire et ne cherche pas à communiquer avec d'autres équipements.",
+	"part3" : "Yadoms propose aujourd'hui une solution qui permette de faire communiquer des équipements de marque différente sous un seul et même logiciel."
+  },
   "licensing" : {
 	"is-free" : "Yadoms est libre !",
 	"part1" : "Oubliez le prix et les logiciels propriétaires, Yadoms est completement open-source et gratuit. Téléchargez et utilisez-le.",

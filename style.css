@@ -55,6 +55,34 @@ body, html {
     text-align: center;
 }
 
+/*Presentation*/
+
+#section-presentation {
+    text-align: center;
+    min-height: 400px;
+    padding: 50px;
+    background-color: #222;
+    color: white;
+}
+
+#section-presentation h2 {
+    margin-bottom: 50px;
+}
+
+#section-presentation h4 {
+    text-align:justify;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#section-presentation h4 span {
+    margin-bottom: 10px;
+}
+
+#section-presentation .img-presentation {
+    vertical-align: initial;
+}
+
 /*Licensing*/
 
 #section-licensing {
