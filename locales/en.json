@@ -54,11 +54,11 @@
   },
   "everywhere" : {
 	"title" : "Run on many devices",
-	"subtitle-line1" : "You can run Yadoms server on many devices like an old Windows XP machine,",
+	"subtitle-line1" : "You can run Yadoms server on many devices like an old Windows XP™ machine,",
 	"subtitle-line2" : "a Linux machine, a raspberry PI even on a Mac.",
 	"windows" : {
 		"title" : "Windows",
-		"subtitle" : "Yadoms supports a wide range of Windows version from Windows XP&trade; to Windows 10&trade;"
+		"subtitle" : "Yadoms supports a wide range of Windows version from Windows XP™ to Windows 10™"
 	},
 	"linux" : {
 		"title" : "Linux",
@@ -66,7 +66,7 @@
 	},
 	"mac" : {
 		"title" : "MacOS",
-		"subtitle" : "Yadoms supports many OSx version from Maverick&trade; to newest"
+		"subtitle" : "Yadoms supports many OSx version from Maverick™ to newest"
 	},
 	"hardwares" : {
 		"title" : "Light weight Hardwares",

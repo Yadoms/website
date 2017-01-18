@@ -9,9 +9,9 @@
   },
 	"presentation" : {
 	"title" : "Yadoms : La solution domotique unique pour piloter tous vos équipements avec un seul logiciel",
-	"part1" : "Lassés d'avoir une application pour piloter vos stores, une autre pour les lumières et encore une pour votre portail ?",
-	"part2" : "Aujourd'hui chaque fabriquant de matériel développe son produit avec ses interfaces propriétaire et ne cherche pas à communiquer avec d'autres équipements.",
-	"part3" : "Yadoms propose aujourd'hui une solution qui permette de faire communiquer des équipements de marque différente sous un seul et même logiciel."
+	"part1" : "Lassés d'avoir une application pour piloter vos stores, une autre pour les lumières et encore une pour le portail ?",
+	"part2" : "Aujourd'hui chaque fabriquant de matériel développe son produit avec ses interfaces propriétaires et ne cherche pas à communiquer avec d'autres équipements.",
+	"part3" : "Yadoms propose aujourd'hui une solution permettant de faire communiquer des équipements de marques différentes avec un seul et même logiciel."
   },
   "licensing" : {
 	"is-free" : "Yadoms est libre !",
@@ -23,8 +23,8 @@
 	"part6" : "Tous les plugins, widgets et scripts développés sont sous licence LGPL v3."
   },
   "control" : {
-	"title" : "Contrôllez votre maison",
-	"subtitle" : "Votre maison obéi à tous vos ordres"
+	"title" : "Contrôlez votre maison",
+	"subtitle" : "Votre maison obéit à tous vos ordres"
   },
   "automate" : {
 	"title" : "Automatisez votre maison",
@@ -37,7 +37,7 @@
   "acquire" : {
 	"line1" : "Acquérir,",
 	"line2" : "Suivre,",
-	"line3" : "Analiser,",
+	"line3" : "Analyser,",
 	"line4" : "Visualiser vos données"
   },
   "be-notified" : {
@@ -50,15 +50,15 @@
   },
   "many-devices" : {
 	"title" : "Une solution pour les gouverner tous",
-	"subtitle" : "Recueilliez et pilotez tous vos appareils de toutes marques avec un seul logiciel"
+	"subtitle" : "Recueillez et pilotez tous vos appareils de toutes marques avec un seul logiciel"
   },
   "everywhere" : {
 	"title" : "Multiplateformes",
-	"subtitle-line1" : "Vous pouvez exécuter le serveur Yadoms sur de nombreux appareils comme une vieille machine Windows XP,",
-	"subtitle-line2" : "une machine Linux, sur RaspberryPI, et même sur un Mac.",
+	"subtitle-line1" : "Vous pouvez exécuter le serveur Yadoms sur de nombreux appareils comme un vieil ordinateur sous Windows XP™,",
+	"subtitle-line2" : "un ordinateur sous Linux, un RaspberryPI, un Mac...",
 	"windows" : {
 		"title" : "Windows",
-		"subtitle" : "Yadoms supporte la plupart des versions de Windows, à partir de Windows XP SP3&trade; jusqu'à Windows 10&trade;"
+		"subtitle" : "Yadoms supporte la plupart des versions de Windows, à partir de Windows XP SP3™ jusqu'à Windows 10™"
 	},
 	"linux" : {
 		"title" : "Linux",
@@ -66,7 +66,7 @@
 	},
 	"mac" : {
 		"title" : "MacOS",
-		"subtitle" : "Yadoms supporte la plupart des version de MacOSX, depuis Maverick&trade; jusqu'aux plus récentes"
+		"subtitle" : "Yadoms supporte la plupart des version de MacOSX, depuis Maverick™ jusqu'aux plus récentes"
 	},
 	"hardwares" : {
 		"title" : "Matériel léger",
@@ -76,7 +76,7 @@
   "expand" : {
 	"title" : "Etendre les fonctionnalités",
 	"subtitle-line1" : "De nombreux plugins sont disponibles pour étendre les fonctionnalités du serveur ou bien supporter de nouveaux périphériques domotique.",
-	"subtitle-line2" : "Beaucoup de widgets pour afficher votre tableau de bord personnalisé."
+	"subtitle-line2" : "Beaucoup de widgets pemettent de personnaliser votre tableau de bord."
   },
   "discover" : {
 	"title" : "Découvrez les fonctionnalités de Yadoms",
@@ -87,7 +87,7 @@
 	"automation" : "Cente d'automatisation",
 	"blockly" : "Un éditeur de règles d'automatisation vraiment amusant et facile à utiliser",
 	"python" : "Editeur de code python en ligne pour des règles plus complexes",
-	"final" : "Il reste beaucoup de fonctionnalité que vous pouvez découvrir par vous-même ..."
+	"final" : "Il reste beaucoup de fonctionnalités que vous pouvez découvrir par vous-même ..."
   },
   "menu" : {
 	"presentation" : "Présentation",
