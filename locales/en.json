@@ -87,7 +87,8 @@
 	"automation" : "Automation center",
 	"blockly" : "Really fun and easy to use automation rule editor",
 	"python" : "Advanced python online editor for complex automation rules",
-	"final" : "It remains a lot of feature that you can discover by yourself ..."
+	"final" : "It remains a lot of feature that you can discover by yourself ...",
+   "screenshot-path" : "en"
   },
   "menu" : {
 	"presentation" : "Presentation",

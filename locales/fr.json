@@ -87,7 +87,8 @@
 	"automation" : "Cente d'automatisation",
 	"blockly" : "Un éditeur de règles d'automatisation vraiment amusant et facile à utiliser",
 	"python" : "Editeur de code python en ligne pour des règles plus complexes",
-	"final" : "Il reste beaucoup de fonctionnalités que vous pouvez découvrir par vous-même ..."
+	"final" : "Il reste beaucoup de fonctionnalités que vous pouvez découvrir par vous-même ...",
+   "screenshot-path" : "fr"
   },
   "menu" : {
 	"presentation" : "Présentation",
