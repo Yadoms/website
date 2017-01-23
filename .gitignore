@@ -2230,3 +2230,7 @@ img/~$many-devices.pptx
 /pluginKit/templateKit/static/extern/include/shared/windows/shared/Peripherals.h
 /pluginKit/templateKit/static/extern/include/shared/windows/shared/Thread.h
 /pluginKit/templateKit/static/extern/lib/MSVC14/yadoms-shared.lib
+Thumbs.db
+Web.config
+website.sln
+.vs
