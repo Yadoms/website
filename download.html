@@ -117,9 +117,8 @@
     
       var option = { resGetPath: "locales/__lng__.json", fallbackLng: "en", useDataAttrOptions: true, debug: false, fallbackNS: "translation" };
       i18n.init(option, function () {
-         i18n.setLng(window.navigator.userLanguage || window.navigator.language, function () {
-            $("html").i18n();
-         });
+         $("html").i18n();
+         updateTranlatedFileAttributes($.t("language"));
       });
 
     </script>    
