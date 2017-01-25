@@ -61,7 +61,7 @@
             <span data-i18n="automate.line3">You can also ask to Yadoms to send you an SMS</span><br />
             <span data-i18n="automate.line4">if you forget to close garage door at night fall.</span><br /><br />
             <span data-i18n="automate.line5">With Yadoms, Automation is as simple as a puzzle game !</span>
-            <img class="blockly" src="img/blockly.png" />
+            <img class="blockly translated-file-attribute" src="" translated-attr="src" translated-attr-value="img/{language}/blockly.png"/>
         </h3>
     </div>
 
@@ -145,13 +145,13 @@
 
     <script>
     
+    
+    
       var option = { resGetPath: "locales/__lng__.json", fallbackLng: "en", useDataAttrOptions: true, debug: false, fallbackNS: "translation" };
       i18n.init(option, function () {
-         i18n.setLng(window.navigator.userLanguage || window.navigator.language, function () {
-            $("html").i18n();
-         });
+         $("html").i18n();
+         updateTranlatedFileAttributes($.t("language"));
       });
-
     </script>
 </body>
 </html>
