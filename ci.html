@@ -31,6 +31,21 @@
         
         <div class="panel panel-default">
            <div class="panel-heading">
+             <h3 class="panel-title"><strong>Windows</strong></h3>
+           </div>
+           <div class="panel-body">
+                  <div class="row">
+                     <div id="btn-generate-windows" class="btn btn-success pull-left">Run new build</div>
+                     <img class="pull-right" src="https://ci.appveyor.com/api/projects/status/github/yadoms/yadoms?branch=master&svg=true">
+                  </div>
+                  <div class="row">
+                     <div id="content-windows" class="table-responsive"></div>
+                  </div>
+           </div>
+        </div>
+        
+        <div class="panel panel-default">
+           <div class="panel-heading">
              <h3 class="panel-title"><strong>RaspberryPI</strong></h3>
            </div>
            <div class="panel-body">
@@ -111,9 +126,8 @@
       var lang = navigator.languages ? navigator.languages : navigator.language;
       var locale = window.navigator.userLanguage || window.navigator.language || lang;
       moment().locale(locale);
-      //moment().locale(locale).localeData()._longDateFormat['L'];
 
-      function pushNewBuild(repository) {
+      function pushNewTravisBuild(repository) {
          $('#myModal').modal('show').on('shown.bs.modal', function (e) {
            $("#btn-validate").unbind('click').bind('click', function() {
                var msg = $("#message").val();
@@ -127,6 +141,29 @@
                  },
                  url: "https://api.travis-ci.org/repo/Yadoms%2F" + repository + "/requests",
                  data: JSON.stringify({ request: { branch:'master', message: msg }}),
+                 success: function(msg) {
+                     $('#myModal').modal('hide');
+                     $("#new-build-created").fadeTo(2000, 500).slideUp(500, function(){
+                         $("#new-build-created").slideUp(500);
+                     });
+                 }
+               });               
+           });
+         });      
+      }
+      
+      function pushNewAppVeyorBuild(repository) {
+         $('#myModal').modal('show').on('shown.bs.modal', function (e) {
+           $("#btn-validate").unbind('click').bind('click', function() {
+               var msg = $("#message").val();
+               $.ajax({
+                 type: "POST",
+                 beforeSend: function(request) {
+                   request.setRequestHeader("Authorization", "Bearer qqxnmw3s6mcgd5lqogh0");
+                   request.setRequestHeader("Content-Type", "application/json");
+                 },
+                 url: "https://ci.appveyor.com/api/builds",
+                 data: JSON.stringify({ accountName:'yadoms', projectSlug:'yadoms', branch:'master' }),
                  success: function(msg) {
                      $('#myModal').modal('hide');
                      $("#new-build-created").fadeTo(2000, 500).slideUp(500, function(){
@@ -170,7 +207,7 @@
      * @param release {JSON} The release content
      * @return The string to append to html (html string)
      */
-    function createSuccessLines(files) {
+    function createSuccessLinesForTravis(files) {
       //add table with header
       var result = '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Version</th><th>Branch</th><th>Size</th><th>Date</th><th></th></tr></thead><tbody>';
 
@@ -188,10 +225,44 @@
       result += '</tbody></table>';
       return result;
    }
+    function createSuccessLinesForAppveyor(files) {
+      //add table with header
+      var result = '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Version</th><th>Branch</th><th>Size</th><th>Date</th><th></th></tr></thead><tbody>';
+
+      //create panel for each release found
+      for(var file of files.sort(SortByDate)) {
+         var myRegexp = /Yadoms-(.*)-(.*)\.\.(exe|zip)/g;
+         var match = myRegexp.exec(file.file);
+         if(match) {
+            //add a line for each file in release
+            var packageType = match[3] === 'exe' ? 'Installer' : 'Zip file';
+            result += '<tr fileid="' + file.file +'"><th scope="row"><a href="appveyor_build/' + file.file + '">' + packageType + '</a></th><td>' + match[1] + '</td><td>-</td><td>' + humanFileSize(file.size, true) + '</td><td>' + moment(file.date*1000).toString() + '</td><td><i class="fa fa-info-circle fa-2x"></i></td></tr>';
+         }
+      }      
+
+      //end table
+      result += '</tbody></table>';
+      return result;
+   }
+
+    //ask for Windows builds
+    $.getJSON("appveyor_build/listBinaries.php?path=win32", function(data) {
+      $("#content-windows").append(createSuccessLinesForAppveyor(data.success.sort(SortByDate)));
+      $.each(data.success, function( index, file ) {
+         var $currentRow = $("#content-windows").find('tr[fileid="' + file.file + '"]');
+         $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
+               '<pre class="text-left">' + file.file +'</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (notepad...)</p></td></tr>' );
+        $currentRow.on('click', function () {       //hide already open doc
+            $("#content-windows").find('tr[docid]').addClass('hidden');
+            //show only one
+            $("#content-windows").find('tr[docid="' + file.file + '"]').toggleClass('hidden'); 
+         });
+      });
+    });
 
     //ask for RaspberryPI builds
     $.getJSON("travis_build/listBinaries.php?path=raspberry_pi", function(data) {
-      $("#content-rpi").append(createSuccessLines(data.success.sort(SortByDate)));
+      $("#content-rpi").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
       $.each(data.success, function( index, file ) {
          var $currentRow = $("#content-rpi").find('tr[fileid="' + file.file + '"]');
          $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
@@ -205,7 +276,7 @@
     });
     
     $.getJSON("travis_build/listBinaries.php?path=linux", function(data) {
-      $("#content-linux").append(createSuccessLines(data.success.sort(SortByDate)));
+      $("#content-linux").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
       $.each(data.success, function( index, file ) {
          var $currentRow = $("#content-linux").find('tr[fileid="' + file.file + '"]');
          $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
@@ -219,7 +290,7 @@
     });
 
     $.getJSON("travis_build/listBinaries.php?path=macos", function(data) {
-      $("#content-mac").append(createSuccessLines(data.success.sort(SortByDate)));
+      $("#content-mac").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
       $.each(data.success, function( index, file ) {
          var $currentRow = $("#content-mac").find('tr[fileid="' + file.file + '"]');
          $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
@@ -233,9 +304,10 @@
     });
     
       $("#new-build-created").hide();
-      $("#btn-generate-rpi").unbind('click').bind('click', function() {  pushNewBuild("yadoms-build_raspberrypi"); });
-      $("#btn-generate-mac").unbind('click').bind('click', function() {  pushNewBuild("yadoms-build-macos"); });
-      $("#btn-generate-linux").unbind('click').bind('click', function() {  pushNewBuild("yadoms-build-linux"); });
+      $("#btn-generate-windows").unbind('click').bind('click', function() {  pushNewAppVeyorBuild("yadoms-build_windows"); });
+      $("#btn-generate-rpi").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build_raspberrypi"); });
+      $("#btn-generate-mac").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build-macos"); });
+      $("#btn-generate-linux").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build-linux"); });
     
     </script>
 </body>
