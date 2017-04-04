@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/_yadoms.png">
+
+    <title>Yadoms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="download.css" rel="stylesheet">
+    <link rel="stylesheet" href="fancyBox-2.1.5/source/jquery.fancybox.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="fancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+</head>
+
+<body>
+    <div id="header"></div>
+   <div class="container">
+       <div id="download-section" class="row">
+           <h1 data-i18n="download.previous.title">Archive</h1>
+           <h4 data-i18n="download.previous.subtitle-page">Archives</h4>
+           <div class="row">
+               <div class="panel panel-default">
+                 <div class="panel-heading">
+                   <h3 class="panel-title"><strong>v1.0.0 Beta</strong></h3>
+                 </div>
+                 <div class="panel-body">
+                     <table class="table table-hover table-responsive"> 
+                        <thead> 
+                           <tr> 
+                              <th data-i18n="download.previous.plateform">Plateforme</th> 
+                              <th data-i18n="download.previous.link">Lien</th> 
+                           </tr> 
+                        </thead> 
+                        <tbody> 
+                           <tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.installer" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-win32.exe">Installeur</a></td></tr>
+                           <tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.portable" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-win32.zip">Portable</a></td></tr>
+                           <tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.targz" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.tar.gz">binaires</a></td></tr>
+                           <tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.deb" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.deb">debian</a></td></tr>
+                           <tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.rpm" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.rpm">rpm</a></td></tr>
+                           <tr><td> <img class="img-platform-archive" src="img/apple.jpg" width="32" height="32"><span data-i18n="download.mac.title">MacOS</span></td> <td><a data-i18n="download.mac.targz" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Darwin-experimental.tar.gz">binaires</a></td></tr>
+                           <tr><td> <img class="img-platform-archive" src="img/raspberry-pi-logo.png" width="32" height="32"><span data-i18n="download.rpi.title">RaspberryPI</span></td> <td><a data-i18n="download.rpi.targz" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-RaspberryPI.tar.gz">binaires</a></td></tr>
+                        </tbody> 
+                     </table>
+                 </div>
+               </div>           
+            </div>
+       </div>
+      <h5 data-i18n="download.legal">All files are provided "as is" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.</h5>
+   </div>
+    
+    <div id="footer"></div>
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="js/yadoms.js"></script>
+    <script type="text/javascript" src="fancyBox-2.1.5/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="fancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <script>
+        $(document).ready(function () {
+            //FANCYBOX
+            //https://github.com/fancyapps/fancyBox
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none",
+
+                helpers: {
+                    thumbs: {
+                        width: 50,
+                        height: 50
+                    }
+                }
+            });
+        });
+
+    </script>
+    
+    <script src="i18next/js/i18next-1.7.2.min.js"></script>
+
+    <script>
+    
+      var option = { resGetPath: "locales/__lng__.json", fallbackLng: "en", useDataAttrOptions: true, debug: false, fallbackNS: "translation" };
+      i18n.init(option, function () {
+         $("html").i18n();
+         updateTranlatedFileAttributes($.t("language"));
+      });
+
+    </script>    
+</body>
+</html>

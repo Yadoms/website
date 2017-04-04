@@ -21,67 +21,77 @@
 
 <body>
     <div id="header"></div>
+   <div class="container">
+       <div id="download-section" class="row">
+           <h1 data-i18n="download.title">Downloads</h1>
+           <h4 data-i18n="download.subtitle">Download the version of yadoms you need</h4>
+           <div class="row">
+               <div class="col-md-3 os">
+                   <img class="img-platform" src="img/windows.png" width="140" height="140">
+                   <h2 data-i18n="download.windows.title">Windows</h2>
+                   <p data-i18n="download.windows.subtitle">Choose if you want installer version to use as a service or portable version</p>
+                   <a href="  https://github.com/Yadoms/yadoms/releases/download/2.0.0-rc.1/Yadoms-2.0.0-rc.1-Windows.exe" class="btn btn-lg btn-success btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.windows.installer">Installer version</span><br><small data-i18n="download.windows.installer-version">v2.0.0-rc.1</small>
+                   </a>
+                   <a href="  https://github.com/Yadoms/yadoms/releases/download/2.0.0-rc.1/Yadoms-2.0.0-rc.1-Windows.zip" class="btn btn-lg btn-default btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.windows.portable">Portable version</span> <br><small data-i18n="download.windows.portable-version">v2.0.0-rc.1</small>
+                   </a>
+               </div>
+               <div class="col-md-3 os">
+                   <img class="img-platform" src="img/linux.jpg" width="140" height="140">
+                   <h2 data-i18n="download.linux.title">Linux</h2>
+                   <p data-i18n="download.linux.subtitle">Download right version based on you Linux distribution</p>
+                   <a href="  https://github.com/Yadoms/yadoms/releases/download/2.0.0-rc.1/Yadoms-2.0.0-rc.1-Linux.tar.gz" class="btn btn-lg btn-success btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.targz">Compressed package</span> <br><small data-i18n="download.linux.targz-version">v2.0.0-rc.1</small>
+                   </a>
+                   <a href="  https://github.com/Yadoms/yadoms/releases/download/2.0.0-rc.1/Yadoms-2.0.0-rc.1-Linux.deb" class="btn btn-lg btn-default btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.deb">Debian package</span> <br><small data-i18n="download.linux.deb-version">v2.0.0-rc.1</small>
+                   </a>
+                   <a href="  https://github.com/Yadoms/yadoms/releases/download/2.0.0-rc.1/Yadoms-2.0.0-rc.1-Linux.rpm" class="btn btn-lg btn-default btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.rpm">Rpm package</span> <br><small data-i18n="download.linux.rpm-version">v2.0.0-rc.1</small>
+                   </a>
+               </div>
+               <div class="col-md-3 os">
+                   <img class="img-platform" src="img/apple.jpg" width="140" height="140">
+                   <h2 data-i18n="download.mac.title">Mac</h2>
+                   <p data-i18n="download.mac.subtitle">This is an experimental package. You will have to make some skilled manipulation to make it works.</p>
+                   <a href="  https://github.com/Yadoms/yadoms/releases/download/2.0.0-rc.1/Yadoms-2.0.0-rc.1-Darwin.tar.gz" class="btn btn-lg btn-success btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.mac.targz">Compressed package</span> <br><small data-i18n="download.mac.targz-version">v2.0.0-rc.1</small>
+                   </a>
+               </div>
+               <div class="col-md-3 os">
+                   <img class="img-platform" src="img/raspberry-pi-logo.png" height="140">
+                   <h2 data-i18n="download.rpi.title">Raspberry PI</h2>
+                   <p data-i18n="download.rpi.subtitle">Extract the packge on your PI, and have fun</p>
+                   <a href="  https://github.com/Yadoms/yadoms/releases/download/2.0.0-rc.1/Yadoms-2.0.0-rc.1-RaspberryPI.tar.bz2" class="btn btn-lg btn-success btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.targz">Compressed package</span> <br><small data-i18n="download.rpi.targz-version">v2.0.0-rc.1</small>
+                   </a>
+               </div>
+           </div>
+       </div>
 
-    <div id="download-section">
-        <h1 data-i18n="download.title">Downloads</h1>
-        <h4 data-i18n="download.subtitle">Download the version of yadoms you need</h4>
-        <div class="row">
-            <div class="col-md-3 os">
-                <img class="img-platform" src="img/windows.png" width="140" height="140">
-                <h2 data-i18n="download.windows.title">Windows</h2>
-                <p data-i18n="download.windows.subtitle">Choose if you want installer version to use as a service or portable version</p>
-                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-win32.exe" class="btn btn-lg btn-success btn-download">
-                    <span class="glyphicon glyphicon-save"></span><span data-i18n="download.windows.installer">Installer version</span><br><small data-i18n="download.windows.installer-version">v1.0.0 Beta</small>
-                </a>
-                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-win32.zip" class="btn btn-lg btn-default btn-download">
-                    <span class="glyphicon glyphicon-save"></span><span data-i18n="download.windows.portable">Portable version</span> <br><small data-i18n="download.windows.portable-version">v1.0.0 Beta</small>
-                </a>
-            </div>
-            <div class="col-md-3 os">
-                <img class="img-platform" src="img/linux.jpg" width="140" height="140">
-                <h2 data-i18n="download.linux.title">Linux</h2>
-                <p data-i18n="download.linux.subtitle">Download right version based on you Linux distribution</p>
-                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.tar.gz" class="btn btn-lg btn-success btn-download">
-                    <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.targz">Compressed package</span> <br><small data-i18n="download.linux.targz-version">v1.0.0 Beta</small>
-                </a>
-                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.deb" class="btn btn-lg btn-default btn-download">
-                    <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.deb">Debian package</span> <br><small data-i18n="download.linux.deb-version">v1.0.0 Beta</small>
-                </a>
-                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.rpm" class="btn btn-lg btn-default btn-download">
-                    <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.rpm">Rpm package</span> <br><small data-i18n="download.linux.rpm-version">v1.0.0 Beta</small>
-                </a>
-            </div>
-            <div class="col-md-3 os">
-                <img class="img-platform" src="img/apple.jpg" width="140" height="140">
-                <h2 data-i18n="download.mac.title">Mac</h2>
-                <p data-i18n="download.mac.subtitle">This is an experimental package. You will have to make some skilled manipulation to make it works.</p>
-                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Darwin-experimental.tar.gz" class="btn btn-lg btn-success btn-download">
-                    <span class="glyphicon glyphicon-save"></span><span data-i18n="download.mac.targz">Compressed package</span> <br><small data-i18n="download.mac.targz-version">v1.0.0 Beta</small>
-                </a>
-            </div>
-            <div class="col-md-3 os">
-                <img class="img-platform" src="img/raspberry-pi-logo.png" height="140">
-                <h2 data-i18n="download.rpi.title">Raspberry PI</h2>
-                <p data-i18n="download.rpi.subtitle">Extract the packge on your PI, and have fun</p>
-                <a href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-RaspberryPI.tar.gz" class="btn btn-lg btn-success btn-download">
-                    <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.targz">Compressed package</span> <br><small data-i18n="download.rpi.targz-version">v1.0.0 Beta</small>
-                </a>
-            </div>
-        </div>
+       <h5 data-i18n="download.legal">All files are provided "as is" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.</h5>
+
+       <div id="previous-section" class="row">
+         <h1 data-i18n="download.previous.title">Archives</h1>
+         <h4 data-i18n="download.previous.subtitle"> consulter la page dédiée aux archives</h4>
+         <div class="col-md-4 os">
+            <a href="previous_download.html" class="btn btn-lg btn-success btn-download">
+               <span class="glyphicon glyphicon-list-alt"></span><span data-i18n="download.previous.button">Voir les archives</span>
+            </a>      
+         </div>
+       </div>
+
+       <div id="build-section" class="row">
+         <h1 data-i18n="download.build.title">Votre plateforme n'est pas listée ici</h1>
+         <h4 data-i18n="download.build.subtitle">Yadoms est multiplateformes; c'est-à-dire qu'il est possible de le générer pour n'importe quelle cible matérielle (ou presque).</h4>
+         <div class="col-md-4 os">
+            <a href="https://github.com/Yadoms/yadoms/wiki/How-to-build-from-sources" target="blank" class="btn btn-lg btn-success btn-download">
+               <span class="glyphicon glyphicon-book"></span><span data-i18n="download.build.wiki">Aller sur le wiki</span>
+            </a>      
+         </div>
+       </div>
     </div>
-
-    <h5 data-i18n="download.legal">All files are provided "as is" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.</h5>
-
-    <div id="build-section">
-      <h1 data-i18n="build.title">Votre plateforme n'est pas listée ici</h1>
-      <h4 data-i18n="build.subtitle">Yadoms est multiplateformes; c'est-à-dire qu'il est possible de le générer pour n'importe quelle cible matérielle (ou presque).</h4>
-      <div class="col-md-3 os">
-         <a href="https://github.com/Yadoms/yadoms/wiki/How-to-build-from-sources" target="blank" class="btn btn-lg btn-success btn-download">
-            <span class="glyphicon glyphicon-book"></span><span data-i18n="build.button">Aller sur le wiki</span>
-         </a>      
-      </div>
-    </div>
-    
     <div id="footer"></div>
 
     <!-- Bootstrap core JavaScript

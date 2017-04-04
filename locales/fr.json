@@ -103,40 +103,41 @@
 	"subtitle" : "Téléchargez la version de Yadoms dont vous avez besoin",
 	"windows" : {
 		"title" : "Windows",
-		"subtitle" : "Choisissez la version \"installeur automatique\" pour l'utiliser comme un service ou bien la version portable",
-		"installer" : "Installeur automatique",
-		"installer-version" : "v1.0.0 Beta",
-		"portable" : "Portable",
-		"portable-version" : "v1.0.0 Beta"
+		"subtitle" : "Choisissez la version \"installeur\" pour l'utiliser comme un service ou bien la version portable",
+		"installer" : "Installeur",
+		"portable" : "Portable"
 	},
 	"linux" : {
 		"title" : "Linux",
 		"subtitle" : "Téléchargez la version correspondant à votre distribution",
-		"targz" : "Binaires compressés",
-		"targz-version" : "v1.0.0 Beta",
+		"targz" : "Binaires",
 		"deb" : "Paquet Debian",
-		"deb-version" : "v1.0.0 Beta",
-		"rpm" : "Paquet RPM",
-		"rpm-version" : "v1.0.0 Beta"
+		"rpm" : "Paquet RPM"
 	},
 	"mac" : {
 		"title" : "Mac OSX",
-		"subtitle" : "C'est un paquet expérimental. Vous devrez effectuer des manipulations relativement complexes pour le faire fonctionner. (lignes de commandes)",
-		"targz" : "Binaires compressés",
-		"targz-version" : "v1.0.0 Beta"
+		"subtitle" : "Packet expérimental, doit être manipuler en ligne de commandes",
+		"targz" : "Binaires"
 	},
 	"rpi" : {
 		"title" : "Raspberry PI",
-		"subtitle" : "réalisez l'extraction sur votre RaspberryPI et amusez vous ;-)",
-		"targz" : "Binaires compressés",
-		"targz-version" : "v1.0.0 Beta"
+		"subtitle" : "Réalisez l'extraction sur votre RaspberryPI et amusez vous ;-)",
+		"targz" : "Binaires"
 	},
-	"legal" : "Le logiciel et ses fichiers sont fournis \"comme ça\". Aucune des personnes de l'équipe Yadoms ne pourra être tenue responsable des dommages causés par le logiciel. Utilisez-le à vos propres risques.",
 	"build" : {
 		"title" : "Votre plateforme n'est pas listée ici ?",
 		"subtitle" : "Yadoms est multiplateformes; c'est-à-dire qu'il est possible de le générer pour n'importe quelle cible matérielle (ou presque).",
 		"wiki" : "Aller sur le wiki"
-	}
+	},
+	"previous" : {
+		"title" : "Archives",
+		"subtitle" : "Vous recherchez une versions précédente, consulter la page dédiée aux archives",
+		"subtitle-page" : "Voici la liste des verions précédentes",
+		"button" : "Consulter les archives",
+      "plateform": "Platforme",
+      "link": "Lien de téléchargement"
+	},
+	"legal" : "Le logiciel et ses fichiers sont fournis \"comme ça\". Aucune des personnes de l'équipe Yadoms ne pourra être tenue responsable des dommages causés par le logiciel. Utilisez-le à vos propres risques."
   }
   
 }

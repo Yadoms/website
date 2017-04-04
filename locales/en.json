@@ -105,37 +105,38 @@
 		"title" : "Windows",
 		"subtitle" : "Choose if you want installer version to use as a service or portable version",
 		"installer" : "Installer version",
-		"installer-version" : "v1.0.0 Beta",
-		"portable" : "Portable version",
-		"portable-version" : "v1.0.0 Beta"
+		"portable" : "Portable version"
 	},
 	"linux" : {
 		"title" : "Linux",
 		"subtitle" : "Download right version based on you Linux distribution",
 		"targz" : "Compressed package",
-		"targz-version" : "v1.0.0 Beta",
 		"deb" : "Debian package",
-		"deb-version" : "v1.0.0 Beta",
-		"rpm" : "RPM package",
-		"rpm-version" : "v1.0.0 Beta"
+		"rpm" : "RPM package"
 	},
 	"mac" : {
 		"title" : "Mac OSX",
 		"subtitle" : "This is an experimental package. You will have to make some skilled manipulation to make it works.",
-		"targz" : "Compressed package",
-		"targz-version" : "v1.0.0 Beta"
+		"targz" : "Compressed package"
 	},
 	"rpi" : {
 		"title" : "Raspberry PI",
 		"subtitle" : "Extract the packge on your PI, and have fun.",
-		"targz" : "Compressed package",
-		"targz-version" : "v1.0.0 Beta"
+		"targz" : "Compressed package"
 	},
 	"legal" : "All files are provided \"as is\" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.",
 	"build" : {
 		"title" : "Your platform is not listed here  ?",
 		"subtitle" : "Yadoms is multiplatform; that is to say, it is possible to generate for any hardware target (or almost).",
 		"wiki" : "Go to wiki"
+	},
+	"previous" : {
+		"title" : "Archives",
+		"subtitle" : "You search for preivous release, consult the archive page",
+		"subtitle-page" : "List of previous releases",
+		"button" : "Consult archives",
+      "plateform": "Platform",
+      "link": "Download link"
 	}
 
   }
