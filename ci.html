@@ -36,7 +36,7 @@
            <div class="panel-body">
                   <div class="row">
                      <div id="btn-generate-windows" class="btn btn-success pull-left">Run new build</div>
-                     <img class="pull-right" src="https://ci.appveyor.com/api/projects/status/github/yadoms/yadoms?branch=2_0_0&svg=true">
+                     <img class="pull-right" src="https://ci.appveyor.com/api/projects/status/github/yadoms/yadoms-build-windows?branch=master&svg=true">
                   </div>
                   <div class="row">
                      <div id="content-windows" class="table-responsive"></div>
@@ -51,7 +51,7 @@
            <div class="panel-body">
                   <div class="row">
                      <div id="btn-generate-rpi" class="btn btn-success pull-left">Run new build</div>
-                     <img class="pull-right" src="https://travis-ci.org/Yadoms/yadoms-build_raspberrypi.svg?branch=2_0_0">
+                     <img class="pull-right" src="https://travis-ci.org/Yadoms/yadoms-build_raspberrypi.svg?branch=master">
                   </div>
                   <div class="row">
                      <div id="content-rpi" class="table-responsive"></div>
@@ -66,7 +66,7 @@
            <div class="panel-body">
                   <div class="row">
                      <div id="btn-generate-linux" class="btn btn-success pull-left">Run new build</div>
-                     <img class="pull-right" src="https://travis-ci.org/Yadoms/yadoms-build-linux.svg?branch=2_0_0">
+                     <img class="pull-right" src="https://travis-ci.org/Yadoms/yadoms-build-linux.svg?branch=master">
                   </div>
                   <div class="row">
                      <div id="content-linux" class="table-responsive"></div>
@@ -81,7 +81,7 @@
            <div class="panel-body">
                   <div class="row">
                      <div id="btn-generate-mac" class="btn btn-success pull-left">Run new build</div>
-                     <img class="pull-right" src="https://travis-ci.org/Yadoms/yadoms-build-macos.svg?branch=2_0_0">
+                     <img class="pull-right" src="https://travis-ci.org/Yadoms/yadoms-build-macos.svg?branch=master">
                   </div>
                   <div class="row">
                      <div id="content-mac" class="table-responsive"></div>
@@ -140,7 +140,7 @@
                    request.setRequestHeader("Authorization", "token tZyquhMsJy2_1z-ElZqRxg");
                  },
                  url: "https://api.travis-ci.org/repo/Yadoms%2F" + repository + "/requests",
-                 data: JSON.stringify({ request: { branch:'2_0_0', message: msg }}),
+                 data: JSON.stringify({ request: { branch:'master', message: msg }}),
                  success: function(msg) {
                      $('#myModal').modal('hide');
                      $("#new-build-created").fadeTo(2000, 500).slideUp(500, function(){
@@ -163,7 +163,7 @@
                    request.setRequestHeader("Content-Type", "application/json");
                  },
                  url: "https://ci.appveyor.com/api/builds",
-                 data: JSON.stringify({ accountName:'yadoms', projectSlug:'yadoms', branch:'2_0_0' }),
+                 data: JSON.stringify({ accountName:'yadoms', projectSlug:repository, branch:'master' }),
                  success: function(msg) {
                      $('#myModal').modal('hide');
                      $("#new-build-created").fadeTo(2000, 500).slideUp(500, function(){
@@ -304,7 +304,7 @@
     });
     
       $("#new-build-created").hide();
-      $("#btn-generate-windows").unbind('click').bind('click', function() {  pushNewAppVeyorBuild("yadoms-build_windows"); });
+      $("#btn-generate-windows").unbind('click').bind('click', function() {  pushNewAppVeyorBuild("yadoms-build-windows"); });
       $("#btn-generate-rpi").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build_raspberrypi"); });
       $("#btn-generate-mac").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build-macos"); });
       $("#btn-generate-linux").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build-linux"); });
