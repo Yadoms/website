@@ -265,8 +265,12 @@
       $("#content-rpi").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
       $.each(data.success, function( index, file ) {
          var $currentRow = $("#content-rpi").find('tr[fileid="' + file.file + '"]');
+         var pathRegex = /(.*)\/(.*)(\.tar\.bz2)/g;
+         var path = pathRegex.exec(file.file);
+         var zippedFilename = path[2] + path[3];
+         var unzippedPath = path[2];
          $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
-               '<p>Depuis la console sur la RaspberryPI</p><pre class="text-left">sudo apt-get install libpq5<br/>wget -U \'yadomsAgent/1.0\' ' + $currentRow.find('a').prop('href') + '<br/>tar xjf ' + file.file + '<br/>cd yadoms-raspberrypi-2.0.0-beta.1<br/>./yadoms</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (vi, nano,...)</p></td></tr>' );
+               '<p>Depuis la console sur la RaspberryPI</p><pre class="text-left">sudo apt-get install libpq5<br/>wget -U \'yadomsAgent/1.0\' ' + $currentRow.find('a').prop('href') + '<br/>tar xjf ' + zippedFilename + '<br/>cd ' + unzippedPath + '<br/>./yadoms</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (vi, nano,...)</p></td></tr>' );
         $currentRow.on('click', function () {       //hide already open doc
             $("#content-rpi").find('tr[docid]').addClass('hidden');
             //show only one
@@ -279,8 +283,12 @@
       $("#content-linux").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
       $.each(data.success, function( index, file ) {
          var $currentRow = $("#content-linux").find('tr[fileid="' + file.file + '"]');
+         var pathRegex = /(.*)\/(.*)(\.tar\.bz2)/g;
+         var path = pathRegex.exec(file.file);
+         var zippedFilename = path[2] + path[3];
+         var unzippedPath = path[2];
          $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
-               '<p>Depuis le terminal</p><pre class="text-left">wget -U \'yadomsAgent/1.0\' ' + $currentRow.find('a').prop('href') + '<br/>tar xjf ' + file.file + '<br/>cd yadoms-raspberrypi-2.0.0-beta.1<br/>./yadoms</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (vi, nano,...)</p></td></tr>' );
+               '<p>Depuis le terminal</p><pre class="text-left">wget -U \'yadomsAgent/1.0\' ' + $currentRow.find('a').prop('href') + '<br/>tar xjf ' + zippedFilename + '<br/>cd ' + unzippedPath + '<br/>./yadoms</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (vi, nano,...)</p></td></tr>' );
         $currentRow.on('click', function () {       //hide already open doc
             $("#content-linux").find('tr[docid]').addClass('hidden');
             //show only one
@@ -293,8 +301,12 @@
       $("#content-mac").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
       $.each(data.success, function( index, file ) {
          var $currentRow = $("#content-mac").find('tr[fileid="' + file.file + '"]');
+         var pathRegex = /(.*)\/(.*)(\.tar\.bz2)/g;
+         var path = pathRegex.exec(file.file);
+         var zippedFilename = path[2] + path[3];
+         var unzippedPath = path[2];
          $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
-               '<p>Ouvrir l\'application terminal</p><pre class="text-left">wget -U \'yadomsAgent/1.0\' ' + $currentRow.find('a').prop('href') + '<br/>tar xjf ' + file.file + '<br/>cd yadoms-raspberrypi-2.0.0-beta.1<br/>./yadoms</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (vi, nano,...)</p></td></tr>' );
+               '<p>Ouvrir l\'application terminal</p><pre class="text-left">wget -U \'yadomsAgent/1.0\' ' + $currentRow.find('a').prop('href') + '<br/>tar xjf ' + zippedFilename + '<br/>cd ' + unzippedPath + '<br/>./yadoms</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (vi, nano,...)</p></td></tr>' );
         $currentRow.on('click', function () {       //hide already open doc
             $("#content-mac").find('tr[docid]').addClass('hidden');
             //show only one
