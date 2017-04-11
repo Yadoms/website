@@ -21,39 +21,13 @@
 
 <body>
     <div id="header"></div>
-   <div class="container">
+    <div class="container">
        <div id="download-section" class="row">
            <h1 data-i18n="download.previous.title">Archive</h1>
            <h4 data-i18n="download.previous.subtitle-page">Archives</h4>
-           <div class="row">
-               <div class="panel panel-default">
-                 <div class="panel-heading">
-                   <h3 class="panel-title"><strong>v1.0.0 Beta</strong></h3>
-                 </div>
-                 <div class="panel-body">
-                     <table class="table table-hover table-responsive"> 
-                        <thead> 
-                           <tr> 
-                              <th data-i18n="download.previous.plateform">Plateforme</th> 
-                              <th data-i18n="download.previous.link">Lien</th> 
-                           </tr> 
-                        </thead> 
-                        <tbody> 
-                           <tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.installer" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-win32.exe">Installeur</a></td></tr>
-                           <tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.portable" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-win32.zip">Portable</a></td></tr>
-                           <tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.targz" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.tar.gz">binaires</a></td></tr>
-                           <tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.deb" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.deb">debian</a></td></tr>
-                           <tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.rpm" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Linux.rpm">rpm</a></td></tr>
-                           <tr><td> <img class="img-platform-archive" src="img/apple.jpg" width="32" height="32"><span data-i18n="download.mac.title">MacOS</span></td> <td><a data-i18n="download.mac.targz" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-Darwin-experimental.tar.gz">binaires</a></td></tr>
-                           <tr><td> <img class="img-platform-archive" src="img/raspberry-pi-logo.png" width="32" height="32"><span data-i18n="download.rpi.title">RaspberryPI</span></td> <td><a data-i18n="download.rpi.targz" href="https://github.com/Yadoms/yadoms/releases/download/1_0_0_beta/Yadoms-1.0.0-Beta-RaspberryPI.tar.gz">binaires</a></td></tr>
-                        </tbody> 
-                     </table>
-                 </div>
-               </div>           
-            </div>
-       </div>
-      <h5 data-i18n="download.legal">All files are provided "as is" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.</h5>
-   </div>
+       </div>   
+       <h5 data-i18n="download.legal">All files are provided "as is" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.</h5>
+    </div>
     
     <div id="footer"></div>
 
@@ -94,6 +68,55 @@
          updateTranlatedFileAttributes($.t("language"));
       });
 
+
+      
+      function addVersion(version, path, winexe, winzip, linuxtar, linuxdeb, linuxrpm, rpitar, mactar) {
+         const baseVersion = version;
+         const versionDisplay = "v" + baseVersion;
+         
+         var urlFolder = baseVersion;
+         if(path)
+            urlFolder =path;
+            
+         const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + urlFolder + "/Yadoms-" + baseVersion + "-";
+         const rpiDlUrl = baseUrl + (rpitar?rpitar:"RaspberryPI.tar.bz2");
+         const macDlUrl = baseUrl + (mactar?mactar:"Darwin.tar.gz");
+         const linuxRpmDlUrl = baseUrl + (linuxrpm?linuxtar:"Linux.rpm");
+         const linuxDebDlUrl = baseUrl + (linuxdeb?linuxtar:"Linux.deb");
+         const linuxTarDlUrl = baseUrl + (linuxtar?linuxtar:"Linux.tar.gz");
+         const winZipDlUrl = baseUrl + (winzip?winzip:"Windows.zip");
+         const winExeDlUrl = baseUrl + (winexe?winexe:"Windows.exe");
+         
+         var row = '<div class="row"> <div class="panel panel-default"> <div class="panel-heading"><h3 class="panel-title"><strong>' + versionDisplay + '</strong></h3>' +
+                 '</div>' +
+                 '<div class="panel-body">' +
+                     '<table class="table table-hover table-responsive"> ' +
+                        '<thead> ' +
+                           '<tr> ' +
+                              '<th data-i18n="download.previous.plateform">Plateforme</th> ' +
+                              '<th data-i18n="download.previous.link">Lien</th> ' +
+                           '</tr> ' +
+                        '</thead> '+
+                        '<tbody> ' +
+                           '<tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.installer" href="' + winExeDlUrl +'">Installeur</a></td></tr>'+
+                           '<tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.portable" href="' + winZipDlUrl +'">Portable</a></td></tr>'+
+                           '<tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.targz" href="' + linuxTarDlUrl +'">binaires</a></td></tr>'+
+                           '<tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.deb" href="' + linuxDebDlUrl +'">debian</a></td></tr>'+
+                           '<tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.rpm" href="' + linuxRpmDlUrl +'">rpm</a></td></tr>'+
+                           '<tr><td> <img class="img-platform-archive" src="img/apple.jpg" width="32" height="32"><span data-i18n="download.mac.title">MacOS</span></td> <td><a data-i18n="download.mac.targz" href="' + macDlUrl +'">binaires</a></td></tr>'+
+                           '<tr><td> <img class="img-platform-archive" src="img/raspberry-pi-logo.png" width="32" height="32"><span data-i18n="download.rpi.title">RaspberryPI</span></td> <td><a data-i18n="download.rpi.targz" href="' + rpiDlUrl +'">binaires</a></td></tr>'+
+                        '</tbody> '+
+                     '</table>'+
+                 '</div>'+
+               '</div>           '+
+            '</div>'; 
+            
+         $("#download-section").append(row);
+      }
+      
+      addVersion("2.0.0-rc.1");
+      addVersion("1.0.0-Beta", "1_0_0_beta", "win32.exe", "win32.zip", undefined, undefined, undefined, "RaspberryPI.tar.gz", "Darwin-experimental.tar.gz");
+     
     </script>    
 </body>
 </html>
