@@ -123,7 +123,8 @@
 	"rpi" : {
 		"title" : "Raspberry PI",
 		"subtitle" : "Réalisez l'extraction sur votre RaspberryPI (libpq5 doit être installé au préalable : sudo apt-get install libpq5)",
-		"targz" : "Binaires"
+		"targz" : "Binaires",
+		"img" : "Image carte SD"
 	},
 	"build" : {
 		"title" : "Votre plateforme n'est pas listée ici ?",

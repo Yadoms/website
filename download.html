@@ -63,7 +63,10 @@
                    <img class="img-platform" src="img/raspberry-pi-logo.png" height="140">
                    <h2 data-i18n="download.rpi.title">Raspberry PI</h2>
                    <p data-i18n="download.rpi.subtitle">Extract the packge on your PI, and have fun (please note that you have to install libpq5 first : sudo apt-get install libpq5)</p>
-                   <a id="a_rpi_tar" href="" class="btn btn-lg btn-success btn-download">
+                   <a id="a_rpi_img" href="" class="btn btn-lg btn-success btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.img">SD card image</span> <br><small data-i18n="download.rpi.img-version" class="current-version">loading...</small>
+                   </a>
+                   <a id="a_rpi_tar" href="" class="btn btn-lg btn-default btn-download">
                        <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.targz">Compressed package</span> <br><small data-i18n="download.rpi.targz-version" class="current-version">loading...</small>
                    </a>
                </div>
@@ -136,7 +139,8 @@
       const versionDisplay = "v" + baseVersion;
       
       const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + baseVersion + "/Yadoms-" + baseVersion + "-";
-      const rpiDlUrl = baseUrl + "RaspberryPI.tar.bz2";
+      const rpiTarDlUrl = baseUrl + "RaspberryPI.tar.bz2";
+      const rpiImgDlUrl = baseUrl + "RaspberryPI.img";
       const macDlUrl = baseUrl + "Darwin.tar.gz";
       const linuxRpmDlUrl = baseUrl + "Linux.rpm";
       const linuxDebDlUrl = baseUrl + "Linux.deb";
@@ -144,7 +148,8 @@
       const winZipDlUrl = baseUrl + "Windows.zip";
       const winExeDlUrl = baseUrl + "Windows.exe";
       
-      $("#a_rpi_tar").attr("href", rpiDlUrl);
+      $("#a_rpi_tar").attr("href", rpiTarDlUrl);
+      $("#a_rpi_img").attr("href", rpiImgDlUrl);
       $("#a_mac_tar").attr("href", macDlUrl);
       $("#a_lin_tar").attr("href", linuxTarDlUrl);
       $("#a_lin_deb").attr("href", linuxDebDlUrl);
