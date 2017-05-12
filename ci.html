@@ -231,7 +231,7 @@
 
       //create panel for each release found
       for(var file of files.sort(SortByDate)) {
-         var myRegexp = /Yadoms-(.*)-(.*)\.\.(exe|zip)/g;
+         var myRegexp = /Yadoms-(.*)-(.*)\.{1,2}(exe|zip)/g;
          var match = myRegexp.exec(file.file);
          if(match) {
             //add a line for each file in release
