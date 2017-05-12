@@ -122,10 +122,13 @@
     <script src="moment/moment-with-locales.min.js"></script>
 
     <script>
+   $( document ).ready(function() {
       //configure momentjs to use browser locale
       var lang = navigator.languages ? navigator.languages : navigator.language;
       var locale = window.navigator.userLanguage || window.navigator.language || lang;
+      moment.locale(locale);
       moment().locale(locale);
+      
 
       function pushNewTravisBuild(repository) {
          $('#myModal').modal('show').on('shown.bs.modal', function (e) {
@@ -197,130 +200,111 @@
           return bytes.toFixed(1)+' '+units[u];
       }
     
-   function SortByDate(b, a){
-     return ((a.date < b.date) ? -1 : ((a.date > b.date) ? 1 : 0));
-   }    
-    
-    
-    /**
-     * Function that create a panel for a release and add the table of each file
-     * @param release {JSON} The release content
-     * @return The string to append to html (html string)
-     */
-    function createSuccessLinesForTravis(files) {
-      //add table with header
-      var result = '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Version</th><th>Branch</th><th>Size</th><th>Date</th><th></th></tr></thead><tbody>';
-
-      //create panel for each release found
-      for(var file of files.sort(SortByDate)) {
-         var myRegexp = /yadoms-(.*)-v(.*)\.b(.*)\.tar\.bz2/g;
-         var match = myRegexp.exec(file.file);
-         if(match) {
-            //add a line for each file in release
-            result += '<tr fileid="' + file.file +'"><th scope="row"><a href="travis_build/' + file.file + '">' + match[1] + '</a></th><td>' + match[2] +  '</td><td>' + match[3] +  '</td><td>' + humanFileSize(file.size, true) + '</td><td>' + moment(file.date*1000).toString() + '</td><td><i class="fa fa-info-circle fa-2x"></i></td></tr>';
+      function SortByDate(b, a){
+        return ((a.date < b.date) ? -1 : ((a.date > b.date) ? 1 : 0));
+      }    
+       
+      function GetFormat(ext) {
+         if(ext === ".tar.gz" || ext === ".tar.bz2") {
+            return "Compressed binaries (" + ext + ")";
+         } else if(ext === ".deb") {
+            return "Debian package";
+         } else if(ext === ".rpm") {
+            return "RPM package";
+         } else if(ext === ".exe") {
+            return "Windows installer";
+         } else if(ext === ".zip") {
+            return "Portable binaries (ZIP)";
          }
-      }      
+         return ext;
+      }
+    
+       /**
+        * Function that create a panel for a release and add the table of each file
+        * @param release {JSON} The release content
+        * @return The string to append to html (html string)
+        */
+       function createSuccessLinesForTravis(files) {
+         //add table with header
+         var result = '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Version</th><th>Format</th><th>Size</th><th>Date</th><th></th></tr></thead><tbody>';
 
-      //end table
-      result += '</tbody></table>';
-      return result;
-   }
-    function createSuccessLinesForAppveyor(files) {
-      //add table with header
-      var result = '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Version</th><th>Branch</th><th>Size</th><th>Date</th><th></th></tr></thead><tbody>';
 
-      //create panel for each release found
-      for(var file of files.sort(SortByDate)) {
-         var myRegexp = /Yadoms-(.*)-(.*)\.{1,2}(exe|zip)/g;
-         var match = myRegexp.exec(file.file);
-         if(match) {
-            //add a line for each file in release
-            var packageType = match[3] === 'exe' ? 'Installer' : 'Zip file';
-            result += '<tr fileid="' + file.file +'"><th scope="row"><a href="appveyor_build/' + file.file + '">' + packageType + '</a></th><td>' + match[1] + '</td><td>-</td><td>' + humanFileSize(file.size, true) + '</td><td>' + moment(file.date*1000).toString() + '</td><td><i class="fa fa-info-circle fa-2x"></i></td></tr>';
+         for(var file of files.sort(SortByDate)) {
+            //old format
+            var myRegexp = /yadoms-(.*)-v(.*)\.b(.*)\.tar\.bz2/g;
+            var match = myRegexp.exec(file.file);
+            if(match) {
+               //add a line for each file in release
+               result += '<tr fileid="' + file.file +'"><th scope="row"><a href="travis_build/' + file.file + '">' + match[1] + '</a></th><td>' + match[2] +  '</td><td>' + GetFormat(".tar.bz2") +  '</td><td>' + humanFileSize(file.size, true) + '</td><td>' + moment(file.date*1000).toString() + '</td></tr>';
+            } else {
+               var pathRegex = /(.*)\/((.*)(\.tar\.bz2|\.tar\.gz|\.deb|\.rpm))/g;
+               var path = pathRegex.exec(file.file);
+               if(path) {
+                  //path[1] : full name with ext
+                  //path[2] : full name without ext
+                  //path[3] : ext
+                  
+                  var fileregex = /[Yy]adoms-(.*)-(.*)/g;
+                  var match = fileregex.exec(path[3]);
+                  if(match) {
+                     //add a line for each file in release
+                     result += '<tr fileid="' + file.file +'"><th scope="row"><a href="travis_build/' + file.file + '">' + path[1] + '</a></th><td>' + match[1] +  '</td><td>' + GetFormat(path[4]) + '</td><td>' + humanFileSize(file.size, true) + '</td><td>' + moment(file.date*1000).toString() + '</td></tr>';
+                  }
+               }
+            }
          }
-      }      
+         
+         
+         //end table
+         result += '</tbody></table>';
+         return result;
+      }
+       function createSuccessLinesForAppveyor(files) {
+         //add table with header
+         var result = '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Version</th><th>Format</th><th>Size</th><th>Date</th><th></th></tr></thead><tbody>';
 
-      //end table
-      result += '</tbody></table>';
-      return result;
-   }
+         //create panel for each release found
+         for(var file of files.sort(SortByDate)) {
+            var myRegexp = /Yadoms-(.*)-(.*)\.?\.(exe|zip)/g;
+            var match = myRegexp.exec(file.file);
+            if(match) {
+               //add a line for each file in release
+               result += '<tr fileid="' + file.file +'"><th scope="row"><a href="appveyor_build/' + file.file + '">' + GetFormat("." + match[3]) + '</a></th><td>' + match[1] + '</td><td>-</td><td>' + humanFileSize(file.size, true) + '</td><td>' + moment(file.date*1000).toString() + '</td></tr>';
+            }
+         }      
 
-    //ask for Windows builds
-    $.getJSON("appveyor_build/listBinaries.php?path=win32", function(data) {
-      $("#content-windows").append(createSuccessLinesForAppveyor(data.success.sort(SortByDate)));
-      $.each(data.success, function( index, file ) {
-         var $currentRow = $("#content-windows").find('tr[fileid="' + file.file + '"]');
-         $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
-               '<pre class="text-left">' + file.file +'</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (notepad...)</p></td></tr>' );
-        $currentRow.on('click', function () {       //hide already open doc
-            $("#content-windows").find('tr[docid]').addClass('hidden');
-            //show only one
-            $("#content-windows").find('tr[docid="' + file.file + '"]').toggleClass('hidden'); 
-         });
-      });
-    });
+         //end table
+         result += '</tbody></table>';
+         return result;
+      }
 
-    //ask for RaspberryPI builds
-    $.getJSON("travis_build/listBinaries.php?path=raspberry_pi", function(data) {
-      $("#content-rpi").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
-      $.each(data.success, function( index, file ) {
-         var $currentRow = $("#content-rpi").find('tr[fileid="' + file.file + '"]');
-         var pathRegex = /(.*)\/(.*)(\.tar\.bz2)/g;
-         var path = pathRegex.exec(file.file);
-         var zippedFilename = path[2] + path[3];
-         var unzippedPath = path[2];
-         $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
-               '<p>Depuis la console sur la RaspberryPI</p><pre class="text-left">sudo apt-get install libpq5<br/>wget -U \'yadomsAgent/1.0\' ' + $currentRow.find('a').prop('href') + '<br/>tar xjf ' + zippedFilename + '<br/>cd ' + unzippedPath + '<br/>./yadoms</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (vi, nano,...)</p></td></tr>' );
-        $currentRow.on('click', function () {       //hide already open doc
-            $("#content-rpi").find('tr[docid]').addClass('hidden');
-            //show only one
-            $("#content-rpi").find('tr[docid="' + file.file + '"]').toggleClass('hidden'); 
-         });
-      });
-    });
-    
-    $.getJSON("travis_build/listBinaries.php?path=linux", function(data) {
-      $("#content-linux").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
-      $.each(data.success, function( index, file ) {
-         var $currentRow = $("#content-linux").find('tr[fileid="' + file.file + '"]');
-         var pathRegex = /(.*)\/(.*)(\.tar\.bz2)/g;
-         var path = pathRegex.exec(file.file);
-         var zippedFilename = path[2] + path[3];
-         var unzippedPath = path[2];
-         $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
-               '<p>Depuis le terminal</p><pre class="text-left">wget -U \'yadomsAgent/1.0\' ' + $currentRow.find('a').prop('href') + '<br/>tar xjf ' + zippedFilename + '<br/>cd ' + unzippedPath + '<br/>./yadoms</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (vi, nano,...)</p></td></tr>' );
-        $currentRow.on('click', function () {       //hide already open doc
-            $("#content-linux").find('tr[docid]').addClass('hidden');
-            //show only one
-            $("#content-linux").find('tr[docid="' + file.file + '"]').toggleClass('hidden'); 
-         });
-      });
-    });
+       //ask for Windows builds
+       $.getJSON("appveyor_build/listBinaries.php?path=win32", function(data) {
+         $("#content-windows").append(createSuccessLinesForAppveyor(data.success.sort(SortByDate)));
+       });
 
-    $.getJSON("travis_build/listBinaries.php?path=macos", function(data) {
-      $("#content-mac").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
-      $.each(data.success, function( index, file ) {
-         var $currentRow = $("#content-mac").find('tr[fileid="' + file.file + '"]');
-         var pathRegex = /(.*)\/(.*)(\.tar\.bz2)/g;
-         var path = pathRegex.exec(file.file);
-         var zippedFilename = path[2] + path[3];
-         var unzippedPath = path[2];
-         $currentRow.after('<tr docid="' + file.file +'" class="hidden"><td colspan="4">' + 
-               '<p>Ouvrir l\'application terminal</p><pre class="text-left">wget -U \'yadomsAgent/1.0\' ' + $currentRow.find('a').prop('href') + '<br/>tar xjf ' + zippedFilename + '<br/>cd ' + unzippedPath + '<br/>./yadoms</pre></p><p>Le fichier de configuration est yadoms.ini que vous pouvez éditer avec n\'importe quel éditeur (vi, nano,...)</p></td></tr>' );
-        $currentRow.on('click', function () {       //hide already open doc
-            $("#content-mac").find('tr[docid]').addClass('hidden');
-            //show only one
-            $("#content-mac").find('tr[docid="' + file.file + '"]').toggleClass('hidden'); 
-         });
-      });
-    });
-    
-      $("#new-build-created").hide();
-      $("#btn-generate-windows").unbind('click').bind('click', function() {  pushNewAppVeyorBuild("yadoms-build-windows"); });
-      $("#btn-generate-rpi").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build_raspberrypi"); });
-      $("#btn-generate-mac").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build-macos"); });
-      $("#btn-generate-linux").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build-linux"); });
-    
+       //ask for RaspberryPI builds
+       $.getJSON("travis_build/listBinaries.php?path=raspberry_pi", function(data) {
+         $("#content-rpi").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
+       });
+       
+       //ask for Linux builds
+       $.getJSON("travis_build/listBinaries.php?path=linux", function(data) {
+         $("#content-linux").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
+       });
+
+       //ask for MacOSX builds
+       $.getJSON("travis_build/listBinaries.php?path=macos", function(data) {
+         $("#content-mac").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
+       });
+       
+       $("#new-build-created").hide();
+       $("#btn-generate-windows").unbind('click').bind('click', function() {  pushNewAppVeyorBuild("yadoms-build-windows"); });
+       $("#btn-generate-rpi").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build_raspberrypi"); });
+       $("#btn-generate-mac").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build-macos"); });
+       $("#btn-generate-linux").unbind('click').bind('click', function() {  pushNewTravisBuild("yadoms-build-linux"); });
+    });    
+
     </script>
 </body>
 </html>
