@@ -69,6 +69,12 @@
                    <a id="a_rpi_tar" href="" class="btn btn-lg btn-default btn-download">
                        <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.targz">Compressed package</span> <br><small data-i18n="download.rpi.targz-version" class="current-version">loading...</small>
                    </a>
+                   <a id="a_rpi_deb" href="" class="btn btn-lg btn-default btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.deb">Debian package</span> <br><small data-i18n="download.rpi.deb-version" class="current-version">loading...</small>
+                   </a>
+                   <a id="a_rpi_rpm" href="" class="btn btn-lg btn-default btn-download">
+                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.rpm">Rpm package</span> <br><small data-i18n="download.rpi.rpm-version" class="current-version">loading...</small>
+                   </a>
                </div>
            </div>
        </div>
@@ -135,11 +141,13 @@
       });
 
       //update links
-      const baseVersion = "2.0.0-rc.2";
+      const baseVersion = "2.0.0-rc.4";
       const versionDisplay = "v" + baseVersion;
       
       const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + baseVersion + "/Yadoms-" + baseVersion + "-";
-      const rpiTarDlUrl = baseUrl + "RaspberryPI.tar.bz2";
+      const rpiTarDlUrl = baseUrl + "RaspberryPI.tar.gz";
+      const rpiDebDlUrl = baseUrl + "RaspberryPI.deb";
+      const rpiRpmDlUrl = baseUrl + "RaspberryPI.rpm";
       const rpiImgDlUrl = baseUrl + "RaspberryPI.img.zip";
       const macDlUrl = baseUrl + "Darwin.tar.gz";
       const linuxRpmDlUrl = baseUrl + "Linux.rpm";
@@ -149,6 +157,8 @@
       const winExeDlUrl = baseUrl + "Windows.exe";
       
       $("#a_rpi_tar").attr("href", rpiTarDlUrl);
+      $("#a_rpi_deb").attr("href", rpiDebDlUrl);
+      $("#a_rpi_rpm").attr("href", rpiRpmDlUrl);
       $("#a_rpi_img").attr("href", rpiImgDlUrl);
       $("#a_mac_tar").attr("href", macDlUrl);
       $("#a_lin_tar").attr("href", linuxTarDlUrl);

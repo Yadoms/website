@@ -124,6 +124,8 @@
 		"title" : "Raspberry PI",
 		"subtitle" : "Extract the packge on your PI, and have fun (please note that you have to install libpq5 first : sudo apt-get install libpq5)",
 		"targz" : "Compressed package",
+		"deb" : "Debian package",
+		"rpm" : "RPM package",
 		"img" : "SD card image"
 	},
 	"legal" : "All files are provided \"as is\" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.",
