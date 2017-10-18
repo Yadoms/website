@@ -2,46 +2,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Yadoms downloads statistics">
-    <meta name="author" content="Yadoms team">
-    <link rel="icon" href="img/_yadoms.png">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   <meta name="description" content="Yadoms downloads statistics">
+   <meta name="author" content="Yadoms team">
+   <link rel="icon" href="img/_yadoms.png">
 
-    <title>Yadoms</title>
+   <title>Yadoms</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="style.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
 
-    <div id="header"></div>
+   <div id="header"></div>
 
-    <div id="section-licensing">
-        <img id="logo" src="img/_yadoms.png" />
-        <h2>Yadoms statistics</h2>
-        <div class="container">
+   <div id="section-licensing">
+      <img id="logo" src="img/_yadoms.png" />
+      <h2>Yadoms statistics</h2>
+      <div id="graph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+      <div class="container">
          <h2>Liste des releases</h2>
          <div id="content"></div>
-        </div>
-    </div>
+      </div>
+   </div>
 
-    <div id="footer"></div>
+   <div id="footer"></div>
 
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
-    <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-    <script src="moment/moment-with-locales.min.js"></script>
+   <!-- Bootstrap core JavaScript
+   ================================================== -->
+   <!-- Placed at the end of the document so the pages load faster -->
+   <script src="js/jquery.min.js"></script>
+   <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+   <script src="moment/moment-with-locales.min.js"></script>
+   <script src="https://code.highcharts.com/highcharts.js"></script>
 
-    <script>
+   <script>
       //configure momentjs to use browser locale
       moment.locale(window.navigator.language);
       
@@ -67,12 +69,12 @@
           return bytes.toFixed(1)+' '+units[u];
       }
     
-    /**
-     * Function that create a panel for a release and add the table of each file
-     * @param release {JSON} The release content
-     * @return The string to append to html (html string)
-     */
-    function createRelease(release) {
+   /**
+    * Function that create a panel for a release and add the table of each file
+    * @param release {JSON} The release content
+    * @return The string to append to html (html string)
+    */
+   function createReleaseTable(release) {
       //create panel with header
       var result = '<div class="panel-group"><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#collapse-' + release.id + '">' 
       + release.name 
@@ -87,8 +89,8 @@
       result += '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Size</th><th>Download count</th></tr></thead><tbody>';
 
       //add a line for each file in release
-      for(var file of release.assets) {
-         result += '<tr><th scope="row">' + file.name + '</th><td>' + humanFileSize(file.size, true) + '</td><td>' + file.download_count + '</td></tr>';
+      for(var asset of release.assets) {
+         result += '<tr><th scope="row">' + asset.name + '</th><td>' + humanFileSize(asset.size, true) + '</td><td>' + asset.download_count + '</td></tr>';
       }
 
       //end table
@@ -97,18 +99,103 @@
       //end of panel
       result += '</div></div></div></div>';
       return result;
-    }
+   }
+    
     
     //get the Yadoms releases information
     //see : https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
-    $.getJSON("https://api.github.com/repos/Yadoms/yadoms/releases", function(data) {
+   $.getJSON("https://api.github.com/repos/Yadoms/yadoms/releases", function(releases) {
    
+      var chartCategories = [];
+      var chartSeries = [];
+      var packageTypes = [];
+      var packageDataPerCategory = [];
+
       //create panel for each release found
-      for(var release of data) {
-         $("#content").append(createRelease(release));
+      for(var release of releases) {
+      
+         $("#content").append(createReleaseTable(release));
+         
+         var category = release.name;
+         
+         for(var asset of release.assets) {
+            platformFilterRegex = /^Yadoms-(\d*\.\d*\.\d*-(.*)?)-(.*)$/g;
+            var match = platformFilterRegex.exec(asset.name);
+            
+            // Filter invalid files (patches...)
+            if (!match || match.length != 4)
+               continue;
+               
+            var version = match[1];
+            var packageType = match[3];
+               
+            // Filter 1.0.0 versions (naming is invalid)
+            if (version.substring(0, 5) === "1.0.0")
+               continue;
+               
+            // Filter obsoletes package types
+            if (packageType === "RaspberryPI.tar.bz2")
+               continue;
+            
+            if (chartCategories.indexOf(category) === -1) {
+               chartCategories.push(category);
+            }
+            
+            if (packageTypes.indexOf(packageType) === -1) {
+               packageTypes.push(packageType);
+               packageDataPerCategory[packageType] = [];
+            }
+            packageDataPerCategory[packageType][category] = asset.download_count;
+         }         
       }
-    });
+
+      for (var packageType of packageTypes) {
+         var chartDataForPacketType = [];
+         for (var category of chartCategories) {
+            chartDataForPacketType.push(packageDataPerCategory[packageType][category] || 0);
+         }
+         chartSeries.push({name: packageType, data: chartDataForPacketType });
+      }
+      
+      Highcharts.chart('graph', {
+         chart: {
+            type: 'column'
+         },
+         title: {
+            text: 'Downloads per versions'
+         },
+         xAxis: {
+            categories: chartCategories,
+            crosshair: true
+         },
+         yAxis: {
+            min: 0,
+            title: {
+               text: 'Downloads'
+            }
+         },
+         tooltip: {
+            backgroundColor: {
+               linearGradient: [0, 0, 0, 60],
+               stops: [ [0, '#FFFFFF'], [1, '#E0E0E0'] ]
+            },
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                         '<td style="padding:0"><b>{point.y} downloads</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+         },
+         plotOptions: {
+            column: {
+               pointPadding: 0.2,
+               borderWidth: 0
+            }
+         },
+         series: chartSeries
+      });      
+   });
     
-    </script>
+   </script>
 </body>
 </html>
