@@ -119,7 +119,7 @@
          var category = release.name;
          
          for(var asset of release.assets) {
-            platformFilterRegex = /^Yadoms-(\d*\.\d*\.\d*-(.*)?)-(.*)$/g;
+            platformFilterRegex = /^Yadoms-(\d*\.\d*\.\d*(-.*)?)-(.*)$/g;
             var match = platformFilterRegex.exec(asset.name);
             
             // Filter invalid files (patches...)
