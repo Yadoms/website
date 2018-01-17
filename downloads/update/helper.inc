@@ -69,6 +69,10 @@ function buildItemList($dirName, $lang)
 			
 			$iconName = "icon.png";
 			$previewName = "preview.png";
+         
+         // Add changelog if exists
+         if (is_file($itemDirName . "changelog.md"))
+            $versionList["changelogUrl"] = dirname($_SERVER["SCRIPT_URI"]) . "/" . $itemDirName . "changelog.md";
 			
 			while (($file = readdir($folder)) !== false)
 			{
@@ -191,6 +195,7 @@ function buildItemList($dirName, $lang)
 						$dir["author"] = $json["author"];
 						$dir["url"] = $json["url"];
 						$dir["credits"] = $json["credits"];
+						$dir["dependencies"] = $json["dependencies"];
 						$dir["downloadUrl"] = dirname($_SERVER["SCRIPT_URI"]) . "/" . $zipFile;
 						$dir["md5Hash"] = md5_file($zipFile);
 						
@@ -248,9 +253,13 @@ function findArch($arch)
 {
    $archX86 = array("x86", "ia32", "i686");
    $archX64 = array("x64", "ia64");
+   $archArmv6l = array("armv6l");
+   $archArmv7l = array("armv7l");
    
    $arch = matchInArray($arch, $archX86, "x86");
    $arch = matchInArray($arch, $archX64, "x64");
+   $arch = matchInArray($arch, $archArmv6l, "armv6l");
+   $arch = matchInArray($arch, $archArmv7l, "armv7l");
    
    return $arch;
 }
@@ -306,8 +315,10 @@ function buildItemListForYadoms($dirName, $lang)
 	
 	$iconName = "icon.png";
 	$previewName = "preview.png";
-	
-	//$dirName .= "/";
+         
+   // Add changelog if exists
+   if (is_file($dirName . "changelog.md"))
+      $versionList["changelogUrl"] = dirname($_SERVER["SCRIPT_URI"]) . "/" . $dirName . "changelog.md";
 	
 	while (($file = readdir($itemDirIterator)) !== false)
 	{
