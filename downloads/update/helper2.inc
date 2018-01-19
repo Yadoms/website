@@ -39,7 +39,7 @@ function matchInArray($element, $array, $elementIfMatch)
 	return $element;
 }
 
-function buildItemList($dirName, $lang)
+function buildItemList($dirName)
 {
 	if (!is_dir($dirName))
 		throw new Exception("folder not found : " . $dirName);
@@ -69,6 +69,10 @@ function buildItemList($dirName, $lang)
 			
 			$iconName = "icon.png";
 			$previewName = "preview.png";
+         
+         // Add changelog if exists
+         if (is_file($itemDirName . "changelog.md"))
+            $versionList["changelogUrl"] = dirname($_SERVER["SCRIPT_URI"]) . "/" . $itemDirName . "changelog.md";
 			
 			while (($file = readdir($folder)) !== false)
 			{
@@ -175,10 +179,8 @@ function buildItemList($dirName, $lang)
 						$encoding = mb_detect_encoding($content);
 						$content = iconv($encoding, 'UTF-8', $content);
 						$content = remove_utf8_bom($content);
-						//the language file exist we take useful information
-						$json = json_decode($content, true);
 
-						//TODO : check json var
+						$json = json_decode($content, true);
 						$dir = array();
 						$dir["type"] = $json["type"];
 						if($json["name"] != null)
@@ -202,22 +204,6 @@ function buildItemList($dirName, $lang)
 						//if the preview is present 
 						if (is_file($previewPath))
 							$dir["previewUrl"] = dirname($_SERVER["SCRIPT_URI"]) . "/" . $previewPath;
-
-						//we manage the i18n
-						$langFile = $fullPath . "/locales/" . $lang . ".json";
-						if (is_file($langFile))
-						{
-							$content = file_get_contents($langFile);
-							$encoding = mb_detect_encoding($content);
-							$content = mb_convert_encoding($content, $encoding, "UTF-8");
-							//the language file exist we take useful information
-							$content = remove_utf8_bom($content);
-							$lngJsonFile = json_decode($content, true);
-							if ($lngJsonFile["description"] != null)
-								$dir["description"] = $lngJsonFile["description"];
-							if ($lngJsonFile["name"] != null)
-								$dir["name"] = $lngJsonFile["name"];
-						}
 										
 						array_push($versionList, $dir);
 						$itemValid = true;
@@ -294,7 +280,7 @@ function getNativeSubPackagesPath($subPackagesType, $os, $arch, $devMode)
 }
 
 
-function buildItemListForYadoms($dirName, $lang)
+function buildItemListForYadoms($dirName)
 {
 	if (!is_dir($dirName))
 		throw new Exception("folder not found : " . $dirName);
@@ -311,6 +297,10 @@ function buildItemListForYadoms($dirName, $lang)
 	
 	$iconName = "icon.png";
 	$previewName = "preview.png";
+         
+   // Add changelog if exists
+   if (is_file($dirName . "changelog.md"))
+      $versionList["changelogUrl"] = dirname($_SERVER["SCRIPT_URI"]) . "/" . $dirName . "changelog.md";
 	
 	while (($file = readdir($itemDirIterator)) !== false)
 	{
@@ -355,9 +345,8 @@ function buildItemListForYadoms($dirName, $lang)
 				$encoding = mb_detect_encoding($content);
 				$content = iconv($encoding, 'UTF-8', $content);
 				$content = remove_utf8_bom($content);
-				//the language file exist we take useful information
+            
 				$json = json_decode($content, true);
-
 				$dir = $json["yadoms"]["information"];
 				$dir["downloadUrl"] = dirname($_SERVER["SCRIPT_URI"]) . "/" . $zipFile;
 				$dir["md5Hash"] = md5_file($zipFile);
