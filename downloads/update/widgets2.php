@@ -1,6 +1,6 @@
 <?
 header('Content-Type: application/json');
-require('helper.inc');
+require('helper2.inc');
 ?>
 
 <?
