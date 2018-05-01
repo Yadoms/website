@@ -61,7 +61,7 @@
          <div class="panel-body">
             <div class="row">
                <div id="btn-generate-rpi" class="btn btn-success pull-left">Run new build</div>
-               <a href="https://travis-ci.org/Yadoms/yadoms-build_raspberrypi" target="_blank">
+               <a href="https://ci.appveyor.com/project/yadoms/yadoms-build-raspberrypi" target="_blank">
                   <img id="btn-generate-rpi-state-img" class="pull-right">
                </a>
             </div>
@@ -80,7 +80,7 @@
          <div class="panel-body">
             <div class="row">
                <div id="btn-generate-linux" class="btn btn-success pull-left">Run new build</div>
-               <a href="https://travis-ci.org/Yadoms/yadoms-build-linux" target="_blank">
+               <a href="https://ci.appveyor.com/project/yadoms/yadoms-build-linux" target="_blank">
                   <img id="btn-generate-linux-state-img" class="pull-right">
                </a>
             </div>
@@ -159,13 +159,13 @@
             pushNewAppVeyorBuild("yadoms-build-windows");
          });
          $("#btn-generate-rpi").unbind('click').bind('click', function () {
-            pushNewTravisBuild("yadoms-build_raspberrypi");
+            pushNewAppVeyorBuild("yadoms-build-raspberrypi");
          });
          $("#btn-generate-mac").unbind('click').bind('click', function () {
             pushNewTravisBuild("yadoms-build-macos");
          });
          $("#btn-generate-linux").unbind('click').bind('click', function () {
-            pushNewTravisBuild("yadoms-build-linux");
+            pushNewAppVeyorBuild("yadoms-build-linux");
          });
          
          refreshData();
@@ -183,22 +183,22 @@
          //ask for Windows builds
          $("#btn-generate-windows-state-img").attr("src", "https://ci.appveyor.com/api/projects/status/github/yadoms/yadoms-build-windows?branch=master&svg=true");
          $("#content-windows").empty();
-         $.getJSON("appveyor_build/listBinaries.php?path=win32", function (data) {
+         $.getJSON("builds/listBinaries.php?path=win32", function (data) {
             $("#content-windows").append(createSuccessLinesForAppveyor(data.success.sort(SortByDate)));
          });
 
          //ask for RaspberryPI builds
-         $("#btn-generate-rpi-state-img").attr("src", "https://travis-ci.org/Yadoms/yadoms-build_raspberrypi.svg?branch=master");
+         $("#btn-generate-rpi-state-img").attr("src", "https://ci.appveyor.com/api/projects/status/github/yadoms/yadoms-build_raspberrypi?branch=master&svg=true");
          $("#content-rpi").empty();
-         $.getJSON("travis_build/listBinaries.php?path=raspberry_pi", function (data) {
-            $("#content-rpi").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
+         $.getJSON("builds/listBinaries.php?path=raspberry_pi", function (data) {
+            $("#content-rpi").append(createSuccessLinesForAppveyor(data.success.sort(SortByDate)));
          });
 
          //ask for Linux builds
-         $("#btn-generate-linux-state-img").attr("src", "https://travis-ci.org/Yadoms/yadoms-build-linux.svg?branch=master");
+         $("#btn-generate-linux-state-img").attr("src", "https://ci.appveyor.com/api/projects/status/github/yadoms/yadoms-build-linux?branch=master&svg=true");
          $("#content-linux").empty();
-         $.getJSON("travis_build/listBinaries.php?path=linux", function (data) {
-            $("#content-linux").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
+         $.getJSON("builds/listBinaries.php?path=linux", function (data) {
+            $("#content-linux").append(createSuccessLinesForAppveyor(data.success.sort(SortByDate)));
          });
 
          //ask for MacOSX builds
@@ -368,7 +368,7 @@
          //create panel for each release found
          var lineCount = maxLinesPerPlatform;
          for (var file of files.sort(SortByDate)) {
-            var myRegexp = /Yadoms-(.*)-(.*)\.?\.(exe|zip)/g;
+            var myRegexp = /Yadoms-(.*)-(.*)\.?\.(exe|zip|tar\.gz|rpm|deb)/g;
             var match = myRegexp.exec(file.file);
             if (match) {
                //add a line for each file in release
