@@ -2235,3 +2235,4 @@ Web.config
 website.sln
 .vs
 /downloads
+*.bak

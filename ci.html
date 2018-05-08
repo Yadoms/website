@@ -372,7 +372,7 @@
             var match = myRegexp.exec(file.file);
             if (match) {
                //add a line for each file in release
-               result += '<tr fileid="' + file.file + '"><th scope="row"><a href="appveyor_build/' + file.file + '">' +
+               result += '<tr fileid="' + file.file + '"><th scope="row"><a href="builds/' + file.file + '">' +
                   GetFormat("." + match[3]) + '</a></th><td>' + match[1] + '</td><td>-</td><td>' + humanFileSize(file.size,
                      true) + '</td><td>' + moment(file.date * 1000).toString() + '</td></tr>';
                lineCount --;
