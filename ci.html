@@ -43,7 +43,7 @@
             <div class="row">
                <div id="btn-generate-windows" class="btn btn-success pull-left">Run new build</div>
                <a href="https://ci.appveyor.com/project/yadoms/yadoms-build-windows" target="_blank">
-                  <img class="pull-right" src="https://ci.appveyor.com/api/projects/status/github/yadoms/yadoms-build-windows?branch=master&svg=true">
+                  <img id="btn-generate-windows-state-img" class="pull-right">
                </a>
             </div>
             <div class="row">
@@ -61,8 +61,8 @@
          <div class="panel-body">
             <div class="row">
                <div id="btn-generate-rpi" class="btn btn-success pull-left">Run new build</div>
-               <a href="https://travis-ci.org/Yadoms/yadoms-build_raspberrypi" target="_blank">
-                  <img class="pull-right" src="https://travis-ci.org/Yadoms/yadoms-build_raspberrypi.svg?branch=master">
+               <a href="https://travis-ci.org/Yadoms/yadoms-build-raspberrypi" target="_blank">
+                  <img id="btn-generate-rpi-state-img" class="pull-right">
                </a>
             </div>
             <div class="row">
@@ -81,7 +81,7 @@
             <div class="row">
                <div id="btn-generate-linux" class="btn btn-success pull-left">Run new build</div>
                <a href="https://travis-ci.org/Yadoms/yadoms-build-linux" target="_blank">
-                  <img class="pull-right" src="https://travis-ci.org/Yadoms/yadoms-build-linux.svg?branch=master">
+                  <img id="btn-generate-linux-state-img" class="pull-right">
                </a>
             </div>
             <div class="row">
@@ -100,7 +100,7 @@
             <div class="row">
                <div id="btn-generate-mac" class="btn btn-success pull-left">Run new build</div>
                <a href="https://travis-ci.org/Yadoms/yadoms-build-macos" target="_blank">
-                  <img class="pull-right" src="https://travis-ci.org/Yadoms/yadoms-build-macos.svg?branch=master">
+                  <img id="btn-generate-mac-state-img" class="pull-right">
                </a>
             </div>
             <div class="row">
@@ -145,6 +145,7 @@
 
    <script>
       var autoUpdateTimer;
+      const maxLinesPerPlatform = 10;
       
       $(document).ready(function () {
          //configure momentjs to use browser locale
@@ -180,24 +181,28 @@
       
       function refreshData() {
          //ask for Windows builds
+         $("#btn-generate-windows-state-img").attr("src", "https://ci.appveyor.com/api/projects/status/github/yadoms/yadoms-build-windows?branch=master&svg=true");
          $("#content-windows").empty();
-         $.getJSON("appveyor_build/listBinaries.php?path=win32", function (data) {
+         $.getJSON("builds/listBinaries.php?path=win32", function (data) {
             $("#content-windows").append(createSuccessLinesForAppveyor(data.success.sort(SortByDate)));
          });
 
          //ask for RaspberryPI builds
+         $("#btn-generate-rpi-state-img").attr("src", "https://travis-ci.org/Yadoms/yadoms-build_raspberrypi.svg?branch=master");
          $("#content-rpi").empty();
-         $.getJSON("travis_build/listBinaries.php?path=raspberry_pi", function (data) {
+         $.getJSON("builds/listBinaries.php?path=raspberry_pi", function (data) {
             $("#content-rpi").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
          });
 
          //ask for Linux builds
+         $("#btn-generate-linux-state-img").attr("src", "https://travis-ci.org/Yadoms/yadoms-build-linux.svg?branch=master");
          $("#content-linux").empty();
-         $.getJSON("travis_build/listBinaries.php?path=linux", function (data) {
+         $.getJSON("builds/listBinaries.php?path=linux", function (data) {
             $("#content-linux").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
          });
 
          //ask for MacOSX builds
+         $("#btn-generate-mac-state-img").attr("src", "https://travis-ci.org/Yadoms/yadoms-build-macos.svg?branch=master");
          $("#content-mac").empty();
          $.getJSON("travis_build/listBinaries.php?path=macos", function (data) {
             $("#content-mac").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
@@ -312,7 +317,7 @@
          var result =
             '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Version</th><th>Format</th><th>Size</th><th>Date</th><th></th></tr></thead><tbody>';
 
-
+         var lineCount = maxLinesPerPlatform;
          for (var file of files.sort(SortByDate)) {
             //old format
             var myRegexp = /yadoms-(.*)-v(.*)\.b(.*)\.tar\.bz2/g;
@@ -322,6 +327,9 @@
                result += '<tr fileid="' + file.file + '"><th scope="row"><a href="travis_build/' + file.file + '">' +
                   match[1] + '</a></th><td>' + match[2] + '</td><td>' + GetFormat(".tar.bz2") + '</td><td>' +
                   humanFileSize(file.size, true) + '</td><td>' + moment(file.date * 1000).toString() + '</td></tr>';
+               lineCount --;
+               if (lineCount == 0)
+                  break;
             } else {
                var pathRegex = /(.*)\/((.*)(\.tar\.bz2|\.tar\.gz|\.deb|\.rpm))/g;
                var path = pathRegex.exec(file.file);
@@ -338,6 +346,9 @@
                         '">' + path[1] + '</a></th><td>' + match[1] + '</td><td>' + GetFormat(path[4]) + '</td><td>' +
                         humanFileSize(file.size, true) + '</td><td>' + moment(file.date * 1000).toString() +
                         '</td></tr>';
+                     lineCount --;
+                     if (lineCount == 0)
+                        break;
                   }
                }
             }
@@ -355,14 +366,18 @@
             '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Version</th><th>Format</th><th>Size</th><th>Date</th><th></th></tr></thead><tbody>';
 
          //create panel for each release found
+         var lineCount = maxLinesPerPlatform;
          for (var file of files.sort(SortByDate)) {
-            var myRegexp = /Yadoms-(.*)-(.*)\.?\.(exe|zip)/g;
+            var myRegexp = /Yadoms-(.*)-(.*)\.?\.(exe|zip|tar\.gz|rpm|deb)/g;
             var match = myRegexp.exec(file.file);
             if (match) {
                //add a line for each file in release
-               result += '<tr fileid="' + file.file + '"><th scope="row"><a href="appveyor_build/' + file.file + '">' +
+               result += '<tr fileid="' + file.file + '"><th scope="row"><a href="builds/' + file.file + '">' +
                   GetFormat("." + match[3]) + '</a></th><td>' + match[1] + '</td><td>-</td><td>' + humanFileSize(file.size,
                      true) + '</td><td>' + moment(file.date * 1000).toString() + '</td></tr>';
+               lineCount --;
+               if (lineCount == 0)
+                  break;
             }
          }
 
