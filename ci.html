@@ -204,7 +204,7 @@
          //ask for MacOSX builds
          $("#btn-generate-mac-state-img").attr("src", "https://travis-ci.org/Yadoms/yadoms-build-macos.svg?branch=master");
          $("#content-mac").empty();
-         $.getJSON("travis_build/listBinaries.php?path=macos", function (data) {
+         $.getJSON("builds/listBinaries.php?path=macos", function (data) {
             $("#content-mac").append(createSuccessLinesForTravis(data.success.sort(SortByDate)));
          });
       }
@@ -324,7 +324,7 @@
             var match = myRegexp.exec(file.file);
             if (match) {
                //add a line for each file in release
-               result += '<tr fileid="' + file.file + '"><th scope="row"><a href="travis_build/' + file.file + '">' +
+               result += '<tr fileid="' + file.file + '"><th scope="row"><a href="builds/' + file.file + '">' +
                   match[1] + '</a></th><td>' + match[2] + '</td><td>' + GetFormat(".tar.bz2") + '</td><td>' +
                   humanFileSize(file.size, true) + '</td><td>' + moment(file.date * 1000).toString() + '</td></tr>';
                lineCount --;
@@ -342,7 +342,7 @@
                   var match = fileregex.exec(path[3]);
                   if (match) {
                      //add a line for each file in release
-                     result += '<tr fileid="' + file.file + '"><th scope="row"><a href="travis_build/' + file.file +
+                     result += '<tr fileid="' + file.file + '"><th scope="row"><a href="builds/' + file.file +
                         '">' + path[1] + '</a></th><td>' + match[1] + '</td><td>' + GetFormat(path[4]) + '</td><td>' +
                         humanFileSize(file.size, true) + '</td><td>' + moment(file.date * 1000).toString() +
                         '</td></tr>';
