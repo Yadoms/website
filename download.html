@@ -44,12 +44,6 @@
                    <a id="a_lin_tar" href="" class="btn btn-lg btn-success btn-download">
                        <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.targz">Compressed package</span> <br><small data-i18n="download.linux.targz-version" class="current-version">loading...</small>
                    </a>
-                   <a id="a_lin_deb" href="" class="btn btn-lg btn-default btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.deb">Debian package</span> <br><small data-i18n="download.linux.deb-version" class="current-version">loading...</small>
-                   </a>
-                   <a id="a_lin_rpm" href="" class="btn btn-lg btn-default btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.rpm">Rpm package</span> <br><small data-i18n="download.linux.rpm-version" class="current-version">loading...</small>
-                   </a>
                </div>
                <div class="col-md-3 os">
                    <img class="img-platform" src="img/apple.jpg" width="140" height="140">
@@ -68,12 +62,6 @@
                    </a>
                    <a id="a_rpi_tar" href="" class="btn btn-lg btn-default btn-download">
                        <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.targz">Compressed package</span> <br><small data-i18n="download.rpi.targz-version" class="current-version">loading...</small>
-                   </a>
-                   <a id="a_rpi_deb" href="" class="btn btn-lg btn-default btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.deb">Debian package</span> <br><small data-i18n="download.rpi.deb-version" class="current-version">loading...</small>
-                   </a>
-                   <a id="a_rpi_rpm" href="" class="btn btn-lg btn-default btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.rpm">Rpm package</span> <br><small data-i18n="download.rpi.rpm-version" class="current-version">loading...</small>
                    </a>
                </div>
            </div>
@@ -141,29 +129,21 @@
       });
 
       //update links
-      const baseVersion = "2.0.2";
+      const baseVersion = "2.1.0";
       const versionDisplay = "v" + baseVersion;
       
       const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + baseVersion + "/Yadoms-" + baseVersion + "-";
       const rpiTarDlUrl = baseUrl + "RaspberryPI.tar.gz";
-      const rpiDebDlUrl = baseUrl + "RaspberryPI.deb";
-      const rpiRpmDlUrl = baseUrl + "RaspberryPI.rpm";
       const rpiImgDlUrl = baseUrl + "RaspberryPI.img.zip";
       const macDlUrl = baseUrl + "Darwin.tar.gz";
-      const linuxRpmDlUrl = baseUrl + "Linux.rpm";
-      const linuxDebDlUrl = baseUrl + "Linux.deb";
       const linuxTarDlUrl = baseUrl + "Linux.tar.gz";
       const winZipDlUrl = baseUrl + "Windows.zip";
       const winExeDlUrl = baseUrl + "Windows.exe";
       
       $("#a_rpi_tar").attr("href", rpiTarDlUrl);
-      $("#a_rpi_deb").attr("href", rpiDebDlUrl);
-      $("#a_rpi_rpm").attr("href", rpiRpmDlUrl);
       $("#a_rpi_img").attr("href", rpiImgDlUrl);
       $("#a_mac_tar").attr("href", macDlUrl);
       $("#a_lin_tar").attr("href", linuxTarDlUrl);
-      $("#a_lin_deb").attr("href", linuxDebDlUrl);
-      $("#a_lin_rpm").attr("href", linuxRpmDlUrl);
       $("#a_win_zip").attr("href", winZipDlUrl);
       $("#a_win_exe").attr("href", winExeDlUrl);
       
