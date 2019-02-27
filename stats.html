@@ -89,9 +89,14 @@
       result += '<table class="table table-hover" style="text-align:initial;"><thead><tr><th>File</th><th>Size</th><th>Download count</th></tr></thead><tbody>';
 
       //add a line for each file in release
+      var totalDownloads = 0;
       for(var asset of release.assets) {
          result += '<tr><th scope="row">' + asset.name + '</th><td>' + humanFileSize(asset.size, true) + '</td><td>' + asset.download_count + '</td></tr>';
+         totalDownloads += asset.download_count;
       }
+
+      //add a line for total
+      result += '<tr><th id="total" colspan="2" style="text-align: right;">TOTAL : </th><td>' + totalDownloads + '</td></tr>';
 
       //end table
       result += '</tbody></table>';
