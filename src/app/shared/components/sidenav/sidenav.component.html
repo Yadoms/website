@@ -4,7 +4,7 @@
       >menu</mat-icon
     >
   </mat-list-item>
-  <div *ngIf="isSideNavExpanded" (resize)="(onResize)">
+  <div *ngIf="isSideNavExpanded">
     <mat-list-item>
       <mat-icon mat-list-icon (click)="isExpanded = !isExpanded">home</mat-icon>
       <h4 mat-line *ngIf="isExpanded">Présentation</h4>
