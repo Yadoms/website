@@ -1,5 +1,7 @@
 # Yadoms
 
+[![build status](https://github.com/Yadoms/website/workflows/Build/badge.svg)](https://github.com/Yadoms/website/actions)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
 ## Development server
