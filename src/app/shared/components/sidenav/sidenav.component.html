@@ -1,0 +1,54 @@
+<mat-nav-list>
+  <mat-list-item>
+    <mat-icon mat-list-icon (click)="isSideNavExpanded = !isSideNavExpanded"
+      >menu</mat-icon
+    >
+  </mat-list-item>
+  <div *ngIf="isSideNavExpanded" (resize)="(onResize)">
+    <mat-list-item>
+      <mat-icon mat-list-icon (click)="isExpanded = !isExpanded">home</mat-icon>
+      <h4 mat-line *ngIf="isExpanded">Présentation</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon (click)="isExpanded = !isExpanded"
+        >explore</mat-icon
+      >
+      <h4 mat-line *ngIf="isExpanded">Découvrir</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon (click)="isExpanded = !isExpanded"
+        >cloud_download</mat-icon
+      >
+      <h4 mat-line *ngIf="isExpanded">Télécharger</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon (click)="isExpanded = !isExpanded"
+        >assignment</mat-icon
+      >
+      <h4 mat-line *ngIf="isExpanded">Documentation</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon (click)="isExpanded = !isExpanded"
+        >message</mat-icon
+      >
+      <h4 mat-line *ngIf="isExpanded">blog</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon (click)="isExpanded = !isExpanded"
+        >forum</mat-icon
+      >
+      <h4 mat-line *ngIf="isExpanded">Forum</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <img
+        class="white-icon"
+        src="../../../../assets/logos/github1.png"
+        width="50px"
+        height="50px"
+        mat-list-icon
+        (click)="isExpanded = !isExpanded"
+      />
+      <h4 mat-line *ngIf="isExpanded">Sources</h4>
+    </mat-list-item>
+  </div>
+</mat-nav-list>

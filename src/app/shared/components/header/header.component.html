@@ -1,0 +1,28 @@
+<mat-toolbar (scroll)="onWindowScroll($event)" (resize)="(onResize)">
+  <mat-toolbar-row *ngIf="!isSmallScreen">
+    <div class="button-row">
+      <a mat-stroked-button class="white-border-button">
+        <!-- Yadoms Logo --->
+        <img
+          src="../../../../../assets/logos/yadoms.ico"
+          style="width: 23px; height: 23px; margin: -2px; margin-right: 4px;"
+        />Yadoms</a
+      >
+      <a mat-stroked-button class="white-border-button">Présentation</a>
+      <a mat-stroked-button class="white-border-button">Découvrir</a>
+      <a mat-stroked-button class="white-border-button">Télécharger</a>
+      <a mat-stroked-button class="white-border-button">Documentation</a>
+      <a mat-stroked-button class="white-border-button">blog</a>
+      <a mat-stroked-button class="white-border-button">Forum</a>
+      <a mat-stroked-button class="white-border-button">Sources</a>
+    </div>
+    <iframe
+      src="https://ghbtns.com/github-btn.html?user=Yadoms&repo=yadoms&type=star&count=true"
+      frameborder="0"
+      scrolling="0"
+      width="150"
+      height="20"
+      title="Star Yadoms/yadoms on GitHub"
+    ></iframe>
+  </mat-toolbar-row>
+</mat-toolbar>

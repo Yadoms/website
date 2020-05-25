@@ -1,0 +1,27 @@
+.home-card {
+  max-width: 350px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: 100px;
+}
+
+.mat-card {
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+.mat-card-content {
+  padding-left: 1px;
+  padding-right: 1px;
+  margin-top: 20px;
+}
+
+.mat-card-actions {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.mat-divider {
+  border-top-color: white;
+}
