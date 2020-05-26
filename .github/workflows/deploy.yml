@@ -11,16 +11,13 @@ on:
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     strategy:
       matrix:
         node-version:
           - 12.x
     steps:
       - uses: actions/checkout@v2.1.0
-        env:
-          GIT_TRACE: 1
-          GIT_CURL_VERBOSE: 1
         with:
           fetch-depth: 2
       - name: Cache node modules
@@ -41,12 +38,9 @@ jobs:
       - name: List output files
         run: ls
 
-      - name: copy file via ssh
-        uses: appleboy/scp-action@master
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          host: '${{ secrets.FTP_SERVER }}'
-          username: ${{ secrets.FTP_USERNAME }}'
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          source: 'dist/yadoms/*'
-          target: 'yadoms'
+          ftp-server: '${{ secrets.FTP_SERVER }}'
+          ftp-username: '${{ secrets.FTP_USERNAME }}'
+          ftp-password: '${{ secrets.FTP_PASSWORD }}'
