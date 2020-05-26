@@ -40,9 +40,13 @@ jobs:
           npm run build:prod
       - name: List output files
         run: ls
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+
+      - name: copy file via ssh
+        uses: appleboy/scp-action@master
         with:
-          ftp-server: '${{ secrets.FTP_SERVER }}'
-          ftp-username: '${{ secrets.FTP_USERNAME }}'
-          ftp-password: '${{ secrets.FTP_PASSWORD }}'
+          host: '${{ secrets.FTP_SERVER }}'
+          username: ${{ secrets.FTP_USERNAME }}'
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 22
+          source: dist/yadoms/*
+          target: 'yadoms'
