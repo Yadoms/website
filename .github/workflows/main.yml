@@ -32,7 +32,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: npm ci and npm run build
+      - name: npm ci && npm run lint && npm run build
         run: |
           npm ci
+          npm run lint
           npm run build:ci
