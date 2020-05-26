@@ -35,13 +35,4 @@ export class SidenavComponent implements OnInit {
       this.isSideNavExpanded = this.screenService.isSmallScreen('div');
     }
   }
-
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e) {
-    if (window.pageYOffset > 0 || this.screenService.isSmallScreen('div')) {
-      this.isSideNavExpanded = true;
-    } else {
-      this.isSideNavExpanded = false;
-    }
-  }
 }

@@ -10,25 +10,33 @@ import { ScreenService } from '../../services/screen.service';
 })
 export class HeaderComponent implements OnInit {
   isSmallScreen: boolean;
-
+  element: Element;
   constructor(private screenservice: ScreenService) {}
 
   ngOnInit() {
     this.isSmallScreen = this.screenservice.isSmallScreen('div');
+    this.element = document.querySelector('mat-toolbar');
+    if (this.isSmallScreen) {
+      this.element.classList.remove('mat-toolbar');
+    }
   }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
-    const element = document.querySelector('mat-toolbar');
-    if (window.pageYOffset > element.clientHeight) {
-      element.classList.add('scrolled');
+    if (window.pageYOffset > this.element.clientHeight && !this.isSmallScreen) {
+      this.element.classList.add('scrolled');
     } else {
-      element.classList.remove('scrolled');
+      this.element.classList.remove('scrolled');
     }
   }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.isSmallScreen = this.screenservice.isSmallScreen('mat-toolbar');
+    if (this.isSmallScreen) {
+      this.element.classList.remove('mat-toolbar');
+    } else {
+      this.element.classList.add('mat-toolbar');
+    }
   }
 }
