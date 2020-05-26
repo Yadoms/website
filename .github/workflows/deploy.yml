@@ -9,9 +9,9 @@ on:
       - master
       - develop
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
-    runs-on: ubuntu-18.04
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version:
@@ -38,9 +38,10 @@ jobs:
       - name: List output files
         run: ls
 
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      - name: Upload ftp
+        uses: sebastianpopp/ftp-action@releases/v2
         with:
-          ftp-server: '${{ secrets.FTP_SERVER }}'
-          ftp-username: '${{ secrets.FTP_USERNAME }}'
-          ftp-password: '${{ secrets.FTP_PASSWORD }}'
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: 'dist'
