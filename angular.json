@@ -19,8 +19,8 @@
           "options": {
             "outputPath": "dist/yadoms",
             "index": "src/index.html",
-            "baseHref": "https://www.yadoms.com/new/",
-            "deployUrl": "https://www.yadoms.com/new/",
+            "baseHref": "/new/",
+            "deployUrl": "/new/",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
