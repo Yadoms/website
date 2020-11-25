@@ -73,6 +73,10 @@ function buildVersionInformationForModule($dirName)
          // Add changelog if exists
          if (is_file($itemDirName . "changelog.md"))
             $versionInformation["changelogUrl"] = dirname($_SERVER["SCRIPT_URI"]) . "/" . $itemDirName . "changelog.md";
+         
+         // Check if obsolete
+         if (is_file($itemDirName . "obsolete"))
+            $versionInformation["obsolete"] = true;
 			
          $versions = array();
 			while (($file = readdir($folder)) !== false)
