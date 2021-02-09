@@ -1,3 +1,5 @@
+[![build status](https://github.com/Yadoms/website/workflows/Build/badge.svg)](https://github.com/Yadoms/website/actions)
+
 # Installation
 ``` 
 npm install
