@@ -6,7 +6,9 @@
   "scripts": {
     "start": "parcel index.html",
     "start-multiple-entries": "parcel index.html centered.html what.html ",
-    "build": "parcel build index.html --public-url ./"
+    "build": "parcel build index.html --public-url ./",
+    "clean": "rimraf ./dist",
+    "build:ci": "npm run clean && npm run build"
   },
   "dependencies": {
     "assets": "^3.0.1",
