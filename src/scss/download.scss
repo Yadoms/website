@@ -47,7 +47,7 @@
     //  clip-path: circle(300px at 80% 20%);
     //}
     &:hover & {
-      &__windows {
+      &__logo {
         top: 0;
         transform: translateY(10%);
 
@@ -59,7 +59,7 @@
       }
     }
 
-    &__windows {
+    &__logo {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -67,7 +67,7 @@
 
       img {
         width: 200px;
-        height: 150px;
+        height: 200px;
       }
       h2{
         font-family: hk_grotesk;
@@ -78,6 +78,8 @@
       }
 
     }
+
+
     &__content {
       position: absolute;
       opacity: 0;
