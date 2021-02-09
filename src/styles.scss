@@ -1,4 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'scss/reset';
+@import 'scss/base';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import 'scss/footer';
+@import 'scss/yadoms';
+@import 'scss/button.scss';
+@import 'scss/download.scss';
+@import '../assets/fonts/hk-grotesk/hk-grotesk';
+@import '../assets/fonts/san-francisco/san-francisco';

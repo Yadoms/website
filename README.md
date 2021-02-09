@@ -1,29 +1,32 @@
-# Yadoms
+# Installation
+``` 
+npm install
+npm run start
+```
 
-[![build status](https://github.com/Yadoms/website/workflows/Build/badge.svg)](https://github.com/Yadoms/website/actions)
+And then go to `localhost:1234`
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+# Handling changes
+If you need to change things such as navbar for example, you will find all the reusable component througout the pages in the folder : `/src/partials`.
+Change the html here and modifiy the css in the good file in `/src/scss`.
+That is almost everything you need to know.
 
-## Development server
+If you have run : `npm run start`, parcels has an excellent hot reload except if you are on another page than index.html. There is a bug with parcels that requires you to manually refresh the page when you are not working on `index.html`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Benjamin Code
+This is the a quick start project made and used by Benjamin Code to quickly experiment stuffs when he's trying to replicate cool effects he sees on the web.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+It's also the project he uses for his Twitch livestreams.
 
-## Build
+A real project was made with this quick starter:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+https://benjamincode.tv
 
-## Running unit tests
+To support Benjamin Code, you can follow him on:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+YouTube: https://www.youtube.com/channel/UCLOAPb7ATQUs_nDs9ViLcMw
 
-## Running end-to-end tests
+Twitter: https://twitter.com/benjamincodeYT
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Twitch: https://www.twitch.tv/benjamincode

@@ -1,0 +1,35 @@
+.y-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+  
+    border-radius: 3px;
+    color: white;
+  
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    
+    img{
+        margin-right: 8px;
+    }
+}
+
+.y-btn--github{
+    background: #454658;
+    img{
+        width: 19px;
+    }
+    &:hover {
+        background: darken(#454658, 5);
+    }
+}
+.y-btn--primary{
+    background: #6578C0;
+    img{
+        width: 19px;
+    }
+    &:hover {
+        background: darken(#6578C0, 3);
+    }
+}
