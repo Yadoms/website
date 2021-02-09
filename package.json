@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel index.html",
     "start-multiple-entries": "parcel index.html centered.html what.html ",
-    "build": "parcel build index.html --public-url ./new"
+    "build": "parcel build index.html --public-url ./"
   },
   "dependencies": {
     "assets": "^3.0.1",
