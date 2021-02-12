@@ -3,31 +3,8 @@
   justify-content: center;
   min-height: 100vh;
   color: white;
-  background: rgb(121, 85, 145);
-  background: linear-gradient(90deg, rgba(121, 85, 145, 1) 11%, rgba(66, 34, 137, 1) 85%);
+  background: #283253;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#a921f3, #e91e63);
-    clip-path: circle(15% at 5% 10%);
-
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#f00, #f0f);
-    clip-path: circle(20% at right 90%);
-  }
 }
 
 .y-hero__logo {
@@ -162,6 +139,7 @@
       width: 200px;
       height: 200px;
     }
+
   }
 
   &__enocean {
@@ -170,6 +148,9 @@
     img {
       width: 150px;
       height: 150px;
+    }
+    &:hover {
+      filter: none !important;
     }
   }
 
@@ -180,6 +161,9 @@
       width: 150px;
       height: 150px;
     }
+    &:hover {
+      filter: none !important;
+    }
   }
   &__rfxcom {
     position: absolute;
@@ -187,6 +171,9 @@
     img {
       width: 110px;
       height: 70px;
+    }
+    &:hover {
+      filter: none !important;
     }
   }
 
@@ -196,6 +183,9 @@
     img {
       width: 100px;
       height: 100px;
+    }
+    &:hover {
+      filter: none !important;
     }
   }
 }
@@ -290,3 +280,4 @@
     transform: translatex(-250px) translatey(200px);
   }
 }
+.grayscale { filter: grayscale(100%); }
