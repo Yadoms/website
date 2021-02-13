@@ -1,0 +1,126 @@
+.fadeInRight {
+  animation-name: fadeInRight;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+.fadeTop {
+  animation-name: fadeTop;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeTop {
+  0% {
+    transform: translate3d(0, -40px, 0);
+  }
+  100% {
+    transform: translate3d(0, -200px, 0);
+  }
+}
+
+.fadeRight {
+  animation-name: fadeRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeRight {
+  0% {
+    transform: translate3d(40px, 0, 0);
+  }
+  100% {
+    transform: translate3d(230px, 0, 0);
+  }
+}
+
+.fadeLeft {
+  animation-name: fadeLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeLeft {
+  0% {
+    transform: translate3d(-40px, 0, 0);
+  }
+  100% {
+    transform: translate3d(-230px, 0, 0);
+  }
+}
+
+
+.fadeBottom {
+  animation-name: fadeBottom;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeBottom {
+  0% {
+    transform: translate3d(0, 40px, 0);
+  }
+  100% {
+    transform: translate3d(0, 200px, 0);
+  }
+}
+
+.fadeTopLeftDiagonal {
+  animation-name: fadeTopLeftDiagonal;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeTopLeftDiagonal {
+  0% {
+    transform: translatex(0px) translatey(0px);
+  }
+  100% {
+    transform: translatex(-250px) translatey(-200px);
+  }
+}
+
+.fadeBottomLeftDiagonal {
+  animation-name: fadeBottomLeftDiagonal;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeBottomLeftDiagonal {
+  0% {
+    transform: translatex(0px) translatey(0px);
+  }
+  100% {
+    transform: translatex(-250px) translatey(200px);
+  }
+}
