@@ -21,6 +21,9 @@
     &:hover {
         background: darken(#454658, 5);
     }
+    &:first-child{
+        margin-right: 11px;
+    }
 }
 .y-btn--primary{
     background: #7063fe;
