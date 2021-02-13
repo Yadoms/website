@@ -45,8 +45,8 @@
 <!--    </ul>-->
 <!--</nav>-->
 
-<section class="y-hero" id="heroBanner">
-    <div class="y-hero__container">
+<section class="y-hero__container" id="heroBanner">
+
         <div class="y-hero__container__card fadeInLeft">
             <div class="y-hero__container__card__content">
                 <h1>
@@ -66,17 +66,15 @@
                         <img src="/assets/img/github.svg" alt="github icon"/>
                         See on Github
                     </a>
-                    <a href="#download" class="y-btn y-btn--primary">
+                    <a href="/#download" class="y-btn y-btn--primary">
                         <img src="/assets/img/computing-cloud.svg" alt="download icon"/>
                         Download
                     </a>
                 </div>
             </div>
-
         </div>
-        <div class="y-hero__container__animation">
-            <img  src="assets/img/undraw_smart_home_28oy.svg">
-<!--            <img class="fadeLeft" src="assets/img/undraw_Home_settings_re_pkya.svg">-->
+        <div class="y-hero__container__img fadeInRight">
+            <img  src="assets/img/undraw_smart_home_28oy.svg" style="width: 100%; height: auto;">
         </div>
 <!--        <div class="y-hero__container__animation">-->
 <!--            <div class="y-hero__container__animation__logo">-->
@@ -111,7 +109,7 @@
         <!--                    logiciel</p>-->
         <!--            </div>-->
         <!--        </div>-->
-    </div>
+
 </section>
 
 <section class="y-download" id="download">
@@ -169,14 +167,6 @@
 
 <script src="src/index.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<script type="text/javascript" src="/node_modules/vanilla-tilt/src/vanilla-tilt.js"></script>
-<script type="text/javascript">
-    VanillaTilt.init(document.querySelectorAll(".y-hero__container__animation"), {
-        max: 25,
-        speed: 400,
-    });
-
-</script>
 
 </body>
 </html>

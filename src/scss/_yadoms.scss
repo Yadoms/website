@@ -1,12 +1,3 @@
-.y-hero {
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  color: white;
-  background: #151b2b;
-
-}
-
 .y-hero__logo {
   width: 50px;
   height: 50px;
@@ -14,18 +5,17 @@
 }
 
 .y-hero__container {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  //max-width: 1200px;
-  z-index: 1;
+  height: 100vh;
+  color: white;
+  background: #151b2b;
 
   &__card {
     position: relative;
     width: 400px;
-    height: 400px;
     margin: 30px;
     overflow: hidden;
     justify-content: center;
@@ -78,8 +68,13 @@
       }
     }
   }
-}
+  &__img{
+    //position: relative;
+    //display: flex;
 
+  }
+
+}
 
 .fadeInRight {
   animation-name: fadeInRight;
@@ -119,8 +114,8 @@
 
 .y-hero__container__animation {
   position: relative;
-  width: 700px;
-  height: 700px;
+  width: 400px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
