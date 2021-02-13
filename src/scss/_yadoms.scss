@@ -10,6 +10,7 @@
   width: 100%;
   margin: auto;
   color: white;
+  min-height: 100vh
 }
 
 .y-hero__container {
@@ -17,8 +18,8 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 100vh;
-
+  margin: auto;
+  min-height: 100vh;
   &__main-banner {
     display: flex;
     flex-wrap: wrap;
