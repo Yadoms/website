@@ -2,7 +2,7 @@ import i18n from 'i18next'
 
 export default class I18 {
     constructor() {
-        console.log('init Navbar');
+        console.log('init i18next');
         this.init();
     }
     init(){
@@ -12,13 +12,19 @@ export default class I18 {
             resources: {
               en: {
                 translation: {
-                  "key": "hello world"
+                  "key": "The ultimate home automation solution"
+                }
+              },    
+              fr: {
+                translation: {
+                  "key": "La solution domotique ultime"
                 }
               }
             }
           }, function(err, t) {
             // initialized and ready to go!
-            document.getElementById('output').innerHTML = i18next.t('key');
+            console.log('init i18next' + i18n);
+            document.getElementById('output').innerHTML = i18n.t('key');
           });
     }
     
