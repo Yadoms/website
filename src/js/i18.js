@@ -23,7 +23,6 @@ export default class I18 {
             }
           }, function(err, t) {
             // initialized and ready to go!
-            console.log('init i18next' + i18n);
             document.getElementById('output').innerHTML = i18n.t('key');
           });
     }
