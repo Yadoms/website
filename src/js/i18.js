@@ -16,7 +16,7 @@ export default class I18 {
                 .init({
                     fallbackLng: "en", 
                     useDataAttrOptions: true, 
-                    debug: false, 
+                    debug: true, 
                     backend: {
                         loadPath: '/locales/{{lng}}.json'
                     }
