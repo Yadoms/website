@@ -14,10 +14,9 @@ export default class I18 {
         i18n.use(LanguageDetector)
                 .use(Backend)
                 .init({
-                    lng:"fr",
                     fallbackLng: "en", 
                     useDataAttrOptions: true, 
-                    debug: true, 
+                    debug: false, 
                     backend: {
                         loadPath: '/locales/{{lng}}.json'
                     }
