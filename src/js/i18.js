@@ -18,7 +18,7 @@ export default class I18 {
                     useDataAttrOptions: true, 
                     debug: true, 
                     backend: {
-                        loadPath: '/locales/{{lng}}.json'
+                        loadPath: '/new/locales/{{lng}}.json'
                     }
                 }, function(err, t) {
                     if (err) {
