@@ -1,5 +1,16 @@
 {
     "language" : "fr",
+    "hero-banner":{
+        "headline": "La solution domotique ultime",
+        "summary": "La solution domotique unique pour piloter tous vos équipements avec un seul logiciel",
+        "github": "Documentation",
+        "download": "Téléchargement",
+        "device": "PÉRIPHÉRIQUES COMPATIBLES"
+    },    
+    "free":{
+      "title" : "Yadoms est gratuit !",
+      "headline" : "Oubliez le prix et les logiciels propriétaires, Yadoms est completement open-source et gratuit. Téléchargez et utilisez-le."
+    },
     "title": {
       "ultimate": "La solution domotique ultime",
       "button" : {
@@ -105,7 +116,7 @@
       "windows" : {
           "title" : "Windows",
           "subtitle" : "Choisissez la version \"installeur\" pour l'utiliser comme un service ou bien la version portable",
-          "installer" : "Installeur",
+          "executable" : "Installeur",
           "portable" : "Portable"
       },
       "linux" : {

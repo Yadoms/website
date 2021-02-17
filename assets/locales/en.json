@@ -1,5 +1,16 @@
 {
     "language" : "en",
+    "hero-banner":{
+        "headline": "The ultimate house automation solution",
+        "summary": "The unique solution to drive all your devices with only one software",
+        "github": "Wiki",
+        "download": "Download",
+        "device": "SUPPORTED DEVICE"
+    },
+    "free":{
+      "title" : "Yadoms is free !",
+      "headline" : "Forget pricing and proprietary softwares, Yadoms is fully open source and fully free. Download and use it."
+    },
     "title": {
       "ultimate": "The ultimate house automation solution",
       "button" : {
@@ -104,8 +115,8 @@
       "subtitle" : "Download the version of yadoms you need",
       "windows" : {
           "title" : "Windows",
-          "subtitle" : "Choose if you want installer version to use as a service or portable version",
-          "installer" : "Installer version",
+          "subtitle" : "Choose if you want executable version to use as a service or portable version",
+          "executable" : "executable",
           "portable" : "Portable version"
       },
       "linux" : {

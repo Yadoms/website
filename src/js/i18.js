@@ -14,13 +14,17 @@ export default class I18 {
         i18n.use(LanguageDetector)
                 .use(Backend)
                 .init({
+                    lng:"fr",
                     fallbackLng: "en", 
                     useDataAttrOptions: true, 
-                    debug: false, 
+                    debug: true, 
                     backend: {
                         loadPath: '/locales/{{lng}}.json'
                     }
                 }, function(err, t) {
+                    if (err) {
+                        console.log(err.message);
+                    }
                     jqueryI18next.init(i18n, $);
                     $('body').localize();
                   });
