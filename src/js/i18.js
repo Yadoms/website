@@ -18,6 +18,7 @@ export default class I18 {
                     useDataAttrOptions: true, 
                     debug: true, 
                     backend: {
+                        // TODO: remove /new when we do the first official deployement
                         loadPath: '/new/locales/{{lng}}.json'
                     }
                 }, function(err, t) {
