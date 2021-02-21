@@ -34,3 +34,10 @@
         background: darken(#7063fe, 3);
     }
 }
+
+@media screen and (max-width: 375px){
+    .y-btn--github:first-child{
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
