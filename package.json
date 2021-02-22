@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "parcel index.html",
     "start-multiple-entries": "parcel index.html centered.html what.html ",
     "build": "parcel build index.html --public-url ./",
@@ -25,6 +26,9 @@
     "parcel-bundler": "^1.6.1",
     "posthtml-include": "^1.4.3",
     "sass": "^1.26.11"
+  },
+  "resolutions": {
+    "node-forge": "0.10.0"
   },
   "keywords": [],
   "assetsPath": "assets"
