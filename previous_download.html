@@ -161,7 +161,7 @@
                 var url = baseUrl + (packageSuffix ? ('Yadoms-' + baseVersion + '-' + packageSuffix) : fullPackageName);
 
                 row += '<tr><td> <img class="img-platform-archive" src="' + platformIcon + '" width="32" height="32">' +
-                    '<span data-i18n="download.windows.title">' + platformLabel + '</span></td>' +
+                    '<span>' + platformLabel + '</span></td>' +
                     ' <td><a data-i18n="' + packageLabel + '" href="' + url + '">' + packageLabel + '</a></td></tr>';
             });
 
@@ -214,7 +214,14 @@
             [Platforms.RASPBERRYPI, PackageLabels.BINARIES, "RaspberryPI.tar.gz"],
             [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE, "RaspberryPI.img.zip"]
         ]);
-        addVersionOld("2.1.0", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
+        addVersion("2.1.0", [
+            [Platforms.WINDOWS, PackageLabels.INSTALLER, "Windows.exe"],
+            [Platforms.WINDOWS, PackageLabels.BINARIES, "Windows.zip"],
+            [Platforms.LINUX, PackageLabels.BINARIES, "Linux.tar.gz"],
+            [Platforms.APPLE, PackageLabels.BINARIES, "Darwin.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.BINARIES, "RaspberryPI.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE, "RaspberryPI.img.zip"]
+        ]);
         addVersionOld("2.0.2", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
         addVersionOld("2.0.1", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
         addVersionOld("2.0.0", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
