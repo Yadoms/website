@@ -134,7 +134,9 @@
 		"targz" : "Compressed package",
 		"deb" : "Debian package",
 		"rpm" : "RPM package",
-		"img" : "SD card image"
+		"img" : "SD card image",
+		"img_fr": "SD card image (FR)",
+		"img_en": "SD card image (EN)"
 	},
 	"legal" : "All files are provided \"as is\" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.",
 	"build" : {

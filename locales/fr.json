@@ -134,7 +134,9 @@
 			"targz": "Binaires",
 			"deb": "Paquet Debian",
 			"rpm": "Paquet RPM",
-			"img": "Image carte SD"
+			"img": "Image carte SD",
+			"img_fr": "Image carte SD (FR)",
+			"img_en": "Image carte SD (EN)"
 		},
 		"build": {
 			"title": "Votre plateforme n'est pas listée ici ?",

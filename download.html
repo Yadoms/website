@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,79 +16,99 @@
     <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link href="download.css" rel="stylesheet">
-    <link rel="stylesheet" href="fancyBox-2.1.5/source/jquery.fancybox.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="fancyBox-2.1.5/source/jquery.fancybox.css" type="text/css" media="screen" />
     <link rel="stylesheet" type="text/css" href="fancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
 </head>
 
 <body>
     <div id="header"></div>
-   <div class="container">
-       <div id="download-section" class="row">
-           <h1 data-i18n="download.title">Downloads</h1>
-           <h4 data-i18n="download.subtitle">Download the version of yadoms you need</h4>
-           <div class="row">
-               <div class="col-md-3 os">
-                   <img class="img-platform" src="img/windows.png" width="140" height="140">
-                   <h2 data-i18n="download.windows.title">Windows</h2>
-                   <p data-i18n="download.windows.subtitle">Choose if you want installer version to use as a service or portable version</p>
-                   <a id="a_win_exe" href="" class="btn btn-lg btn-success btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.windows.installer">Installer version</span><br><small data-i18n="download.windows.installer-version" class="current-version">loading...</small>
-                   </a>
-                   <a id="a_win_zip" href="" class="btn btn-lg btn-default btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.windows.portable">Portable version</span> <br><small data-i18n="download.windows.portable-version" class="current-version">loading...</small>
-                   </a>
-               </div>
-               <div class="col-md-3 os">
-                   <img class="img-platform" src="img/linux.jpg" width="140" height="140">
-                   <h2 data-i18n="download.linux.title">Linux</h2>
-                   <p data-i18n="download.linux.subtitle">Download right version based on you Linux distribution</p>
-                   <a id="a_lin_tar" href="" class="btn btn-lg btn-success btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.targz">Compressed package</span> <br><small data-i18n="download.linux.targz-version" class="current-version">loading...</small>
-                   </a>
-               </div>
-               <div class="col-md-3 os">
-                   <img class="img-platform" src="img/apple.jpg" width="140" height="140">
-                   <h2 data-i18n="download.mac.title">Mac</h2>
-                   <p data-i18n="download.mac.subtitle">This is an experimental package. You will have to make some skilled manipulation to make it works.</p>
-                   <a id="a_mac_tar" href="" class="btn btn-lg btn-success btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.mac.targz">Compressed package</span> <br><small data-i18n="download.mac.targz-version" class="current-version">loading...</small>
-                   </a>
-               </div>
-               <div class="col-md-3 os">
-                   <img class="img-platform" src="img/raspberry-pi-logo.png" height="140">
-                   <h2 data-i18n="download.rpi.title">Raspberry PI</h2>
-                   <p data-i18n="download.rpi.subtitle">Extract the packge on your PI, and have fun (please note that you have to install libpq5 first : sudo apt-get install libpq5)</p>
-                   <a id="a_rpi_img" href="" class="btn btn-lg btn-success btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.img">SD card image</span> <br><small data-i18n="download.rpi.img-version" class="current-version">loading...</small>
-                   </a>
-                   <a id="a_rpi_tar" href="" class="btn btn-lg btn-default btn-download">
-                       <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.targz">Compressed package</span> <br><small data-i18n="download.rpi.targz-version" class="current-version">loading...</small>
-                   </a>
-               </div>
-           </div>
-       </div>
+    <div class="container">
+        <div id="download-section" class="row">
+            <h1 data-i18n="download.title">Downloads</h1>
+            <h4 data-i18n="download.subtitle">Download the version of yadoms you need</h4>
+            <div class="row">
+                <div class="col-md-3 os">
+                    <img class="img-platform" src="img/windows.png" width="140" height="140">
+                    <h2 data-i18n="download.windows.title">Windows</h2>
+                    <p data-i18n="download.windows.subtitle">Choose if you want installer version to use as a service or
+                        portable version</p>
+                    <a id="a_win_zip" href="" class="btn btn-lg btn-success btn-download">
+                        <span class="glyphicon glyphicon-save"></span><span
+                            data-i18n="download.windows.portable">Portable version</span> <br><small
+                            data-i18n="download.windows.portable-version" class="current-version">loading...</small>
+                    </a>
+                </div>
+                <div class="col-md-3 os">
+                    <img class="img-platform" src="img/linux.jpg" width="140" height="140">
+                    <h2 data-i18n="download.linux.title">Linux</h2>
+                    <p data-i18n="download.linux.subtitle">Download right version based on you Linux distribution</p>
+                    <a id="a_lin_tar" href="" class="btn btn-lg btn-success btn-download">
+                        <span class="glyphicon glyphicon-save"></span><span data-i18n="download.linux.targz">Compressed
+                            package</span> <br><small data-i18n="download.linux.targz-version"
+                            class="current-version">loading...</small>
+                    </a>
+                </div>
+                <div class="col-md-3 os">
+                    <img class="img-platform" src="img/apple.jpg" width="140" height="140">
+                    <h2 data-i18n="download.mac.title">Mac</h2>
+                    <p data-i18n="download.mac.subtitle">This is an experimental package. You will have to make some
+                        skilled manipulation to make it works.</p>
+                    <a id="a_mac_tar" href="" class="btn btn-lg btn-success btn-download">
+                        <span class="glyphicon glyphicon-save"></span><span data-i18n="download.mac.targz">Compressed
+                            package</span> <br><small data-i18n="download.mac.targz-version"
+                            class="current-version">loading...</small>
+                    </a>
+                </div>
+                <div class="col-md-3 os">
+                    <img class="img-platform" src="img/raspberry-pi-logo.png" height="140">
+                    <h2 data-i18n="download.rpi.title">Raspberry PI</h2>
+                    <p data-i18n="download.rpi.subtitle">Extract the packge on your PI, and have fun (please note that
+                        you have to install libpq5 first : sudo apt-get install libpq5)</p>
+                    <a id="a_rpi_fr_img" href="" class="btn btn-lg btn-success btn-download">
+                        <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.img_fr">FR SD card
+                            image</span> <br><small data-i18n="download.rpi.img-version"
+                            class="current-version">loading...</small>
+                    </a>
+                    <a id="a_rpi_en_img" href="" class="btn btn-lg btn-default btn-download">
+                        <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.img_en">EN SD card
+                            image</span> <br><small data-i18n="download.rpi.img-version"
+                            class="current-version">loading...</small>
+                    </a>
+                    <a id="a_rpi_tar" href="" class="btn btn-lg btn-default btn-download">
+                        <span class="glyphicon glyphicon-save"></span><span data-i18n="download.rpi.targz">Compressed
+                            package</span> <br><small data-i18n="download.rpi.targz-version"
+                            class="current-version">loading...</small>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-       <h5 data-i18n="download.legal">All files are provided "as is" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.</h5>
+        <h5 data-i18n="download.legal">All files are provided "as is" and no one of Yadoms team can be considered as
+            responsible of any damage caused by our software. Use at your own risks.</h5>
 
-       <div id="previous-section" class="row">
-         <h1 data-i18n="download.previous.title">Archives</h1>
-         <h4 data-i18n="download.previous.subtitle"> consulter la page dédiée aux archives</h4>
-         <div class="col-md-4 os">
-            <a href="previous_download.html" class="btn btn-lg btn-success btn-download">
-               <span class="glyphicon glyphicon-list-alt"></span><span data-i18n="download.previous.button">Voir les archives</span>
-            </a>      
-         </div>
-       </div>
+        <div id="previous-section" class="row">
+            <h1 data-i18n="download.previous.title">Archives</h1>
+            <h4 data-i18n="download.previous.subtitle"> consulter la page dédiée aux archives</h4>
+            <div class="col-md-4 os">
+                <a href="previous_download.html" class="btn btn-lg btn-success btn-download">
+                    <span class="glyphicon glyphicon-list-alt"></span><span data-i18n="download.previous.button">Voir
+                        les archives</span>
+                </a>
+            </div>
+        </div>
 
-       <div id="build-section" class="row">
-         <h1 data-i18n="download.build.title">Votre plateforme n'est pas listée ici</h1>
-         <h4 data-i18n="download.build.subtitle">Yadoms est multiplateformes; c'est-à-dire qu'il est possible de le générer pour n'importe quelle cible matérielle (ou presque).</h4>
-         <div class="col-md-4 os">
-            <a href="https://github.com/Yadoms/yadoms/wiki/How-to-build-from-sources" target="blank" class="btn btn-lg btn-success btn-download">
-               <span class="glyphicon glyphicon-book"></span><span data-i18n="download.build.wiki">Aller sur le wiki</span>
-            </a>      
-         </div>
-       </div>
+        <div id="build-section" class="row">
+            <h1 data-i18n="download.build.title">Votre plateforme n'est pas listée ici</h1>
+            <h4 data-i18n="download.build.subtitle">Yadoms est multiplateformes; c'est-à-dire qu'il est possible de le
+                générer pour n'importe quelle cible matérielle (ou presque).</h4>
+            <div class="col-md-4 os">
+                <a href="https://github.com/Yadoms/yadoms/wiki/How-to-build-from-sources" target="blank"
+                    class="btn btn-lg btn-success btn-download">
+                    <span class="glyphicon glyphicon-book"></span><span data-i18n="download.build.wiki">Aller sur le
+                        wiki</span>
+                </a>
+            </div>
+        </div>
     </div>
     <div id="footer"></div>
 
@@ -117,37 +138,38 @@
         });
 
     </script>
-    
+
     <script src="i18next/js/i18next-1.7.2.min.js"></script>
 
     <script>
-    
-      var option = { resGetPath: "locales/__lng__.json", fallbackLng: "en", useDataAttrOptions: true, debug: false, fallbackNS: "translation" };
-      i18n.init(option, function () {
-         $("html").i18n();
-         updateTranlatedFileAttributes($.t("language"));
-      });
 
-      //update links
-      const baseVersion = "2.3.0";
-      const versionDisplay = "v" + baseVersion;
-      
-      const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + baseVersion + "/Yadoms-" + baseVersion + "-";
-      const rpiTarDlUrl = baseUrl + "RaspberryPI.tar.gz";
-      const rpiImgDlUrl = baseUrl + "RaspberryPI.img.zip";
-      const macDlUrl = baseUrl + "Darwin.tar.gz";
-      const linuxTarDlUrl = baseUrl + "Linux.tar.gz";
-      const winZipDlUrl = baseUrl + "Windows.zip";
-      const winExeDlUrl = baseUrl + "Windows.exe";
-      
-      $("#a_rpi_tar").attr("href", rpiTarDlUrl);
-      $("#a_rpi_img").attr("href", rpiImgDlUrl);
-      $("#a_mac_tar").attr("href", macDlUrl);
-      $("#a_lin_tar").attr("href", linuxTarDlUrl);
-      $("#a_win_zip").attr("href", winZipDlUrl);
-      $("#a_win_exe").attr("href", winExeDlUrl);
-      
-       $(".current-version").html(versionDisplay);
-    </script>    
+        var option = { resGetPath: "locales/__lng__.json", fallbackLng: "en", useDataAttrOptions: true, debug: false, fallbackNS: "translation" };
+        i18n.init(option, function () {
+            $("html").i18n();
+            updateTranlatedFileAttributes($.t("language"));
+        });
+
+        //update links
+        const baseVersion = "2.4.1";
+        const versionDisplay = "v" + baseVersion;
+
+        const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + baseVersion + "/";
+        const rpiTarDlUrl = baseUrl + "Yadoms-" + baseVersion + "-" + "RaspberryPI.tar.gz";
+        const rpiImgFrDlUrl = baseUrl + "Raspbian-Lite-FR-Yadoms-Image.zip";
+        const rpiImgEnDlUrl = baseUrl + "Raspbian-Lite-EN-Yadoms-Image.zip";
+        const macDlUrl = baseUrl + "Yadoms-" + baseVersion + "-" + "Darwin.tar.gz";
+        const linuxTarDlUrl = baseUrl + "Yadoms-" + baseVersion + "-" + "Linux.tar.gz";
+        const winZipDlUrl = baseUrl + "Yadoms-" + baseVersion + "-" + "Windows.zip";
+
+        $("#a_rpi_tar").attr("href", rpiTarDlUrl);
+        $("#a_rpi_fr_img").attr("href", rpiImgFrDlUrl);
+        $("#a_rpi_en_img").attr("href", rpiImgEnDlUrl);
+        $("#a_mac_tar").attr("href", macDlUrl);
+        $("#a_lin_tar").attr("href", linuxTarDlUrl);
+        $("#a_win_zip").attr("href", winZipDlUrl);
+
+        $(".current-version").html(versionDisplay);
+    </script>
 </body>
+
 </html>
