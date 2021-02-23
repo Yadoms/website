@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,20 +16,21 @@
     <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link href="download.css" rel="stylesheet">
-    <link rel="stylesheet" href="fancyBox-2.1.5/source/jquery.fancybox.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="fancyBox-2.1.5/source/jquery.fancybox.css" type="text/css" media="screen" />
     <link rel="stylesheet" type="text/css" href="fancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
 </head>
 
 <body>
     <div id="header"></div>
     <div class="container">
-       <div id="download-section" class="row">
-           <h1 data-i18n="download.previous.title">Archive</h1>
-           <h4 data-i18n="download.previous.subtitle-page">Archives</h4>
-       </div>   
-       <h5 data-i18n="download.legal">All files are provided "as is" and no one of Yadoms team can be considered as responsible of any damage caused by our software. Use at your own risks.</h5>
+        <div id="download-section" class="row">
+            <h1 data-i18n="download.previous.title">Archive</h1>
+            <h4 data-i18n="download.previous.subtitle-page">Archives</h4>
+        </div>
+        <h5 data-i18n="download.legal">All files are provided "as is" and no one of Yadoms team can be considered as
+            responsible of any damage caused by our software. Use at your own risks.</h5>
     </div>
-    
+
     <div id="footer"></div>
 
     <!-- Bootstrap core JavaScript
@@ -57,75 +59,173 @@
         });
 
     </script>
-    
+
     <script src="i18next/js/i18next-1.7.2.min.js"></script>
 
     <script>
-    
-      var option = { resGetPath: "locales/__lng__.json", fallbackLng: "en", useDataAttrOptions: true, debug: false, fallbackNS: "translation" };
-      i18n.init(option, function () {
-         $("html").i18n();
-         updateTranlatedFileAttributes($.t("language"));
-      });
+
+        var option = { resGetPath: "locales/__lng__.json", fallbackLng: "en", useDataAttrOptions: true, debug: false, fallbackNS: "translation" };
+        i18n.init(option, function () {
+            $("html").i18n();
+            updateTranlatedFileAttributes($.t("language"));
+        });
 
 
-      
-      function addVersion(version, path, winexe, winzip, linuxtar, linuxdeb, linuxrpm, rpitar, mactar) {
-         const baseVersion = version;
-         const versionDisplay = "v" + baseVersion;
-         
-         var urlFolder = baseVersion;
-         if(path)
-            urlFolder =path;
-            
-         const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + urlFolder + "/Yadoms-" + baseVersion + "-";
-         const rpiDlUrl = baseUrl + (rpitar?rpitar:"RaspberryPI.tar.bz2");
-         const macDlUrl = baseUrl + (mactar?mactar:"Darwin.tar.gz");
-         const linuxRpmDlUrl = baseUrl + (linuxrpm?linuxtar:"Linux.rpm");
-         const linuxDebDlUrl = baseUrl + (linuxdeb?linuxtar:"Linux.deb");
-         const linuxTarDlUrl = baseUrl + (linuxtar?linuxtar:"Linux.tar.gz");
-         const winZipDlUrl = baseUrl + (winzip?winzip:"Windows.zip");
-         const winExeDlUrl = baseUrl + (winexe?winexe:"Windows.exe");
-         
-         var row = '<div class="row"> <div class="panel panel-default"> <div class="panel-heading"><h3 class="panel-title"><strong>' + versionDisplay + '</strong></h3>' +
-                 '</div>' +
-                 '<div class="panel-body">' +
-                     '<table class="table table-hover table-responsive"> ' +
-                        '<thead> ' +
-                           '<tr> ' +
-                              '<th data-i18n="download.previous.plateform">Plateforme</th> ' +
-                              '<th data-i18n="download.previous.link">Lien</th> ' +
-                           '</tr> ' +
-                        '</thead> '+
-                        '<tbody> ' +
-                           '<tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.installer" href="' + winExeDlUrl +'">Installeur</a></td></tr>'+
-                           '<tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.portable" href="' + winZipDlUrl +'">Portable</a></td></tr>'+
-                           '<tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.targz" href="' + linuxTarDlUrl +'">binaires</a></td></tr>'+
-                           '<tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.deb" href="' + linuxDebDlUrl +'">debian</a></td></tr>'+
-                           '<tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.rpm" href="' + linuxRpmDlUrl +'">rpm</a></td></tr>'+
-                           '<tr><td> <img class="img-platform-archive" src="img/apple.jpg" width="32" height="32"><span data-i18n="download.mac.title">MacOS</span></td> <td><a data-i18n="download.mac.targz" href="' + macDlUrl +'">binaires</a></td></tr>'+
-                           '<tr><td> <img class="img-platform-archive" src="img/raspberry-pi-logo.png" width="32" height="32"><span data-i18n="download.rpi.title">RaspberryPI</span></td> <td><a data-i18n="download.rpi.targz" href="' + rpiDlUrl +'">binaires</a></td></tr>'+
-                        '</tbody> '+
-                     '</table>'+
-                 '</div>'+
-               '</div>           '+
-            '</div>'; 
-            
-         $("#download-section").append(row);
-      }
-      
-      addVersion("2.1.0", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
-      addVersion("2.0.2", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
-      addVersion("2.0.1", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
-      addVersion("2.0.0", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
-      addVersion("2.0.0-rc.6", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
-      addVersion("2.0.0-rc.5", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
-      addVersion("2.0.0-rc.4", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
-      addVersion("2.0.0-rc.3");
-      addVersion("2.0.0-rc.2");
-      addVersion("2.0.0-rc.1");
-      addVersion("1.0.0-Beta", "1_0_0_beta", "win32.exe", "win32.zip", undefined, undefined, undefined, "RaspberryPI.tar.gz", "Darwin-experimental.tar.gz");
-     
-    </script>    
+
+        function addVersionOld(version, path, winexe, winzip, linuxtar, linuxdeb, linuxrpm, rpitar, mactar) {
+            const baseVersion = version;
+            const versionDisplay = "v" + baseVersion;
+
+            var urlFolder = baseVersion;
+            if (path)
+                urlFolder = path;
+
+            const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + urlFolder + "/Yadoms-" + baseVersion + "-";
+            const rpiDlUrl = baseUrl + (rpitar ? rpitar : "RaspberryPI.tar.bz2");
+            const macDlUrl = baseUrl + (mactar ? mactar : "Darwin.tar.gz");
+            const linuxRpmDlUrl = baseUrl + (linuxrpm ? linuxtar : "Linux.rpm");
+            const linuxDebDlUrl = baseUrl + (linuxdeb ? linuxtar : "Linux.deb");
+            const linuxTarDlUrl = baseUrl + (linuxtar ? linuxtar : "Linux.tar.gz");
+            const winZipDlUrl = baseUrl + (winzip ? winzip : "Windows.zip");
+            const winExeDlUrl = baseUrl + (winexe ? winexe : "Windows.exe");
+
+            var row = '<div class="row"> <div class="panel panel-default"> <div class="panel-heading"><h3 class="panel-title"><strong>' + versionDisplay + '</strong></h3>' +
+                '</div>' +
+                '<div class="panel-body">' +
+                '<table class="table table-hover table-responsive"> ' +
+                '<thead> ' +
+                '<tr> ' +
+                '<th data-i18n="download.previous.plateform">Plateforme</th> ' +
+                '<th data-i18n="download.previous.link">Lien</th> ' +
+                '</tr> ' +
+                '</thead> ' +
+                '<tbody> ' +
+                '<tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.installer" href="' + winExeDlUrl + '">Installeur</a></td></tr>' +
+                '<tr><td> <img class="img-platform-archive" src="img/windows.png" width="32" height="32"><span data-i18n="download.windows.title">Windows</span></td> <td><a data-i18n="download.windows.portable" href="' + winZipDlUrl + '">Portable</a></td></tr>' +
+                '<tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.targz" href="' + linuxTarDlUrl + '">binaires</a></td></tr>' +
+                '<tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.deb" href="' + linuxDebDlUrl + '">debian</a></td></tr>' +
+                '<tr><td> <img class="img-platform-archive" src="img/linux.jpg" width="32" height="32"><span data-i18n="download.linux.title">Linux</span></td> <td><a data-i18n="download.linux.rpm" href="' + linuxRpmDlUrl + '">rpm</a></td></tr>' +
+                '<tr><td> <img class="img-platform-archive" src="img/apple.jpg" width="32" height="32"><span data-i18n="download.mac.title">MacOS</span></td> <td><a data-i18n="download.mac.targz" href="' + macDlUrl + '">binaires</a></td></tr>' +
+                '<tr><td> <img class="img-platform-archive" src="img/raspberry-pi-logo.png" width="32" height="32"><span data-i18n="download.rpi.title">RaspberryPI</span></td> <td><a data-i18n="download.rpi.targz" href="' + rpiDlUrl + '">binaires</a></td></tr>' +
+                '</tbody> ' +
+                '</table>' +
+                '</div>' +
+                '</div>           ' +
+                '</div>';
+
+            $("#download-section").append(row);
+        }
+
+
+        const Platforms = {
+            WINDOWS: ["Windows", "img/windows.png"],
+            LINUX: ["Linux", "img/linux.jpg"],
+            APPLE: ["MacOS", "img/apple.jpg"],
+            RASPBERRYPI: ["Raspberry Pi", "img/raspberry-pi-logo.png"]
+        }
+
+        const PackageLabels = {
+            BINARIES: "download.packages.binaries",
+            PORTABLE: "download.packages.portable",
+            INSTALLER: "download.packages.installer",
+            DISK_IMAGE: "download.packages.diskImage",
+            DISK_IMAGE_EN: "download.packages.diskImage_EN",
+            DISK_IMAGE_FR: "download.packages.diskImage_FR",
+        }
+
+        function addVersion(version, packages) {
+            const baseVersion = version;
+            const versionDisplay = "v" + baseVersion;
+
+            const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + baseVersion + "/";
+
+            var row = '<div class="row"> <div class="panel panel-default"> <div class="panel-heading"><h3 class="panel-title"><strong>' + versionDisplay + '</strong></h3>' +
+                '</div>' +
+                '<div class="panel-body">' +
+                '<table class="table table-hover table-responsive"> ' +
+                '<thead> ' +
+                '<tr> ' +
+                '<th data-i18n="download.previous.plateform">Plateforme</th> ' +
+                '<th data-i18n="download.previous.link">Lien</th> ' +
+                '</tr> ' +
+                '</thead> ' +
+                '<tbody> ';
+
+            packages.forEach(package => {
+                var platformLabel = package[0][0]
+                var platformIcon = package[0][1]
+                var packageLabel = package[1]
+                var packageSuffix = package[2]
+                var fullPackageName = package[3]
+
+                var url = baseUrl + (packageSuffix ? ('Yadoms-' + baseVersion + '-' + packageSuffix) : fullPackageName);
+
+                row += '<tr><td> <img class="img-platform-archive" src="' + platformIcon + '" width="32" height="32">' +
+                    '<span data-i18n="download.windows.title">' + platformLabel + '</span></td>' +
+                    ' <td><a data-i18n="' + packageLabel + '" href="' + url + '">' + packageLabel + '</a></td></tr>';
+            });
+
+            row += '</tbody> ' +
+                '</table>' +
+                '</div>' +
+                '</div>           ' +
+                '</div>';
+
+            $("#download-section").append(row);
+        }
+
+        addVersion("2.4.1", [
+            [Platforms.WINDOWS, PackageLabels.BINARIES, "Windows.zip"],
+            [Platforms.LINUX, PackageLabels.BINARIES, "Linux.tar.gz"],
+            [Platforms.APPLE, PackageLabels.BINARIES, "Darwin.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.BINARIES, "RaspberryPI.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE_FR, "", "Raspbian-Lite-FR-Yadoms-Image.zip"],
+            [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE_EN, "", "Raspbian-Lite-EN-Yadoms-Image.zip"]
+        ]);
+        addVersion("2.4.0", [
+            [Platforms.WINDOWS, PackageLabels.BINARIES, "Windows.zip"],
+            [Platforms.LINUX, PackageLabels.BINARIES, "Linux.tar.gz"],
+            [Platforms.APPLE, PackageLabels.BINARIES, "Darwin.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.BINARIES, "RaspberryPI.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE, "RaspberryPI.img.zip"]
+        ]);
+        addVersion("2.3.0", [
+            [Platforms.WINDOWS, PackageLabels.INSTALLER, "Windows.exe"],
+            [Platforms.WINDOWS, PackageLabels.BINARIES, "Windows.zip"],
+            [Platforms.LINUX, PackageLabels.BINARIES, "Linux.tar.gz"],
+            [Platforms.APPLE, PackageLabels.BINARIES, "Darwin.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.BINARIES, "RaspberryPI.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE, "RaspberryPI.img.zip"]
+        ]);
+        addVersion("2.2.1", [
+            [Platforms.WINDOWS, PackageLabels.INSTALLER, "Windows.exe"],
+            [Platforms.WINDOWS, PackageLabels.BINARIES, "Windows.zip"],
+            [Platforms.LINUX, PackageLabels.BINARIES, "Linux.tar.gz"],
+            [Platforms.APPLE, PackageLabels.BINARIES, "Darwin.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.BINARIES, "RaspberryPI.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE, "RaspberryPI.img.zip"]
+        ]);
+        addVersion("2.2.0", [
+            [Platforms.WINDOWS, PackageLabels.INSTALLER, "Windows.exe"],
+            [Platforms.WINDOWS, PackageLabels.BINARIES, "Windows.zip"],
+            [Platforms.LINUX, PackageLabels.BINARIES, "Linux.tar.gz"],
+            [Platforms.APPLE, PackageLabels.BINARIES, "Darwin.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.BINARIES, "RaspberryPI.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE, "RaspberryPI.img.zip"]
+        ]);
+        addVersionOld("2.1.0", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
+        addVersionOld("2.0.2", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
+        addVersionOld("2.0.1", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
+        addVersionOld("2.0.0", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
+        addVersionOld("2.0.0-rc.6", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
+        addVersionOld("2.0.0-rc.5", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
+        addVersionOld("2.0.0-rc.4", undefined, undefined, undefined, undefined, undefined, undefined, "RaspberryPI.tar.gz", undefined);
+        addVersionOld("2.0.0-rc.3");
+        addVersionOld("2.0.0-rc.2");
+        addVersionOld("2.0.0-rc.1");
+        addVersionOld("1.0.0-Beta", "1_0_0_beta", "win32.exe", "win32.zip", undefined, undefined, undefined, "RaspberryPI.tar.gz", "Darwin-experimental.tar.gz");
+
+    </script>
 </body>
+
 </html>

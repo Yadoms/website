@@ -102,6 +102,14 @@
   "download" : {
 	"title" : "Downloads",
 	"subtitle" : "Download the version of yadoms you need",
+	"packages": {
+		"binaries": "Binaries",
+		"portable": "Portable",
+		"installer": "Installer",
+		"diskImage": "Disk image",
+		"diskImage_EN": "Disk image EN version",
+		"diskImage_FR": "Disk image FR version"
+	},
 	"windows" : {
 		"title" : "Windows",
 		"subtitle" : "Choose if you want installer version to use as a service or portable version",
