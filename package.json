@@ -12,6 +12,7 @@
     "build:ci": "npm run clean && npm run build"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "assets": "^3.0.1",
     "i18next": "^19.8.7",
     "i18next-browser-languagedetector": "^6.0.1",

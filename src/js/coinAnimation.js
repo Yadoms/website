@@ -19,11 +19,11 @@ export default class CoinAnimation {
                 console.log('scrollpos : ' + scrollpos);
                 console.log('offset : ' + offset);
                 console.log('element.getBoundingClientRect().top : ' + rect.top);
-                if (scrollpos >= (window.scrollY + element.getBoundingClientRect().top) - 200) {
+                if (scrollpos >= element_height) {
                     element.classList.add("fadeOutDown");
-                } else if (scrollpos <= (window.scrollY + element.getBoundingClientRect().top) + 100) {
-                    element.classList.add("fadeOutDown");
-                } else {
+                // } else if (scrollpos <= (window.scrollY + element.getBoundingClientRect().top) + 100) {
+                //     element.classList.add("fadeOutDown");
+                // } else {
                     element.classList.remove("fadeOutDown")
                 }
             }
