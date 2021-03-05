@@ -8,15 +8,15 @@
         "device": "SUPPORTED DEVICE"
     },
     "free":{
-      "title" : "Yadoms is free !",
+      "title" : "FREE !",
       "headline" : "Forget pricing and proprietary softwares,<br> Yadoms is fully open source and fully free. <br> Download and use it."
     },
     "privacy": {
-      "title" : "Keep ownership of your data",
+      "title" : "SECURE !",
       "headline" : "Because your privacy is important,<br> Yadoms keeps your data in your house"
     },
     "cross-platform": {
-      "title" : "Run on many devices",
+      "title" : "CROSS-PLATFORM !",
       "headline" : "You can run Yadoms server on many devices like an old Windows XP™ machine, <br> a Linux machine, a raspberry PI even on a Mac."
     },
     "control": {

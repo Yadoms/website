@@ -8,15 +8,15 @@
         "device": "PÉRIPHÉRIQUES COMPATIBLES"
     },    
     "free":{
-      "title" : "Yadoms est gratuit !",
+      "title" : "GRATUIT !",
       "headline" : "Oubliez le prix et les logiciels propriétaires, <br> Yadoms est completement open-source et gratuit. <br> Téléchargez et utilisez-le."
     },
     "privacy": {
-      "title" : "Conservez la propriété de vos données",
+      "title" : "SECURISER !",
       "headline" : "Parce que votre vie privée est importante, <br> Yadoms conserve les données dans votre maison"
     },
     "cross-platform": {
-      "title" : "Multiplateformes",
+      "title" : "MULTIPLATFORMRD !",
       "headline" : "Vous pouvez exécuter le serveur Yadoms sur de nombreux appareils comme un vieil ordinateur sous Windows XP™, <br> un ordinateur sous Linux, un RaspberryPI, un Mac..."
     },
     "control" : {

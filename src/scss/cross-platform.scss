@@ -32,10 +32,19 @@
   }
 }
 @media screen and (max-width: 700px) {
-  .y-control__container > div {
+  .y-cross-platform__container {
     width: 100%;
+    min-height: 100vh;
+    &__img{
+      width: 100%;
+    }
+    &__content{
+      p{
+        margin: 30px;
+      }
+    }
   }
-  .y-control__container{
+  .y-cross-platform__container{
     flex-wrap: wrap;
   }
 }
