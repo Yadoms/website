@@ -5,16 +5,14 @@
 }
 
 .y-hero {
-  max-width: 1280px;
-  min-height: 100vh;
-  margin: auto;
 }
 
 .y-hero__container {
-  flex-direction: column;
-  flex : 1 1;
-  min-height: 95vh;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
   &__main-banner__container{
     justify-content: center;
     align-items: center;
