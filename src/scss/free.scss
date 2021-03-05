@@ -1,20 +1,20 @@
 .y-free {
-  max-width: 1280px;
   min-height: 100vh;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  //align-content: space-between;
 }
 
 .y-free__container {
   display: flex;
-  min-height: 100vh;
-  //align-items: center;
-  //align-content: center;
-  //justify-content: center;
-
+  justify-content: center;
+  flex-direction: column;
+  width: 33%;
   &__img{
     display: flex;
     position: relative;
-    width: 50%;
+    width: 100%;
     align-items: center;
     &__saving{
       width: 100%;
@@ -26,7 +26,7 @@
 
   }
   &__content {
-    width: 50%;
+    width: 100%;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -53,8 +53,10 @@
   }
 }
 @media screen and (max-width: 700px) {
+  .y-free{
+    flex-direction: column;
+  }
   .y-free__container > div {
-
     width: 100%;
   }
   .y-free__container{

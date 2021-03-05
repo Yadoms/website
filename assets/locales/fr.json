@@ -11,6 +11,18 @@
       "title" : "Yadoms est gratuit !",
       "headline" : "Oubliez le prix et les logiciels propriétaires, <br> Yadoms est completement open-source et gratuit. <br> Téléchargez et utilisez-le."
     },
+    "privacy": {
+      "title" : "Conservez la propriété de vos données",
+      "headline" : "Parce que votre vie privée est importante, <br> Yadoms conserve les données dans votre maison"
+    },
+    "cross-platform": {
+      "title" : "Multiplateformes",
+      "headline" : "Vous pouvez exécuter le serveur Yadoms sur de nombreux appareils comme un vieil ordinateur sous Windows XP™, <br> un ordinateur sous Linux, un RaspberryPI, un Mac..."
+    },
+    "control" : {
+      "title" : "Contrôlez votre maison",
+      "headline" : "Votre maison obéit à tous vos ordres"
+    },
     "title": {
       "ultimate": "La solution domotique ultime",
       "button" : {
@@ -34,10 +46,7 @@
       "part5" : "Yadoms est délivré sous licence GPL v3.",
       "part6" : "Tous les plugins, widgets et scripts développés sont sous licence LGPL v3."
     },
-    "control" : {
-      "title" : "Contrôlez votre maison",
-      "subtitle" : "Votre maison obéit à tous vos ordres"
-    },
+
     "automate" : {
       "title" : "Automatisez votre maison",
       "line1" : "Construisez des scénarios pour automatiser des tâches comme l'arrosage du jardin",
