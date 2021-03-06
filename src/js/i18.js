@@ -8,26 +8,26 @@ export default class I18 {
         console.log('init i18next');
         this.init();
     }
-    
-    init()
-    { 
+
+    init() {
         i18n.use(LanguageDetector)
-                .use(Backend)
-                .init({
-                    fallbackLng: "en", 
-                    useDataAttrOptions: true, 
-                    debug: true, 
-                    backend: {
-                        // TODO: remove /new when we do the first official deployement
-                        loadPath: '/new/locales/{{lng}}.json'
-                    }
-                }, function(err, t) {
-                    if (err) {
-                        console.log(err.message);
-                    }
-                    jqueryI18next.init(i18n, $);
-                    $('body').localize();
-                  });
-        
-    }  
+            .use(Backend)
+            .init({
+                fallbackLng: "en",
+                useDataAttrOptions: true,
+                debug: true,
+                preload: ['en', 'fr'],
+                ns: ['translation'],
+                defaultNS: 'translation',
+                backend: {
+                    // TODO: remove /new when we do the first official deployement
+                    loadPath: '/new/locales/{{lng}}/{{ns}}.json',
+                    addPath: ''
+                }
+            }, (err, t) => {
+                if (err) return console.error(err)
+                jqueryI18next.init(i18n, $);
+                $('body').localize();
+            });
+    }
 }
