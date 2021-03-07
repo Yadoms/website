@@ -9,7 +9,9 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 33%;
+  flex: 1 0 30%;
+  padding: 10px;
+  margin: 5px;
   &__img{
     display: flex;
     position: relative;
@@ -22,7 +24,7 @@
       position: absolute;
       width: 100%;
     }
-
+    margin: 20px auto;
   }
   &__content {
     width: 100%;
@@ -35,6 +37,7 @@
       font-size: 35px;
       line-height: 56px;
       font-weight: 800;
+
     }
 
     p {
@@ -42,7 +45,6 @@
       font-size: 15px;
       line-height: 150%;
       color: #9caca8;
-      margin: 30px auto;
     }
     &__download-btn {
       display: flex;

@@ -9,15 +9,15 @@
     },
     "free":{
       "title" : "FREE !",
-      "headline" : "Forget pricing and proprietary softwares,<br> Yadoms is fully open source and fully free. <br> Download and use it."
+      "headline" : "Forget pricing and proprietary softwares,<br> Yadoms is fully open source and fully free. Download and use it."
     },
     "privacy": {
       "title" : "SECURE !",
-      "headline" : "Because your privacy is important,<br> Yadoms keeps your data in your house"
+      "headline" : "Because your privacy and personal security are extremely important to us,<br> Yadoms keeps your data in your house"
     },
     "cross-platform": {
       "title" : "CROSS-PLATFORM !",
-      "headline" : "You can run Yadoms server on many devices like an old Windows XP™ machine, <br> a Linux machine, a raspberry PI even on a Mac."
+      "headline" : "You can run Yadoms server on many devices : Windows, Linux, raspberry PI and even on a Mac."
     },
     "control": {
       "title": "Control your home",

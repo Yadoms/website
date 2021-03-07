@@ -13,6 +13,7 @@ export default class I18 {
         i18n.use(LanguageDetector)
             .use(Backend)
             .init({
+                // lng: 'en',
                 fallbackLng: "en",
                 useDataAttrOptions: true,
                 debug: true,
@@ -21,8 +22,7 @@ export default class I18 {
                 defaultNS: 'translation',
                 backend: {
                     // TODO: remove /new when we do the first official deployement
-                    loadPath: '/new/locales/{{lng}}/{{ns}}.json',
-                    addPath: ''
+                    loadPath: '/new/locales/{{lng}}/{{ns}}.json'
                 }
             }, (err, t) => {
                 if (err) return console.error(err)

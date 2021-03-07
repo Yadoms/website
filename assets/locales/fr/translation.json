@@ -9,15 +9,15 @@
     },    
     "free":{
       "title" : "GRATUIT !",
-      "headline" : "Oubliez le prix et les logiciels propriétaires, <br> Yadoms est completement open-source et gratuit. <br> Téléchargez et utilisez-le."
+      "headline" : "Oubliez le prix et les logiciels propriétaires, <br> Yadoms est completement open-source et gratuit. Téléchargez et utilisez-le."
     },
     "privacy": {
       "title" : "SECURISER !",
-      "headline" : "Parce que votre vie privée est importante, <br> Yadoms conserve les données dans votre maison"
+      "headline" : "Parce que votre vie privée est importante,<br> Yadoms conserve les données dans votre maison"
     },
     "cross-platform": {
       "title" : "MULTIPLATFORMES !",
-      "headline" : "Vous pouvez exécuter le serveur Yadoms sur de nombreux appareils comme un vieil ordinateur sous Windows XP™, <br> un ordinateur sous Linux, un RaspberryPI, un Mac..."
+      "headline" : "Vous pouvez exécuter Yadoms sur de nombreux appareils : Windows, Linux, RaspberryPI, un Mac..."
     },
     "control" : {
       "title" : "Contrôlez votre maison",
