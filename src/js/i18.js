@@ -2,11 +2,13 @@ import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 import jqueryI18next from 'jquery-i18next';
+import $ from "jquery"
 
 export default class I18 {
     constructor() {
         console.log('init i18next');
         this.init();
+
     }
 
     init() {
@@ -29,5 +31,6 @@ export default class I18 {
                 jqueryI18next.init(i18n, $);
                 $('body').localize();
             });
+
     }
 }

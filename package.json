@@ -17,6 +17,7 @@
     "i18next": "^19.8.7",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.1.0",
+    "jquery": "^3.6.0",
     "jquery-i18next": "^1.2.1",
     "js": "^0.1.0",
     "parcel-plugin-asset-copier": "^1.1.0",
