@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
+    "prebuild": "rm -rf dist",
     "preinstall": "npx npm-force-resolutions",
     "start": "parcel index.html",
     "start-multiple-entries": "parcel index.html centered.html what.html ",
