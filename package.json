@@ -21,6 +21,7 @@
     "jquery-i18next": "^1.2.1",
     "js": "^0.1.0",
     "parcel-plugin-asset-copier": "^1.1.0",
+    "parcel-plugin-clean-dist": "^0.0.6",
     "parcel-plugin-html-root-syntax": "0.0.3",
     "scss": "^0.2.4"
   },
