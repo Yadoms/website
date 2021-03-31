@@ -16,10 +16,10 @@ export default class I18 {
             .use(Backend)
             .init({
                 // lng: 'en',
-                fallbackLng: "en",
+                fallbackLng: "en-En",
                 useDataAttrOptions: true,
                 debug: true,
-                preload: ['en', 'fr'],
+                preload: ['en-En', 'fr-FR'],
                 ns: ['translation'],
                 defaultNS: 'translation',
                 backend: {
