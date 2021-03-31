@@ -4,26 +4,25 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "prebuild": "rm -rf dist",
+    "prebuild": "rm -rf *",
     "preinstall": "npx npm-force-resolutions",
     "start": "parcel index.html",
     "start-multiple-entries": "parcel index.html centered.html what.html ",
     "build": "parcel build index.html --public-url ./",
-    "clean": "rimraf ./dist",
-    "build:ci": "npm run clean && npm run build"
+    "build:ci": "npm run build"
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "assets": "^3.0.1",
     "i18next": "^19.8.7",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.1.0",
     "jquery": "^3.6.0",
     "jquery-i18next": "^1.2.1",
     "js": "^0.1.0",
-    "parcel-plugin-asset-copier": "^1.1.0",
     "parcel-plugin-clean-dist": "^0.0.6",
+    "parcel-plugin-custom-dist-structure": "^1.1.17",
     "parcel-plugin-html-root-syntax": "0.0.3",
+    "parcel-plugin-static-files-copy": "^2.6.0",
     "scss": "^0.2.4"
   },
   "devDependencies": {
@@ -35,6 +34,38 @@
   "resolutions": {
     "node-forge": "0.10.0"
   },
-  "keywords": [],
-  "assetsPath": "assets"
+  "customDistStructure": {
+    "config": {
+      ".js": "js",
+      "images": [
+        ".jpg",
+        ".png",
+        ".svg",
+        ".ico"
+      ],
+      ".css": "css",
+      "fonts": [
+        ".woff2",
+        ".woff",
+        ".otf"
+      ],
+      ".fileExtension": "folder/in/dist",
+      "folder/in/dist": [
+        ".file",
+        ".extensions"
+      ]
+    },
+    "options": {
+      "development": true
+    }
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "assets/locales",
+        "staticOutDir": "locales"
+      }
+    ],
+    "watcherGlob": "**"
+  }
 }
