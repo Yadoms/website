@@ -6,8 +6,9 @@ export default class CoinAnimation {
 
     start() {
         let scrollpos = window.scrollY;
-        const element = document.querySelector(".y-free__container");
-        let rect = element.getBoundingClientRect();
+        const element = document.querySelector(".y-free__container__img__coin");
+        const container = document.querySelector(".y-free__container");
+        let rect = container.getBoundingClientRect();
         window.addEventListener('scroll', function () {
                 scrollpos = window.scrollY;
                 if (scrollpos >= rect.top) {
