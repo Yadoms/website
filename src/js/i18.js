@@ -17,7 +17,7 @@ export default class I18 {
             .init({
                 // lng: 'en',
                 fallbackLng: "en",
-                useDataAttrOptions: true,
+                load: 'languageOnly',
                 debug: true,
                 preload: ['en', 'fr'],
                 ns: ['translation'],
