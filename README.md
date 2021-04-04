@@ -1,4 +1,5 @@
-[![build status](https://github.com/Yadoms/website/workflows/Build/badge.svg)](https://github.com/Yadoms/website/actions)
+[![Build status](https://github.com/Yadoms/website/workflows/Build/badge.svg)](https://github.com/Yadoms/website/actions)
+[![Publish yadoms Website](https://github.com/Yadoms/website/actions/workflows/deploy.yml/badge.svg)](https://github.com/Yadoms/website/actions/workflows/deploy.yml)
 
 # Installation
 
