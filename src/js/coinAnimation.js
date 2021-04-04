@@ -1,3 +1,6 @@
+import gsap from "gsap/all";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
 export default class CoinAnimation {
     constructor() {
         console.log('start coin scroll event listener');
@@ -5,21 +8,16 @@ export default class CoinAnimation {
     }
 
     start() {
-        let scrollpos = window.scrollY;
-        const element = document.querySelector(".y-free__container__img__coin");
-        const container = document.querySelector(".y-free__container");
-        let rect = container.getBoundingClientRect();
-        window.addEventListener('scroll', function () {
-                scrollpos = window.scrollY;
-                if (scrollpos >= rect.top) {
-                    element.classList.add("fadeOutDown");
-                } else {
-                    element.classList.remove("fadeOutDown")
-                }
-            }
-        );
+        gsap.registerPlugin(ScrollTrigger);
 
+        gsap.to('.presentation-card__img__coin',
+            {
+                scrollTrigger: {
+                    trigger: "presentation__container",
+                    // start: 'top+100 center',
+                    markers: true,
+                    toggleActions: "play none none none"
+                }, y: 100, duration: 3, animationIterationCount: 'infinite'
+            });
     }
-
-
 }
