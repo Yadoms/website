@@ -5,7 +5,7 @@
   align-items: center;
 }
 .presentation-card{
-  width: 350px;
+  width: 360px;
   height: 500px;
   padding: 10px;
   margin: 5px;
@@ -16,10 +16,10 @@
     height: 100%;
     display: flex;
     align-items: flex-end;
-    img{
-      width: 100%;
-      height: auto;
-    }
+    //img{
+    //  width: 100%;
+    //  height: auto;
+    //}
   }
   &__content{
     h1 {
