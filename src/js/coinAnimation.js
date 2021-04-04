@@ -9,15 +9,16 @@ export default class CoinAnimation {
 
     start() {
         gsap.registerPlugin(ScrollTrigger);
-
-        gsap.to('.presentation-card__img__coin',
-            {
-                scrollTrigger: {
-                    trigger: "presentation__container",
-                    // start: 'top+100 center',
-                    markers: true,
-                    toggleActions: "play none none none"
-                }, y: 100, duration: 3, animationIterationCount: 'infinite'
-            });
+        gsap.to(".presentation-card__img__coin", {
+            scrollTrigger: {
+                trigger: ".presentation-card",
+                start: 'top center',
+                toggleActions: "play complete restart reset",
+            },
+            y: 100,
+            duration: 3,
+            opacity: 0,
+            repeat: -1,
+        });
     }
 }
