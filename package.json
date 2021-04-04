@@ -13,6 +13,7 @@
     "build:ci": "npm run clean && npm run build"
   },
   "dependencies": {
+    "gsap": "^3.6.1",
     "i18next": "^19.8.7",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.1.0",
