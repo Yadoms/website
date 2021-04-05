@@ -26,12 +26,12 @@
     }
 }
 .y-btn--primary{
-    background: #7063fe;
+    background: #428bca;
     img{
         width: 19px;
     }
     &:hover {
-        background: darken(#7063fe, 3);
+        background: darken(#428bca, 3);
     }
 }
 
