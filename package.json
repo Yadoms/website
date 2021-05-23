@@ -1,72 +1,28 @@
 {
-  "name": "yadoms",
+  "name": "web-quick-starter-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
+  "description": "```\r npm i\r ```\r # run\r ```\r npm run start\r ```",
+  "main": "index.js",
   "scripts": {
-    "prebuild": "rm -rf ./dist",
-    "preinstall": "npx npm-force-resolutions",
-    "start": "parcel index.html",
-    "start-multiple-entries": "parcel index.html centered.html what.html ",
-    "build": "parcel build index.html --public-url ./",
-    "clean": "rm -rf ./dist",
-    "build:ci": "npm run clean && npm run build"
+    "dev": "vite ./src/ --open",
+    "build": "vite build ./src/ --outDir ../dist",
+    "serve": "vite preview"
   },
-  "dependencies": {
-    "gsap": "^3.6.1",
-    "i18next": "^19.8.7",
-    "i18next-browser-languagedetector": "^6.0.1",
-    "i18next-http-backend": "^1.1.0",
-    "jquery": "^3.6.0",
-    "jquery-i18next": "^1.2.1",
-    "js": "^0.1.0",
-    "parcel-plugin-clean-dist": "^0.0.6",
-    "parcel-plugin-custom-dist-structure": "^1.1.17",
-    "parcel-plugin-html-root-syntax": "0.0.3",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "scss": "^0.2.4"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oben01/web-quick-starter-project.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oben01/web-quick-starter-project/issues"
+  },
+  "homepage": "https://github.com/oben01/web-quick-starter-project#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-nuke-dist": "^1.0.1",
-    "posthtml-include": "^1.4.3",
-    "sass": "^1.26.11"
-  },
-  "resolutions": {
-    "node-forge": "0.10.0"
-  },
-  "customDistStructure": {
-    "config": {
-      ".js": "js",
-      "images": [
-        ".jpg",
-        ".png",
-        ".svg",
-        ".ico"
-      ],
-      ".css": "css",
-      "fonts": [
-        ".woff2",
-        ".woff",
-        ".otf"
-      ],
-      ".fileExtension": "folder/in/dist",
-      "folder/in/dist": [
-        ".file",
-        ".extensions"
-      ]
-    },
-    "options": {
-      "development": true
-    }
-  },
-  "staticFiles": {
-    "staticPath": [
-      {
-        "staticPath": "assets/locales",
-        "staticOutDir": "locales"
-      }
-    ],
-    "watcherGlob": "**"
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.13",
+    "tailwindcss": "^2.1.2",
+    "vite": "^2.2.4"
   }
 }

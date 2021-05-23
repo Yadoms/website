@@ -23,3 +23,21 @@ If you have run : `npm run start`, parcels has an excellent hot reload except if
 - We thank all the people who contribute, the project exists because of you<br />
 - We thank [JetBrains](https://www.jetbrains.com/?from=yadoms) for the licenses<br />
   <a href="https://www.jetbrains.com/?from=yadoms" target="_blank"><img src="./assets/img/jetbrains-variant-3.svg"></a>
+
+This project is generated using those commands :
+
+## Init project
+```
+npm init -y 
+```
+
+## Install dependencies
+```
+npm install -D autoprefixer postcss tailwindcss vite
+```
+
+## init tailwindcss
+```
+npx tailwindcss init -p
+```
+
