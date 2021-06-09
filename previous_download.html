@@ -174,15 +174,14 @@
             $("#download-section").append(row);
         }
 
-        // A remettre lorsque la 2.4.1 sera devenue une archive...
-        // addVersion("2.4.1", [
-        //     [Platforms.WINDOWS, PackageLabels.BINARIES, "Windows.zip"],
-        //     [Platforms.LINUX, PackageLabels.BINARIES, "Linux.tar.gz"],
-        //     [Platforms.APPLE, PackageLabels.BINARIES, "Darwin.tar.gz"],
-        //     [Platforms.RASPBERRYPI, PackageLabels.BINARIES, "RaspberryPI.tar.gz"],
-        //     [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE_FR, "", "Raspbian-Lite-FR-Yadoms-Image.zip"],
-        //     [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE_EN, "", "Raspbian-Lite-EN-Yadoms-Image.zip"]
-        // ]);
+        addVersion("2.4.1", [
+            [Platforms.WINDOWS, PackageLabels.BINARIES, "Windows.zip"],
+            [Platforms.LINUX, PackageLabels.BINARIES, "Linux.tar.gz"],
+            [Platforms.APPLE, PackageLabels.BINARIES, "Darwin.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.BINARIES, "RaspberryPI.tar.gz"],
+            [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE_FR, "", "Yadoms-2.4.1-RaspberryPI-image-FR.zip"],
+            [Platforms.RASPBERRYPI, PackageLabels.DISK_IMAGE_EN, "", "Yadoms-2.4.1-RaspberryPI-image-EN.zip"]
+        ]);
         addVersion("2.4.0", [
             [Platforms.WINDOWS, PackageLabels.BINARIES, "Windows.zip"],
             [Platforms.LINUX, PackageLabels.BINARIES, "Linux.tar.gz"],

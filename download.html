@@ -32,7 +32,12 @@
                     <h2 data-i18n="download.windows.title">Windows</h2>
                     <p data-i18n="download.windows.subtitle">Choose if you want installer version to use as a service or
                         portable version</p>
-                    <a id="a_win_zip" href="" class="btn btn-lg btn-success btn-download">
+                    <a id="a_win_exe" href="" class="btn btn-lg btn-success btn-download">
+                        <span class="glyphicon glyphicon-save"></span><span
+                            data-i18n="download.windows.installer">Installer</span> <br><small
+                            data-i18n="download.windows.installer-version" class="current-version">loading...</small>
+                    </a>
+                    <a id="a_win_zip" href="" class="btn btn-lg btn-default btn-download">
                         <span class="glyphicon glyphicon-save"></span><span
                             data-i18n="download.windows.portable">Portable version</span> <br><small
                             data-i18n="download.windows.portable-version" class="current-version">loading...</small>
@@ -150,7 +155,7 @@
         });
 
         //update links
-        const baseVersion = "2.4.1";
+        const baseVersion = "2.5.0";
         const versionDisplay = "v" + baseVersion;
 
         const baseUrl = "https://github.com/Yadoms/yadoms/releases/download/" + baseVersion + "/";
@@ -160,6 +165,7 @@
         const macDlUrl = baseUrl + "Yadoms-" + baseVersion + "-Darwin.tar.gz";
         const linuxTarDlUrl = baseUrl + "Yadoms-" + baseVersion + "-Linux.tar.gz";
         const winZipDlUrl = baseUrl + "Yadoms-" + baseVersion + "-Windows.zip";
+        const winExeDlUrl = baseUrl + "Yadoms-" + baseVersion + "-Windows.exe";
 
         $("#a_rpi_tar").attr("href", rpiTarDlUrl);
         $("#a_rpi_fr_img").attr("href", rpiImgFrDlUrl);
@@ -167,6 +173,7 @@
         $("#a_mac_tar").attr("href", macDlUrl);
         $("#a_lin_tar").attr("href", linuxTarDlUrl);
         $("#a_win_zip").attr("href", winZipDlUrl);
+        $("#a_win_exe").attr("href", winExeDlUrl);
 
         $(".current-version").html(versionDisplay);
     </script>
