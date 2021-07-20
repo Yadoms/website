@@ -7,18 +7,41 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/tailwind.css"/>
 </head>
-<body class="bg-mirage">
-<div class="bg-red-400">
-    <div class="grid 2xl:grid-cols-2">
-        <div class="px-8 2xl:py-52 max-w-md mx-auto mt-3 mb-3">
-            <div class="flex items-end space-x-5 mb-5 ">
-                <img class="h-10" src="./assets/img/application_logo.svg" alt="Logo">
-                <h1 class="mt-6 text-4xl font-bold text-white ">YADOMS</h1>
-                <a class="github-button" href="https://github.com/Yadoms/yadoms" data-size="large"
-                   data-show-count="true" aria-label="Star Yadoms/yadoms on GitHub">Star</a>
+<body class="">
+<div class="">
+    <nav class="bg-white py-2 md:py-4 fixed inset-x-0">
+        <div class="container px-4 mx-auto md:flex md:items-center">
+
+            <div class="flex justify-between items-center">
+                <div class="flex items-end space-x-3 ">
+                    <img class="h-10" src="./assets/img/application_logo.svg" alt="Logo">
+                    <h1 class="text-4xl font-bold text-bostonBlue-light ">YADOMS</h1>
+<!--                    <a class="github-button" href="https://github.com/Yadoms/yadoms" data-size="large"-->
+<!--                       data-show-count="true" aria-label="Star Yadoms/yadoms on GitHub">Star</a>-->
+                </div>
+                <button class="border border-solid border-gray-600 px-3 py-1 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden" id="navbar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
+
+            <div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" id="navbar-collapse" >
+                <a href="#" class="p-2 lg:px-4 md:mx-2 text-white rounded bg-bostonBlue-light">Accueil</a>
+                <a href="#" class="p-2 lg:px-4 md:mx-2 text-bostonBlue-light rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">Documentation</a>
+                <a href="#" class="p-2 lg:px-4 md:mx-2 text-bostonBlue-light rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">Téléchargement</a>
+                <a href="#" class="p-2 lg:px-4 md:mx-2 text-bostonBlue-light rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">Blog</a>
+                <a href="#" class="p-2 lg:px-4 md:mx-2 text-bostonBlue-light rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">Forum</a>
+                <!-- Place this tag where you want the button to render. -->
+                <span>
+                    <a class="github-button align-middle" href="https://github.com/Yadoms/yadoms" data-show-count="true" aria-label="Star Yadoms/yadoms on GitHub">Star</a>
+                </span>
+
+            </div>
+        </div>
+    </nav>
+    <div class="flex xl:flex-row sm:flex-col md:flex-col py-32 h-screen p-3 bg-mirage">
+        <div class="px-8 2xl:py-52 mt-3 mb-3 align-center">
             <div>
-                <h2 class="mb-2 text-white font-medium text-2xl"> The ultimate house automation solution </h2>
+                <h2 class="mb-2 text-white font-bold text-2xl"> The ultimate house automation solution </h2>
                 <p class="text-white ">The unique solution to drive all your devices with only one software</p>
             </div>
             <div class="mt-4 sm:mt-6 flex flex-col space-y-3">
@@ -38,8 +61,17 @@
             </div>
         </div>
         <div class="relative sm:px-10 m-4">
-            <img class="xl:absolute inset-0 w-full h-full object-center"
+            <img class="inset-0 w-full h-full object-center"
                  src="assets/img/undraw_smart_home_28oy.svg" alt="smart home">
+        </div>
+    </div>
+    <!-- Supported devices -->
+    <div>
+        <!-- Header -->
+        <div class="flex justify-center space-x-4">
+            <hr class="w-20">
+            <h2> Supported device</h2>
+            <hr class="w-20">
         </div>
     </div>
 

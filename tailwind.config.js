@@ -10,7 +10,7 @@ module.exports = {
         bostonBlue:{
           light: '#428BCA',
           DEFAULT: '#00548D',
-          dark:'#002355',
+          dark:'#1d2f49',
         }
       }
     },
