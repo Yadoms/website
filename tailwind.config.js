@@ -18,6 +18,7 @@ module.exports = {
   variants: {
     extend: {
       backgroundColor: ["active"],
+      filter: ['hover']
     },
   },
   plugins: [],
