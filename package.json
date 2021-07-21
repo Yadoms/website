@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite ./src/ --open",
     "build": "vite build ./src/ --outDir ../dist",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "clean": "rm -rf ./dist",
+    "build:ci": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
