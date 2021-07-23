@@ -1,0 +1,10 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.line-seperator{
+    height: 1px;
+    flex: 1;
+    background-color: #428BCA;
+    opacity: 0.33;
+}
