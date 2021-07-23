@@ -4,8 +4,8 @@
   "description": "```\r npm i\r ```\r # run\r ```\r npm run start\r ```",
   "main": "index.js",
   "scripts": {
-    "dev": "vite ./src/ --open",
-    "build": "vite build ./src/ --outDir ../dist",
+    "dev": "vite --open",
+    "build": "vite build ",
     "serve": "vite preview",
     "clean": "rm -rf ./dist",
     "build:ci": "npm run clean && npm run build"
