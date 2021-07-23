@@ -2,11 +2,10 @@
   "name": "web-quick-starter-project",
   "version": "1.0.0",
   "description": "```\r npm i\r ```\r # run\r ```\r npm run start\r ```",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "dev": "vite --open",
-    "build": "vite build ",
-    "serve": "vite preview",
+    "start": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html",
     "clean": "rm -rf ./dist",
     "build:ci": "npm run clean && npm run build"
   },
@@ -23,8 +22,8 @@
   "homepage": "https://github.com/oben01/web-quick-starter-project#readme",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+    "parcel": "^2.0.0-beta.3.1",
     "postcss": "^8.2.13",
-    "tailwindcss": "^2.1.2",
-    "vite": "^2.2.4"
+    "tailwindcss": "^2.1.2"
   }
 }
