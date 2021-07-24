@@ -22,7 +22,7 @@ If you have run : `npm run start`, parcels has an excellent hot reload except if
 
 - We thank all the people who contribute, the project exists because of you<br />
 - We thank [JetBrains](https://www.jetbrains.com/?from=yadoms) for the licenses<br />
-  <a href="https://www.jetbrains.com/?from=yadoms" target="_blank"><img src="./assets/img/jetbrains-variant-3.svg"></a>
+  <a href="https://www.jetbrains.com/?from=yadoms" target="_blank"><img src="./src/assets/img/jetbrains-variant-3.svg"></a>
 
 This project is generated using those commands :
 
@@ -41,3 +41,8 @@ npm install -D autoprefixer postcss tailwindcss vite
 npx tailwindcss init -p
 ```
 
+## FAQ
+1. Parcel is not reloading ? 
+```
+Disable safe write on your IDE + clean .parcel-cache & dist
+```
