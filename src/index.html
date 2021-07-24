@@ -8,11 +8,11 @@
     <link rel="stylesheet" type="text/css" href="tailwind.css"/>
 </head>
 <body class="bg-mirage">
-<div class="container mx-auto px-8">
-    <!--header-->
-    <include src="src/partials/nav.html"></include>
-    <!--Landing page-->
-    <main class="py-12 flex flex-col font-sans">
+<!--header-->
+<include src="src/partials/nav.html"></include>
+<!--Landing page-->
+<main class="py-12 flex flex-col font-sans container mx-auto px-8">
+    <div>
         <!--Hero -->
         <div class="flex flex-col-reverse sm:flex-row jusitfy-between items-center">
             <div class="sm:w-2/5 flex flex-col items-center sm:items-start text-center sm:text-left">
@@ -48,16 +48,20 @@
             <!--Supported devices logos-->
             <div class="flex flex-cols sm:flex-row md:flex-row justify-around">
                 <a href="#" onclick="return false;">
-                    <img class="w-20 h-20 filter grayscale hover:filter-none" src="./static/img/EnOcean_logo.svg" alt="Enocean logo">
+                    <img class="w-20 h-20 filter grayscale hover:filter-none" src="./static/img/EnOcean_logo.svg"
+                         alt="Enocean logo">
                 </a>
                 <a href="#" onclick="return false;">
-                    <img class="w-20 h-20 filter grayscale hover:filter-none" src="./static/img/Oregon_Scientific_logo.svg" alt="Oregon logo">
+                    <img class="w-20 h-20 filter grayscale hover:filter-none"
+                         src="./static/img/Oregon_Scientific_logo.svg" alt="Oregon logo">
                 </a>
                 <a href="#" onclick="return false;">
-                    <img class="w-20 h-20 filter grayscale hover:filter-none" src="./static/img/Somfy_logo.svg" alt="Somfy logo">
+                    <img class="w-20 h-20 filter grayscale hover:filter-none" src="./static/img/Somfy_logo.svg"
+                         alt="Somfy logo">
                 </a>
                 <a href="#" onclick="return false;">
-                    <img class="w-20 h-20 filter grayscale hover:filter-none" src="./static/img/z-wave.svg" alt="Z-wave logo">
+                    <img class="w-20 h-20 filter grayscale hover:filter-none" src="./static/img/z-wave.svg"
+                         alt="Z-wave logo">
                 </a>
                 <a href="#" onclick="return false;"><img
                         class="w-20 h-20 aspect-none filter grayscale hover:filter-none" src="./static/img/rfxcom.png"
@@ -68,11 +72,13 @@
                 </a>
             </div>
         </div>
-    </main>
-    <!-- Features    -->
-    <section class="bg-white">
-        <h1> Features</h1>
-    </section>
-</div>
+    </div>
+</main>
+<!-- Features    -->
+<section class="bg-white">
+    <h1> Features</h1>
+</section>
+
+<script src="index.ts"></script>
 </body>
 </html>
