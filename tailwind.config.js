@@ -1,25 +1,28 @@
 module.exports = {
-  purge: ["./index.html"],
-  darkMode: 'media', // or 'media' or 'class'
-  theme: {
-    extend: {
-      colors: {
-        mirage: {
-          DEFAULT: '#151b2b'
+    purge: [
+        './index.html',
+        './src/**/*.html'
+    ],
+    darkMode: 'media', // or 'media' or 'class'
+    theme: {
+        extend: {
+            colors: {
+                mirage: {
+                    DEFAULT: '#151b2b'
+                },
+                bostonBlue: {
+                    light: '#428BCA',
+                    DEFAULT: '#00548D',
+                    dark: '#1d2f49',
+                }
+            }
         },
-        bostonBlue: {
-          light: '#428BCA',
-          DEFAULT: '#00548D',
-          dark: '#1d2f49',
-        }
-      }
     },
-  },
-  variants: {
-    extend: {
-      backgroundColor: ["active"],
-      filter: ['hover']
+    variants: {
+        extend: {
+            backgroundColor: ["active"],
+            filter: ['hover']
+        },
     },
-  },
-  plugins: [],
+    plugins: [],
 }
