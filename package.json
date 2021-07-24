@@ -4,7 +4,7 @@
   "description": "```\r npm i\r ```\r # run\r ```\r npm run start\r ```",
   "scripts": {
     "start": "parcel serve index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --public-url ./",
     "clean": "rm -rf ./dist",
     "build:ci": "npm run clean && npm run build"
   },
