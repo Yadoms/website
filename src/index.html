@@ -5,27 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Yadoms</title>
-    <link rel="stylesheet" href="assets/css/tailwind.css"/>
+    <link rel="stylesheet" href="./assets/css/tailwind.css"/>
 </head>
 <body class="bg-mirage">
-<div class=" flex flex-col font-sans container mx-auto px-8">
-    <header class="flex flex-col sm:flex-row items-center justify-between py-6 relative fixed">
-        <div class="flex items-end space-x-3">
+<div class="container mx-auto px-8">
+    <!--header-->
+    <header class="bg-white flex flex-col sm:flex-row items-center justify-between py-3 px-8 relative container mx-auto fixed">
+        <div class="flex items-end">
             <img class="h-10" src="/src/assets/img/application_logo.svg" alt="Logo">
-            <!--                    <h1 class="text-4xl font-bold text-bostonBlue-light ">YADOMS</h1>-->
         </div>
         <nav class="hidden md:flex text-lg">
             <a href="#" class="text-bostonBlue-light hover:text-bostonBlue-dark py-3 px-6">Accueil</a>
-            <a href="https://github.com/Yadoms/yadoms/wiki" class="text-bostonBlue-light hover:text-bostonBlue-dark py-3 px-6" target="_blank">Documentation</a>
+            <a href="https://github.com/Yadoms/yadoms/wiki"
+               class="text-bostonBlue-light hover:text-bostonBlue-dark py-3 px-6" target="_blank">Documentations</a>
             <a href="#" class="text-bostonBlue-light hover:text-bostonBlue-dark py-3 px-6" target="_blank">Téléchargement</a>
-            <a href="https://www.yadoms.com/blog/" class="text-bostonBlue-light hover:text-bostonBlue-dark py-3 px-6" target="_blank">Blog</a>
-            <a href="https://yadoms.com/forum/" class="text-bostonBlue-light hover:text-bostonBlue-dark py-3 px-6" target="_blank">Forum</a>
+            <a href="https://www.yadoms.com/blog/" class="text-bostonBlue-light hover:text-bostonBlue-dark py-3 px-6"
+               target="_blank">Blog</a>
+            <a href="https://yadoms.com/forum/" class="text-bostonBlue-light hover:text-bostonBlue-dark py-3 px-6"
+               target="_blank">Forum</a>
         </nav>
     </header>
-    <main class="py-12">
+    <!--Landing page-->
+    <main class="py-12 flex flex-col font-sans">
         <div class="flex flex-col-reverse sm:flex-row jusitfy-between items-center">
             <div class="sm:w-2/5 flex flex-col items-center sm:items-start text-center sm:text-left">
-                <h1 class="uppercase text-6xl text-bostonBlue-light font-bold leading-none tracking-wide mb-2">Yadoms</h1>
+                <h1 class="uppercase text-6xl text-bostonBlue-light font-bold leading-none tracking-wide mb-2">
+                    Yadoms</h1>
                 <p class="text-gray-600 leading-relaxed mb-12">Aujourd'hui chaque fabriquant de matériel développe son
                     produit avec ses interfaces propriétaires et ne cherche pas à communiquer avec d'autres équipements.
                     Yadoms propose aujourd'hui une solution permettant de faire communiquer des équipements de marques
@@ -192,7 +197,8 @@
                     </svg>
                 </a>
                 <a href="#" onclick="return false;">
-                    <svg class="w-20 h-20 filter grayscale hover:filter-none" version="1.1" id="layer" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="w-20 h-20 filter grayscale hover:filter-none" version="1.1" id="layer"
+                         xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 652 652" style="enable-background:new 0 0 652 652;" xml:space="preserve">
                     <style type="text/css">
@@ -274,7 +280,8 @@
                 </a>
                 <a href="#" onclick="return false;">
                     <!--                    <img src="./assets/img/z-wave.svg" alt="Z-wave logo">-->
-                    <svg class="w-20 h-20 filter grayscale hover:filter-none" viewBox="0 0 256 114" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="w-20 h-20 filter grayscale hover:filter-none" viewBox="0 0 256 114" version="1.1"
+                         xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
                         <g>
                             <path d="M115.7771,63.7932 L128.1671,63.7932 L131.7881,86.0792 L135.8071,63.7932 L144.4351,63.7932 L148.7641,86.0792 L152.7061,63.7932 L164.2921,63.7932 L154.8671,97.5042 L143.9531,97.5042 L140.4771,79.8842 L136.3621,97.5042 L125.8221,97.5042 L115.7771,63.7932 Z M193.498,63.8736 L206.693,63.8736 L212.003,84.3096 L217.957,63.6326 L230.508,63.6326 L217.945,97.5046 L206.105,97.5046 L193.498,63.8736 Z M233.5648,63.8737 L233.5648,97.5037 L255.9998,97.5037 L255.9998,88.8957 L245.2318,88.8957 L245.2318,84.8727 L254.9668,84.8727 L254.9668,76.1827 L245.2318,76.1827 L245.2318,72.4017 L255.8518,72.4017 L255.8518,63.8737 L233.5648,63.8737 Z M176.8033,85.3152 L180.0613,73.4882 L182.5363,85.3152 L176.8033,85.3152 Z M186.9003,63.7932 L173.2433,63.7932 L160.9693,97.5042 L173.9223,97.5042 L175.0733,92.8382 L184.5873,92.8382 L185.5873,97.5042 L198.8763,97.5042 L186.9003,63.7932 Z M96.8698,86.9646 L90.4338,97.4236 L62.4348,97.4236 L77.9628,73.3676 L63.6168,73.3676 L69.5948,63.7936 L96.8698,63.7936 L82.3068,86.9646 L96.8698,86.9646 Z M80.8708,48.9896 C63.0078,48.9896 48.5268,63.4696 48.5268,81.3326 C48.5268,99.1956 63.0078,113.6766 80.8708,113.6766 C98.7328,113.6766 113.2138,99.1956 113.2138,81.3326 C113.2138,63.4696 98.7328,48.9896 80.8708,48.9896 Z M80.135,10.642 L80.135,0 C35.845,0.196 1.13686838e-13,36.152 1.13686838e-13,80.488 C1.13686838e-13,80.69 0.014,80.889 0.016,81.091 L10.627,81.091 C10.756,42.549 41.716,11.288 80.135,10.642 Z M80.135,32.8388 L80.135,22.2038 C80.054,22.2028 79.975,22.1968 79.894,22.1968 C47.501,22.1968 21.241,48.4568 21.241,80.8498 C21.241,80.9308 21.247,81.0108 21.247,81.0908 L31.882,81.0908 C32.33,54.6378 53.681,33.2868 80.135,32.8388 Z"
@@ -282,17 +289,22 @@
                         </g>
                     </svg>
                 </a>
-                <a href="#" onclick="return false;"><img class="w-20 h-20 aspect-none filter grayscale hover:filter-none" src="./assets/img/rfxcom.png"
-                                                         alt="Rfxcom logo"></a>
-                <a href="#" onclick="return false;"><img class="w-20 h-20 filter grayscale hover:filter-none" src="./assets/img/philipsHue.png"
+                <a href="#" onclick="return false;"><img
+                        class="w-20 h-20 aspect-none filter grayscale hover:filter-none" src="./assets/img/rfxcom.png"
+                        alt="Rfxcom logo"></a>
+                <a href="#" onclick="return false;"><img class="w-20 h-20 filter grayscale hover:filter-none"
+                                                         src="./assets/img/philipsHue.png"
                                                          alt="Philips hue logo"></a>
             </div>
         </div>
     </main>
-
-
+    <!-- Features    -->
+    <section class="bg-white">
+        <h1> Features</h1>
+    </section>
 </div>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<script src="index.ts"></script>
+
+
+
 </body>
 </html>

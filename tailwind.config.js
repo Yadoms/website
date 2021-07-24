@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./index.html"],
+  purge: ["./src/index.html"],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
@@ -7,10 +7,10 @@ module.exports = {
         mirage: {
           DEFAULT: '#151b2b'
         },
-        bostonBlue:{
+        bostonBlue: {
           light: '#428BCA',
           DEFAULT: '#00548D',
-          dark:'#1d2f49',
+          dark: '#1d2f49',
         }
       }
     },
