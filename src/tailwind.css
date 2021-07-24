@@ -8,3 +8,9 @@
     background-color: #428BCA;
     opacity: 0.33;
 }
+
+@layer components {
+    .btn-primary {
+        @apply bg-bostonBlue-light hover:bg-bostonBlue-dark py-3 px-6 uppercase text-lg font-bold text-white rounded-full;
+    }
+}
