@@ -202,38 +202,124 @@
 </section>
 
 <!--Download-->
-<section class="bg-gray-200 h-screen" id="Download">
-    <div class="container mx-auto flex flex-col items-center">
-        <h1 class="text-2xl text-center font-bold text-gray-900 mt-8 sm:text-4xl">
+<section class="bg-gray-200" id="Download">
+    <!-- Packages -->
+    <div class="container mx-auto flex flex-col items-center ">
+        <h1 class="text-2xl text-center font-bold text-gray-900 mt-8 sm:text-4xl p-6">
             Download yadoms for you platform.
             <br class="sm:hidden"/>
-            <span class="text-bostonBlue-light">Latest version : 2.5.0</span>
+            <span class="text-bostonBlue-light ">Latest version : <span class="bg-gray-300 box-border border-2 p-2 text-gray-800 rounded-2xl">2.5.0</span></span>
         </h1>
-        <div class="lg:w-3/12 w-3/4 bg-white rounded-xl p-4 m-4 flex flex-col items-center align-middle border-solid border-4 border-bostonBlue space-y-3">
-            <img class="w-2/4" src="static/img/Windows.svg" alt="Windows Logo" loading="lazy">
-            <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-8 sm:text-4xl text-center">Windows</h1>
-            <p class="mt-2 text-gray-600 sm:mr-4 sm:text-xl">Choose if you want installer version to use as a service or portable version</p>
-            <hr class="mt-4 border-1 border-gray-500 w-3/4">
-            <a href="#"
-               class="btn-primary"
-               target="_blank"
-               rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
-                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
-                </svg>
-                Installer
-            </a>
-            <a href="#"
-               class="btn-secondary"
-               target="_blank"
-               rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
-                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
-                </svg>
-                Portable
-            </a>
+        <div class="flex flex-col xl:flex-row">
+            <!--Windows-->
+            <div class="lg:w-3/12 w-3/4 bg-white rounded-xl p-4 m-4 flex flex-col items-center align-middle border-solid border-4 border-bostonBlue hover:-translate-y-0.5 hover:scale-110 transform transition">
+                <img class="w-2/4 h-48" src="static/img/Windows.svg" alt="Windows Logo" loading="lazy">
+                <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-3 sm:text-4xl text-center">Windows</h1>
+                <p class="mt-2 mb-3 text-gray-600 sm:mr-4 sm:text-xl text-center" >Choose if you want installer version to use as a service or portable version</p>
+                <hr class="mt-4 mb-3 border-1 border-gray-500 w-full">
+                <a href="#"
+                   class="btn-primary mb-3"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
+                    </svg>
+                    Installer
+                </a>
+                <a href="#"
+                   class="btn-secondary"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
+                    </svg>
+                    Portable
+                </a>
+            </div>
+            <!-- Linux-->
+            <div class="lg:w-3/12 w-3/4 bg-white rounded-xl p-4 m-4 flex flex-col items-center align-middle border-solid border-4 border-bostonBlue hover:-translate-y-0.5 hover:scale-110 transform transition">
+                <img class="w-2/4 h-48" src="static/img/Tux.svg" alt="Linux Logo" loading="lazy">
+                <h1 class="mt-8 text-2xl font-bold text-gray-900 sm:mt-3 sm:text-4xl text-center">Linux</h1>
+                <p class="mt-2 mb-12 text-gray-600 sm:mr-4 sm:text-xl text-center" >Download right version based on you Linux distribution</p>
+                <hr class="mt-4 mb-3 border-1 border-gray-500 w-full ">
+                <a href="#"
+                   class="btn-primary mb-3"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
+                    </svg>
+                    Package
+                </a>
+                <a href="#"
+                   class="btn-secondary"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
+                    </svg>
+                    Synology DS218+
+                </a>
+            </div>
+            <!-- Mac OSX-->
+            <div class="lg:w-3/12 w-3/4 bg-white rounded-xl p-4 m-4 flex flex-col items-center align-middle border-solid border-4 border-bostonBlue hover:-translate-y-0.5 hover:scale-110 transform transition space-y-3">
+                <img class="w-2/4 h-48" src="static/img/Apple_logo_black.svg" alt="MaxOs Logo" loading="lazy">
+                <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-8 sm:text-4xl text-center">Mac OSX</h1>
+                <p class="mt-2 text-gray-600 sm:mr-4 sm:text-xl text-center" >This is an experimental package. You will have to make some skilled manipulation to make it works.</p>
+                <hr class="mt-4 border-1 border-gray-500 w-full">
+                <a href="#"
+                   class="btn-primary"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
+                    </svg>
+                    Package
+                </a>
+            </div>
+            <!-- Raspberry PI-->
+            <div class="lg:w-3/12 w-3/4 bg-white rounded-xl p-4 m-4 flex flex-col items-center align-middle border-solid border-4 border-bostonBlue hover:-translate-y-0.5 hover:scale-110 transform transition space-y-3">
+                <img class="w-2/4 h-48" src="static/img/Raspberry_Pi_logo.svg" alt="Raspberry PI Logo" loading="lazy">
+                <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-8 sm:text-4xl text-center">Raspberry PI</h1>
+                <p class="mt-2 text-gray-600 sm:mr-4 sm:text-xl text-center" >Extract the packge on your PI, and have fun (please note that you have to install libpq5 first : sudo apt-get install libpq5)
+                </p>
+                <hr class="mt-4 border-1 border-gray-500 w-full">
+                <a href="#"
+                   class="btn-primary"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
+                    </svg>
+                    Package
+                </a>
+                <a href="#"
+                   class="btn-secondary"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
+                    </svg>
+                    SD Card image(FR)
+                </a>
+                <a href="#"
+                   class="btn-secondary"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v4m0 0l-2-2m2 2l2-2" />
+                    </svg>
+                    SD Card image(EN)
+                </a>
+            </div>
         </div>
     </div>
 </section>
