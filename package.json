@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Yadoms/website#readme",
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-nightly.2400",
     "autoprefixer": "^10.3.1",
     "parcel": "^2.0.0-beta.3.1",
     "parcel-reporter-static-files-copy": "^1.3.0",
