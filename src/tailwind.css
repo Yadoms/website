@@ -13,4 +13,7 @@
     .btn-primary {
         @apply inline-block px-5 py-3 rounded-xl shadow bg-bostonBlue-light hover:bg-bostonBlue hover:-translate-y-0.5 hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-white uppercase tracking-wider font-semibold text-sm sm:text-base;
     }
+    .btn-secondary {
+        @apply inline-block px-5 py-3 rounded-xl shadow bg-white border-solid border-4 border-bostonBlue hover:bg-gray-200 hover:-translate-y-0.5 hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-bostonBlue uppercase tracking-wider font-semibold text-sm sm:text-base;
+    }
 }
