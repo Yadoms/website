@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oben01/web-quick-starter-project.git"
+    "url": "git+https://github.com/Yadoms/website"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/oben01/web-quick-starter-project/issues"
+    "url": "https://github.com/Yadoms/website/issues"
   },
-  "homepage": "https://github.com/oben01/web-quick-starter-project#readme",
+  "homepage": "https://github.com/Yadoms/website#readme",
   "devDependencies": {
     "autoprefixer": "^10.3.1",
     "parcel": "^2.0.0-beta.3.1",
