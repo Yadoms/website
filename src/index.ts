@@ -1,1 +1,6 @@
-console.log('hello world');
+import {getYadomsLatestRelease, LatestReleaseInfos} from "./lib/service";
+
+getYadomsLatestRelease().then((res: LatestReleaseInfos) => {
+    console.log(res);
+}).catch(error => console.log(error));
+
