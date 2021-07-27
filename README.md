@@ -46,3 +46,11 @@ npx tailwindcss init -p
 ```
 Disable safe write on your IDE + clean .parcel-cache & dist
 ```
+
+## Credits
+
+- [https://fontawesome.com/license](Fontawesome)
+- [https://heroicons.com/](HeroIcons)
+- [https://tailwindcss.com/](Tailwindcss)
+- [https://v2.parceljs.org/](Parcel)
+- [https://undraw.co/](Undraw)
