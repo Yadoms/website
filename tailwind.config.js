@@ -1,7 +1,7 @@
 module.exports = {
     purge: [
         './src/**/*.html',
-        './src/**/*.html'
+        './src/**/*.ts'
     ],
     darkMode: 'media', // or 'media' or 'class'
     theme: {
@@ -21,7 +21,8 @@ module.exports = {
     variants: {
         extend: {
             backgroundColor: ["active"],
-            filter: ['hover']
+            filter: ['hover'],
+            zIndex: ['hover', 'active'],
         },
     },
     plugins: [],

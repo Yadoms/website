@@ -1,0 +1,1 @@
+export {generateDownloadPage} from './download'

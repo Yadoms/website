@@ -16,4 +16,8 @@
     .btn-secondary {
         @apply inline-block px-5 py-3 rounded-xl shadow bg-white border-solid border-4 border-bostonBlue hover:bg-gray-200 hover:-translate-y-0.5 hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-bostonBlue uppercase tracking-wider font-semibold text-sm sm:text-base;
     }
+
+    .download-card {
+        @apply max-w-sm md:max-w-2xl md:h-96 py-4 bg-white flex flex-col items-center md:flex-row space-x-3 rounded-2xl border-solid border-4 border-bostonBlue shadow-lg hover:-translate-y-0.5 hover:scale-110 transform transition;
+    }
 }
