@@ -16,7 +16,6 @@ export function generateDownloadPage(latestReleaseInfos: LatestReleaseInfos): vo
 }
 
 function getHeader(tagName: string): HTMLHeadingElement {
-    // let downloadPackage = document.querySelector('div#DownloadPackage');
     let downloadPageHeader = document.createElement('h1');
     downloadPageHeader.className = `text-2xl text-center font-bold text-gray-900 mt-8 2xl:text-4xl p-6`;
     downloadPageHeader.innerHTML = ` Download yadoms for you platform.
@@ -25,7 +24,6 @@ function getHeader(tagName: string): HTMLHeadingElement {
                     class="bg-gray-300 box-border border-2 p-1 2xl:p-2 text-gray-800 rounded-2xl">${tagName}</span></span>`;
 
     return downloadPageHeader;
-    // downloadPackage?.append(downloadPageHeader);
 }
 
 function getWindowsMacOsContainer(latestReleaseInfos: LatestReleaseInfos): HTMLDivElement {
