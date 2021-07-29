@@ -1,1 +1,7 @@
-export {generateDonwloadCard, windowsButton, linuxButton, macOsButton, raspberryPiButton} from './download-card'
+export {
+    generateDonwloadCard,
+    getLinuxButton,
+    getMacOsButton,
+    getRaspberryPiButtons,
+    getWindownsButtons
+} from './download-card'
