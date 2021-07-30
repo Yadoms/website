@@ -5,6 +5,6 @@ import './tailwind.css';
 getYadomsLatestRelease().then((latestReleaseInfos: LatestReleaseInfos) => {
     generateDownloadPage(latestReleaseInfos);
 }).catch(error => {
-    console.error('Github api is not available, Error : ', error);
+    console.error('Github api is not available.', error);
     generateResiliencePage()
 });
