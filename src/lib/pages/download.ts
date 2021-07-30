@@ -76,7 +76,7 @@ function getLinuxRaspberryContainer(latestReleaseInfos: LatestReleaseInfos): HTM
 function getDownloadCard(htmlElementId: string, asset: { path: string; alt: string }, header: string, paragraph: string, buttonsHtml: string) {
     let donwloadWindows = document.createElement('div');
     donwloadWindows.setAttribute('id', htmlElementId);
-    donwloadWindows.className = 'max-w-sm md:max-w-2xl md:h-96 py-4 bg-white flex flex-col items-center md:flex-row space-x-3 rounded-2xl border-solid border-4 border-bostonBlue shadow-lg hover:-translate-y-0.5 hover:scale-110 hover:z-20 transform transition';
+    donwloadWindows.className = 'max-w-sm md:max-w-2xl md:h-96 py-4 bg-white flex flex-col items-center md:flex-row space-x-3 rounded-2xl border-solid border-4 border-bostonBlue shadow-lg hover:translate-y-0 md:hover:-translate-y-0.5 hover:translate-scale-0 md:hover:scale-110 md:hover:z-20 transform transition';
     donwloadWindows.innerHTML = generateDonwloadCard({path: asset.path, alt: asset.alt + ' logo'},
         header,
         paragraph,
