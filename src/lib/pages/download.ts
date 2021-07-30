@@ -17,7 +17,7 @@ export function generateDownloadPage(latestReleaseInfos: LatestReleaseInfos): vo
 
 function getHeader(tagName: string): HTMLHeadingElement {
     let downloadPageHeader = document.createElement('h1');
-    downloadPageHeader.className = `text-2xl text-center font-bold text-gray-900 mt-8 2xl:text-4xl p-6`;
+    downloadPageHeader.className = `text-2xl text-center font-bold text-gray-900 2xl:text-4xl`;
     downloadPageHeader.innerHTML = ` Download yadoms for you platform.
             <br class="2xl:hidden"/>
             <span class="text-bostonBlue-light">Latest version : <span
