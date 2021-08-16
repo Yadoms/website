@@ -7,13 +7,19 @@
     /******* Hero *******/
 
     .hero-container {
-        @apply py-12 flex flex-col font-sans container mx-auto px-8;
+        @apply container mx-auto;
+        @apply flex flex-col;
+        @apply py-12 px-8;
+        @apply font-sans
     }
     .hero-presentation-container {
-        @apply flex flex-col-reverse sm:flex-row justify-between items-center;
+        @apply flex flex-col-reverse sm:flex-row;
+        @apply justify-between items-center;
     }
     .hero-presentation-content-container {
-        @apply sm:w-2/5 flex flex-col items-center sm:items-start text-center;
+        @apply flex flex-col;
+        @apply items-center sm:items-start text-center;
+        @apply sm:w-2/5;
     }
     .hero-presentation-content-header {
         @apply uppercase text-6xl text-bostonBlue-light font-bold leading-none tracking-wide mb-2;
@@ -22,7 +28,9 @@
         @apply mt-2 mb-12 text-gray-400 sm:mr-4 sm:text-xl text-left;
     }
     .hero-presentation-content-navigation-btn {
-        @apply flex md:flex-row flex-col space-x-0 lg:space-x-3.5 md:space-x-3 gap-3;
+        @apply flex md:flex-row flex-col;
+        @apply space-x-0 lg:space-x-3.5 md:space-x-3;
+        @apply gap-3;
     }
 
     /******* Hero supported device *******/
@@ -31,7 +39,9 @@
         @apply flex items-center;
     }
     .hero-supported-devices-header-separator {
-        @apply mt-4 mb-3 border-bostonBlue-light flex-1;
+        @apply flex-1;
+        @apply mt-4 mb-3;
+        @apply border-bostonBlue-light;
     }
     .hero-supported-devices-header-title {
         @apply text-bostonBlue-light p-4 uppercase;
