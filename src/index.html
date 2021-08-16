@@ -11,21 +11,21 @@
 <include src="src/partials/nav.html"></include>
 <!--Landing page-->
 <main class="bg-bostonBlue-dark">
-    <div class="py-12 flex flex-col font-sans container mx-auto px-8">
-        <!--Hero -->
-        <div class="flex flex-col-reverse sm:flex-row jusitfy-between items-center">
-            <div class="sm:w-2/5 flex flex-col items-center sm:items-start text-center">
+    <div class="hero-container">
+        <!--Hero content -->
+        <div class="hero-presentation-container">
+            <div class="hero-presentation-content-container">
                 <!--Title -->
-                <h1 class="uppercase text-6xl text-bostonBlue-light font-bold leading-none tracking-wide mb-2">
+                <h1 class="hero-presentation-content-header">
                     Yadoms</h1>
-                <!--Description -->
-                <p class="mt-2 mb-12 text-gray-400 sm:mr-4 sm:text-xl text-left">Tired to have one application to drive your
+                <!--headline -->
+                <p class="hero-presentation-content-headline">Tired to have one application to drive your
                     blinds, one other for the lights and one again for your gate?
                     Yadoms provide a solution that can make devices from different brands speak together and be drivable
                     from only one software.
                 </p>
                 <!--Navigation btns -->
-                <div class="flex md:flex-row flex-col space-x-0 lg:space-x-3.5 md:space-x-3 gap-3">
+                <div class="hero-presentation-content-navigation-btn">
                     <a href="https://github.com/Yadoms/yadoms/wiki"
                        class="btn-primary"
                        target="_blank"
@@ -48,32 +48,32 @@
         <div>
             <!--Header-->
             <div class="flex items-center">
-                <div class="line-seperator bostonBlue-light"></div>
-                <div class="text-bostonBlue-light p-4 uppercase">Supported devices</div>
-                <div class="line-seperator"></div>
+                <hr class="hero-supported-devices-header-separator"/>
+                <h1 class="hero-supported-devices-header-title">Supported devices</h1>
+                <hr class="hero-supported-devices-header-separator"/>
             </div>
             <!--Supported devices logos-->
-            <div class="flex flex-col md:flex-row justify-around items-center space-y-3 md:space-y-0">
+            <div class="hero-supported-devices-logos-container">
                 <a href="#" onclick="return false;">
-                    <img class="w-20 filter grayscale hover:filter-none" src="img/EnOcean_logo.svg"
+                    <img class="hero-supported-devices-logos-img" src="img/EnOcean_logo.svg"
                          alt="Enocean logo" loading="lazy">
                 </a>
                 <a href="#" onclick="return false;">
-                    <img class="w-20 filter grayscale hover:filter-none"
+                    <img class="hero-supported-devices-logos-img"
                          src="img/Oregon_Scientific_logo.svg" alt="Oregon logo" loading="lazy">
                 </a>
                 <a href="#" onclick="return false;">
-                    <img class="w-20 filter grayscale hover:filter-none" src="img/Somfy_logo.svg"
+                    <img class="hero-supported-devices-logos-img" src="img/Somfy_logo.svg"
                          alt="Somfy logo" loading="lazy">
                 </a>
                 <a href="#" onclick="return false;">
-                    <img class="w-20 filter grayscale hover:filter-none" src="img/z-wave.svg"
+                    <img class="hero-supported-devices-logos-img" src="img/z-wave.svg"
                          alt="Z-wave logo" loading="lazy">
                 </a>
                 <a href="#" onclick="return false;"><img
-                        class="h-20 aspect-none filter grayscale hover:filter-none" src="img/rfxcom.png"
+                        class="hero-supported-devices-logos-img" src="img/rfxcom.png"
                         alt="Rfxcom logo" loading="lazy"></a>
-                <a href="#" onclick="return false;"><img class="h-20 filter grayscale hover:filter-none"
+                <a href="#" onclick="return false;"><img class="hero-supported-devices-logos-img"
                                                          src="img/philipsHue.png"
                                                          alt="Philips hue logo"
                                                          loading="lazy">

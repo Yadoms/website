@@ -2,20 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-.line-seperator{
-    height: 1px;
-    flex: 1;
-    background-color: #428BCA;
-    opacity: 0.33;
-}
-
 @layer components {
+
+    /******* Hero *******/
+
+    .hero-container {
+        @apply py-12 flex flex-col font-sans container mx-auto px-8;
+    }
+    .hero-presentation-container {
+        @apply flex flex-col-reverse sm:flex-row justify-between items-center;
+    }
+    .hero-presentation-content-container {
+        @apply sm:w-2/5 flex flex-col items-center sm:items-start text-center;
+    }
+    .hero-presentation-content-header {
+        @apply uppercase text-6xl text-bostonBlue-light font-bold leading-none tracking-wide mb-2;
+    }
+    .hero-presentation-content-headline {
+        @apply mt-2 mb-12 text-gray-400 sm:mr-4 sm:text-xl text-left;
+    }
+    .hero-presentation-content-navigation-btn {
+        @apply flex md:flex-row flex-col space-x-0 lg:space-x-3.5 md:space-x-3 gap-3;
+    }
+
+    /******* Hero supported device *******/
+
+    .hero-supported-devices-header-container {
+        @apply flex items-center;
+    }
+    .hero-supported-devices-header-separator {
+        @apply mt-4 mb-3 border-bostonBlue-light flex-1;
+    }
+    .hero-supported-devices-header-title {
+        @apply text-bostonBlue-light p-4 uppercase;
+    }
+
+    .hero-supported-devices-logos-container {
+        @apply flex flex-col md:flex-row;
+        @apply justify-around items-center;
+        @apply space-y-3 md:space-y-0;
+    }
+
+    .hero-supported-devices-logos-img {
+        @apply w-20 filter grayscale hover:filter-none;
+    }
+
+    /******* btn *******/
     .btn-primary {
         @apply inline-block px-5 py-3 rounded-xl shadow bg-bostonBlue-light hover:bg-bostonBlue md:hover:-translate-y-0.5 md:hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-white uppercase tracking-wider font-semibold text-sm sm:text-base;
     }
     .btn-secondary {
         @apply inline-block px-5 py-3 rounded-xl shadow bg-white border-solid border-4 border-bostonBlue hover:bg-gray-200 md:hover:-translate-y-0.5 md:hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-bostonBlue uppercase tracking-wider font-semibold text-sm sm:text-base;
     }
+
+
     .download-card {
         @apply max-w-sm md:max-w-2xl md:h-96 py-4 bg-white flex flex-col items-center md:flex-row space-x-3 rounded-2xl border-solid border-4 border-bostonBlue shadow-lg hover:-translate-y-0.5 hover:scale-110 transform transition;
     }
