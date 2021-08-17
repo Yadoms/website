@@ -17,11 +17,11 @@ export function generateDownloadPage(latestReleaseInfos: LatestReleaseInfos): vo
 
 function getHeader(tagName: string): HTMLHeadingElement {
     let downloadPageHeader = document.createElement('h1');
-    downloadPageHeader.className = `text-2xl text-center font-bold text-gray-900 2xl:text-4xl`;
+    downloadPageHeader.className = `download-header`;
     downloadPageHeader.innerHTML = ` Download yadoms for you platform.
             <br class="2xl:hidden"/>
             <span class="text-bostonBlue-light">Latest version : <span
-                    class="bg-gray-300 box-border border-2 p-1 2xl:p-2 text-gray-800 rounded-2xl">${tagName}</span></span>`;
+                    class="download-header-yadoms-version">${tagName}</span></span>`;
 
     return downloadPageHeader;
 }
@@ -44,7 +44,7 @@ function getWindowsMacOsContainer(latestReleaseInfos: LatestReleaseInfos): HTMLD
 
     const downloadWindowsMacContainer = document.createElement('div');
     downloadWindowsMacContainer.setAttribute('id', 'DonwloadWindowsMacContainer')
-    downloadWindowsMacContainer.className = `flex flex-col xl:flex-row xl:space-x-3 space-y-3 xl:space-y-0`;
+    downloadWindowsMacContainer.className = `download-platforms-container`;
     downloadWindowsMacContainer.append(windowsCard, macOsCard);
     return downloadWindowsMacContainer;
 }
@@ -68,7 +68,7 @@ function getLinuxRaspberryContainer(latestReleaseInfos: LatestReleaseInfos): HTM
 
     const downloadLinuxRaspberryContainer = document.createElement('div');
     downloadLinuxRaspberryContainer.setAttribute('id', 'LinuxRaspberryContainer')
-    downloadLinuxRaspberryContainer.className = `flex flex-col xl:flex-row xl:space-x-3 space-y-3 xl:space-y-0`;
+    downloadLinuxRaspberryContainer.className = `download-platforms-container`;
     downloadLinuxRaspberryContainer.append(linuxCard, raspberryCard);
     return downloadLinuxRaspberryContainer;
 }
@@ -76,7 +76,7 @@ function getLinuxRaspberryContainer(latestReleaseInfos: LatestReleaseInfos): HTM
 function getDownloadCard(htmlElementId: string, asset: { path: string; alt: string }, header: string, paragraph: string, buttonsHtml: string) {
     let donwloadWindows = document.createElement('div');
     donwloadWindows.setAttribute('id', htmlElementId);
-    donwloadWindows.className = 'max-w-sm md:max-w-2xl md:h-96 py-4 bg-white flex flex-col items-center md:flex-row space-x-3 rounded-2xl border-solid border-4 border-bostonBlue shadow-lg hover:translate-y-0 md:hover:-translate-y-0.5 hover:translate-scale-0 md:hover:scale-110 md:hover:z-20 transform transition';
+    donwloadWindows.className = 'download-card';
     donwloadWindows.innerHTML = generateDonwloadCard({path: asset.path, alt: asset.alt + ' logo'},
         header,
         paragraph,

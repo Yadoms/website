@@ -138,6 +138,48 @@
     .set-of-features-container-content-img {
         @apply w-3/4 md:w-1/2 rounded-lg shadow-2xl;
     }
+
+    /************************************/
+    /************ Download **************/
+    /************************************/
+    .download-container {
+        @apply container mx-auto;
+        @apply flex flex-col items-center;
+        @apply space-y-7 p-6;
+    }
+    .download-header {
+        @apply text-2xl text-center font-bold text-gray-900 2xl:text-4xl;
+    }
+    .download-header-yadoms-version {
+        @apply bg-gray-300 box-border border-2 p-1 2xl:p-2 text-gray-800 rounded-2xl;
+    }
+    .download-platforms-container {
+        @apply flex flex-col xl:flex-row xl:space-x-3 space-y-3 xl:space-y-0;
+    }
+
+    .download-card {
+        @apply bg-white;
+        @apply max-w-sm md:max-w-2xl md:h-96;
+        @apply flex flex-col md:flex-row items-center;
+        @apply py-4 space-x-3;
+        @apply rounded-2xl border-solid border-4 border-bostonBlue shadow-lg;
+        @apply hover:translate-y-0 md:hover:-translate-y-0.5 md:hover:scale-110 md:hover:z-20 transform transition;
+    }
+    .download-card-img {
+        @apply h-48 p-8;
+    }
+    .download-card-content {
+        @apply flex flex-col p-3 items-center;
+    }
+    .download-card-content-header {
+        @apply mt-6 text-2xl font-bold text-gray-900 sm:mt-3 sm:text-4xl text-center;
+    }
+    .download-card-content-paragraph {
+        @apply mt-2 mb-3 text-gray-600 sm:mr-4 sm:text-xl text-left;
+    }
+    .download-card-content-separator {
+        @apply mt-4 mb-3 border-gray-500 w-full;
+    }
     /************************************/
     /******* Questions ? Response *******/
     /************************************/
@@ -175,10 +217,5 @@
     }
     .btn-secondary {
         @apply inline-block px-5 py-3 rounded-xl shadow bg-white border-solid border-4 border-bostonBlue hover:bg-gray-200 md:hover:-translate-y-0.5 md:hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-bostonBlue uppercase tracking-wider font-semibold text-sm sm:text-base;
-    }
-
-
-    .download-card {
-        @apply max-w-sm md:max-w-2xl md:h-96 py-4 bg-white flex flex-col items-center md:flex-row space-x-3 rounded-2xl border-solid border-4 border-bostonBlue shadow-lg hover:-translate-y-0.5 hover:scale-110 transform transition;
     }
 }

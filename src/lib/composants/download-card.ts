@@ -1,9 +1,9 @@
 export function generateDonwloadCard(asset: { path: string; alt: string }, header: string, paragraph: string, buttonsHtml: string): string {
-    return `<img class="h-48 p-8" src="${asset.path}" alt="${asset.alt}" loading="lazy"/>
-            <div class="flex flex-col p-3 items-center">
-                <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-3 sm:text-4xl text-center">${header}</h1>
-                <p class="mt-2 mb-3 text-gray-600 sm:mr-4 sm:text-xl text-left">${paragraph}</p>
-                <hr class="mt-4 mb-3 border-1 border-gray-500 w-full"/>
+    return `<img class="download-card-img" src="${asset.path}" alt="${asset.alt}" loading="lazy"/>
+            <div class="download-card-content">
+                <h1 class="download-card-content-header">${header}</h1>
+                <p class="download-card-content-paragraph">${paragraph}</p>
+                <hr class="download-card-content-separator"/>
                 ${buttonsHtml}
             </div>
             `
