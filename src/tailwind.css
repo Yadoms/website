@@ -98,6 +98,28 @@
         @apply mt-2 text-gray-600 sm:mr-4 sm:text-xl;
     }
 
+    /******* Sponsor *******/
+    .sponsor-container {
+        @apply container mx-auto;
+        @apply flex flex-col;
+        @apply items-center justify-center;
+    }
+    .sponsor-header {
+        @apply text-2xl text-center font-bold text-bostonBlue-light sm:text-4xl uppercase;
+    }
+    .sponsor-card {
+        @apply flex flex-col-reverse xl:flex-row p-3 xl:space-x-14;
+    }
+    .sponsor-card-content {
+        @apply flex flex-col items-center justify-center;
+    }
+    .sponsor-card-content-items {
+        @apply list-disc flex flex-col text-gray-400 sm:mr-4 sm:text-xl p-4;
+    }
+    .sponsor-card-content-img {
+        @apply max-w-md lg:max-w-sm p-2;
+    }
+
     /******* btn *******/
     .btn-primary {
         @apply inline-block px-5 py-3 rounded-xl shadow bg-bostonBlue-light hover:bg-bostonBlue md:hover:-translate-y-0.5 md:hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-white uppercase tracking-wider font-semibold text-sm sm:text-base;
