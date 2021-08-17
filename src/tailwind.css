@@ -120,6 +120,24 @@
         @apply max-w-md lg:max-w-sm p-2;
     }
 
+    /******* Discover a set of Yadoms features *******/
+
+    .set-of-features-container {
+        @apply container mx-auto;
+        @apply flex flex-col;
+        @apply items-center justify-center;
+        @apply space-y-6 p-10;
+    }
+    .set-of-features-container-header {
+        @apply text-2xl text-center font-bold text-gray-900 sm:text-4xl;
+    }
+    .set-of-features-container-content {
+        @apply flex flex-col md:flex-row items-center gap-y-5 gap-x-5;
+    }
+    .set-of-features-container-content-img {
+        @apply w-3/4 md:w-1/2 rounded-lg shadow-2xl;
+    }
+
     /******* btn *******/
     .btn-primary {
         @apply inline-block px-5 py-3 rounded-xl shadow bg-bostonBlue-light hover:bg-bostonBlue md:hover:-translate-y-0.5 md:hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-white uppercase tracking-wider font-semibold text-sm sm:text-base;
