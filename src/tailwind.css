@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-
+    /********************/
     /******* Hero *******/
-
+    /********************/
     .hero-container {
         @apply container mx-auto;
         @apply flex flex-col;
@@ -32,9 +32,9 @@
         @apply space-x-0 lg:space-x-3.5 md:space-x-3;
         @apply gap-3;
     }
-
+    /*************************************/
     /******* Hero supported device *******/
-
+    /*************************************/
     .hero-supported-devices-header-container {
         @apply flex items-center;
     }
@@ -56,9 +56,9 @@
     .hero-supported-devices-logos-img {
         @apply w-20 filter grayscale hover:filter-none;
     }
-
+    /************************/
     /******* Features *******/
-
+    /************************/
     .features-container {
         @apply container mx-auto;
         @apply flex flex-col;
@@ -97,8 +97,9 @@
     .feature-content-paragraph {
         @apply mt-2 text-gray-600 sm:mr-4 sm:text-xl;
     }
-
+    /***********************/
     /******* Sponsor *******/
+    /***********************/
     .sponsor-container {
         @apply container mx-auto;
         @apply flex flex-col;
@@ -119,9 +120,9 @@
     .sponsor-card-content-img {
         @apply max-w-md lg:max-w-sm p-2;
     }
-
+    /*************************************************/
     /******* Discover a set of Yadoms features *******/
-
+    /*************************************************/
     .set-of-features-container {
         @apply container mx-auto;
         @apply flex flex-col;
@@ -137,8 +138,38 @@
     .set-of-features-container-content-img {
         @apply w-3/4 md:w-1/2 rounded-lg shadow-2xl;
     }
-
+    /************************************/
+    /******* Questions ? Response *******/
+    /************************************/
+    .questions-response-container {
+        @apply bg-white;
+        @apply flex flex-col;
+        @apply justify-center items-center;
+        @apply space-y-7 space-x-4 lg:space-x-0 p-6;
+    }
+    .questions-response-header {
+        @apply text-2xl text-center font-bold text-gray-900 sm:text-4xl;
+    }
+    .questions-response-card-wrapper {
+        @apply flex flex-col xl:flex-row text-center;
+        @apply space-x-0 xl:space-x-20 space-y-7 xl:space-y-0;
+    }
+    .questions-response-card {
+        @apply bg-gray-200;
+        @apply flex flex-col;
+        @apply items-center max-w-sm;
+        @apply px-4 py-4 space-y-3;
+        @apply rounded-tl-3xl rounded-br-3xl border-4 border-solid border-gray-500;
+    }
+    .questions-response-card-img {
+        @apply h-72 p-6;
+    }
+    .questions-response-card-paragraph {
+        @apply text-gray-600 text-xl font-bold;
+    }
+    /*******************/
     /******* btn *******/
+    /*******************/
     .btn-primary {
         @apply inline-block px-5 py-3 rounded-xl shadow bg-bostonBlue-light hover:bg-bostonBlue md:hover:-translate-y-0.5 md:hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-white uppercase tracking-wider font-semibold text-sm sm:text-base;
     }
