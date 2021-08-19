@@ -40,7 +40,6 @@ function getWindowsMacOsContainer(latestReleaseInfos: LatestReleaseInfos): HTMLD
     }, 'Windows', 'Choose if you want installer version to use as a service or portable version', windownsButtons);
 
     const windowsParagraph = windowsCard.getElementsByClassName('download-card-content-paragraph');
-    console.log(windowsParagraph.item(0));
     windowsParagraph.item(0)?.setAttribute('data-i18n', 'download.windows.paragraph');
 
     const macOsDownloadLink = getMacOsDownloadLink(latestReleaseInfos);
