@@ -16,7 +16,8 @@ export function getWindownsButtons(installerLink: string | undefined, portableLi
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
                         </svg>
-                        Installer
+                        <span data-i18n="download.btn.installer">Installer</span>
+                    
                     </a>
                               <a href="${portableLink}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
@@ -25,7 +26,7 @@ export function getWindownsButtons(installerLink: string | undefined, portableLi
                             <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M10 9v4m0 0l-2-2m2 2l2-2"/>
                         </svg>
-                        Portable
+                          <span data-i18n="download.btn.portable">Portable</span>
                     </a>`;
 }
 
@@ -36,7 +37,7 @@ export function getMacOsButton(installerLink: string | undefined) {
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
                         </svg>
-                        Installer
+                        <span data-i18n="download.btn.installer">Installer</span>
                     </a>`;
 }
 
@@ -47,7 +48,7 @@ export function getLinuxButton(packageLink: string | undefined) {
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
                         </svg>
-                        Package
+                        <span data-i18n="download.btn.package">Package</span>
                     </a>`;
 }
 
@@ -58,7 +59,7 @@ export function getRaspberryPiButtons(frCardImageLink: string | undefined, enCar
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
                         </svg>
-                        Package
+                        <span data-i18n="download.btn.package">Package</span>
                     </a>
                     <a href="${frCardImageLink}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
@@ -67,7 +68,7 @@ export function getRaspberryPiButtons(frCardImageLink: string | undefined, enCar
                             <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M10 9v4m0 0l-2-2m2 2l2-2"/>
                         </svg>
-                        SD Card image(FR)
+                        <span data-i18n="download.btn.sdCradImgFr">SD Card image(FR)</span>
                     </a>
                     <a href="${enCardImageLink}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
@@ -76,6 +77,6 @@ export function getRaspberryPiButtons(frCardImageLink: string | undefined, enCar
                             <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M10 9v4m0 0l-2-2m2 2l2-2"/>
                         </svg>
-                        SD Card image(EN)
+                         <span data-i18n="download.btn.sdCradImgEn">SD Card image(EN)</span>
                     </a>`;
 }

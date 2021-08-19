@@ -18,10 +18,15 @@ export function generateDownloadPage(latestReleaseInfos: LatestReleaseInfos): vo
 function getHeader(tagName: string): HTMLHeadingElement {
     let downloadPageHeader = document.createElement('h1');
     downloadPageHeader.className = `download-header`;
-    downloadPageHeader.innerHTML = ` Download yadoms for you platform.
+    downloadPageHeader.innerHTML = ` 
+            <span data-i18n="download.header.part1">Download yadoms for you platform.</span>
             <br class="2xl:hidden"/>
-            <span class="text-bostonBlue-light">Latest version : <span
-                    class="download-header-yadoms-version">${tagName}</span></span>`;
+            <span class="text-bostonBlue-light">
+                <span data-i18n="download.header.part2">Latest version : </span>
+                <span
+                    class="download-header-yadoms-version">${tagName}
+                </span>
+            </span>`;
 
     return downloadPageHeader;
 }
@@ -34,6 +39,10 @@ function getWindowsMacOsContainer(latestReleaseInfos: LatestReleaseInfos): HTMLD
         alt: 'Windows'
     }, 'Windows', 'Choose if you want installer version to use as a service or portable version', windownsButtons);
 
+    const windowsParagraph = windowsCard.getElementsByClassName('download-card-content-paragraph');
+    console.log(windowsParagraph.item(0));
+    windowsParagraph.item(0)?.setAttribute('data-i18n', 'download.windows.paragraph');
+
     const macOsDownloadLink = getMacOsDownloadLink(latestReleaseInfos);
     const macOsButtons = getMacOsButton(macOsDownloadLink.packageLink);
 
@@ -41,6 +50,9 @@ function getWindowsMacOsContainer(latestReleaseInfos: LatestReleaseInfos): HTMLD
         path: 'img/Apple_logo_black.svg',
         alt: 'Apple'
     }, 'Mac OSX', 'This is an experimental package. You will have to make some skilled manipulation to make it works.', macOsButtons);
+
+    const macOsParagraph = macOsCard.getElementsByClassName('download-card-content-paragraph');
+    macOsParagraph.item(0)?.setAttribute('data-i18n', 'download.macOs.paragraph');
 
     const downloadWindowsMacContainer = document.createElement('div');
     downloadWindowsMacContainer.setAttribute('id', 'DonwloadWindowsMacContainer')
@@ -57,14 +69,19 @@ function getLinuxRaspberryContainer(latestReleaseInfos: LatestReleaseInfos): HTM
         alt: 'Linux'
     }, 'Linux', 'Download right version based on you Linux distribution', linuxButton);
 
+    const linuxParagraph = linuxCard.getElementsByClassName('download-card-content-paragraph');
+    linuxParagraph.item(0)?.setAttribute('data-i18n', 'download.linux.paragraph');
+
     const raspberryLink = getRaspberryDownloadLinks(latestReleaseInfos);
     const raspberryButtons = getRaspberryPiButtons(raspberryLink.frSdCardImageLink, raspberryLink.enSdCardImageLink, raspberryLink.packageLink);
 
     const raspberryCard = getDownloadCard('DonwloadRaspberry', {
         path: 'img/Raspberry_Pi_logo.svg',
         alt: 'Raspberry PI'
-    }, 'Raspberry PI', 'Extract the packge on your PI, and have fun (please note that you have to install libpq5 first : sudo apt-get install libpq5)\n' +
-        '\n', raspberryButtons);
+    }, 'Raspberry PI', 'Extract the packge on your PI, and have fun (please note that you have to install libpq5 first : sudo apt-get install libpq5)', raspberryButtons);
+
+    const raspberryParagraph = raspberryCard.getElementsByClassName('download-card-content-paragraph');
+    raspberryParagraph.item(0)?.setAttribute('data-i18n', 'download.rapsberryPi.paragraph');
 
     const downloadLinuxRaspberryContainer = document.createElement('div');
     downloadLinuxRaspberryContainer.setAttribute('id', 'LinuxRaspberryContainer')

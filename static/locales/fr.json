@@ -1,0 +1,111 @@
+{
+  "download-hero": "Téléchargement",
+  "hero": {
+    "headline": "Lassés d'avoir une application pour piloter vos stores, une autre pour les lumières et encore une pour le portail ? Yadoms propose aujourd'hui une solution permettant de faire communiquer des équipements de marques différentes avec un seul et même logiciel.",
+    "supported-devices-header": "Périphériques compatibles"
+  },
+  "features": {
+    "header": {
+      "part1" : "La solution ultime.",
+      "part2" : "Prends la à ton avantage."
+    },
+    "articles": {
+      "free": {
+        "header": {
+          "first": "Yadoms est",
+          "second": "GRATUIT!"
+        },
+        "paragraph": {
+          "main": "Oubliez le prix et les logiciels propriétaires, Yadoms est completement open-source et gratuit. Téléchargez et utilisez-le.<br> Si vous voulez le code source, pas de problème, allez sur notre ",
+          "github": "page GitHub",
+          "licence": "*Yadoms est délivré sous licence GPL v3. Tous les plugins, widgets et scripts développés sont sous licence LGPL v3."
+        }
+      },
+      "secure": {
+        "header": {
+          "first": "Yadoms est",
+          "second": "SÉCURISÉ!"
+        },
+        "paragraph": "Parce que votre vie privée est importante <br> Yadoms conserve les données dans votre maison"
+      },
+      "cross-platform": {
+        "header": {
+          "first": "Yadoms est",
+          "second": "MULTI-PLATEFORMES!"
+        },
+        "paragraph": "Vous pouvez exécuter le serveur Yadoms sur de nombreux appareils comme un vieil ordinateur sous Windows XP™, un ordinateur sous Linux, un RaspberryPI, un Mac..."
+      },
+      "dashboard": {
+        "header": {
+          "first": "Yadoms a",
+          "second": "un tableau de bord!"
+        },
+        "paragraph": "Acquérir <br> Suivre,<br> Analyser, <br> Visualiser vos données"
+      },
+      "automates": {
+        "header": {
+          "first": "Yadoms",
+          "second": "Automatises!"
+        },
+        "paragraph": "Construisez des scénarios pour automatiser des tâches comme l'arrosage du jardin ou bien la fermeture automatique des volets lorsque le soleil se couche. Vous pouvez aussi demander à Yadoms de vous envoyer un SMS si vous oubliez de fermer la porte de votre garage lorsque la nuit tombe Avec Yadoms, l'automatisation est simple comme un puzzle !"
+      }
+    }
+  },
+  "sponsor": {
+    "header": "Merci !",
+    "first-item": "A toutes les personnes qui contribuent, <br> le projet existe grâce à vous",
+    "second-item" : "A",
+    "third-item": "pour les licences gratuites"
+  },
+  "discover": {
+    "header": {
+      "part1": "Découvrez les fonctionnalités",
+      "part2": "de Yadoms"
+    }
+  },
+  "download": {
+    "header": {
+      "part1": "Téléchargez la version de Yadoms dont vous avez besoin",
+      "part2": "La dernière version : "
+    },
+    "windows": {
+      "paragraph": "Choisissez la version \"installeur\" pour l'utiliser comme un service ou bien la version portable"
+    },
+    "macOs": {
+      "paragraph": "Packet expérimental, doit être manipuler en ligne de commandes"
+    },
+    "linux": {
+      "paragraph": "Téléchargez la version correspondant à votre distribution"
+    },
+    "rapsberryPi": {
+      "paragraph": "Réalisez l'extraction sur votre RaspberryPI (libpq5 doit être installé au préalable : sudo apt-get install libpq5)"
+    },
+    "btn": {
+      "installer": "installeur",
+      "portable": "portable",
+      "package": "binaires",
+      "sdCradImgFr": "Image carte SD(FR)",
+      "sdCradImgEn": "Image carte SD(EN)"
+    }
+  },
+  "questionResponse": {
+    "header": {
+      "part1": "Questions ?",
+      "part2": "Réponses."
+    },
+    "previousRelease": {
+      "question": "Vous recherchez une version précédente"
+    },
+    "notListedPackage": {
+      "question": "Votre binaire n'est pas répertorié"
+    },
+    "bug": {
+      "question": "Vous avez trouvé un bug"
+    },
+    "btn": {
+      "archive": "Consulter l'archive",
+      "generate": "Générer un",
+      "issue": "Ouvrir un issue"
+    }
+  }
+}
