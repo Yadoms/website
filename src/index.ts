@@ -13,7 +13,6 @@ const translator = new Translator({
     persistKey: "preferred_language",
     filesLocation: "/locales"
 });
-translatePage();
 
 getYadomsLatestRelease().then((latestReleaseInfos: LatestReleaseInfos) => {
     generateDownloadPage(latestReleaseInfos);
