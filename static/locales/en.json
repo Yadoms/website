@@ -1,53 +1,53 @@
 {
   "download-hero": "Download",
   "hero": {
-    "headline": "Tired to have one application to drive your blinds, one other for the lights and one again for your gate? Yadoms provide a solution that can make devices from different brands speak together and be drivable from only one software.",
+    "headline": "Tired to have one application to drive your blinds, one other for your lights and one again for your gate ? Yadoms provides a solution that can make devices from different brands speak together and be drivable from only one software",
     "supported-devices-header": "Supported devices"
   },
   "features": {
     "header":{
       "part1": "The unique solution.",
-      "part2": "Take advantage of it."
+      "part2": "Take advantage of it"
     },
     "articles": {
       "free": {
         "header": {
           "first": "Yadoms is",
-          "second": "FREE!"
+          "second": "FREE !"
         },
         "paragraph": {
           "main": "Forget pricing and proprietary softwares, Yadoms is fully open source and fully free. Download and use it. <br> If you want the source code, no problem, go on our",
           "github": "GitHub page",
-          "licence": "*Yadoms is released under GPL v3 licence.\n                        All plugins, widgets and scripts developped are released under LGPL v3 licence."
+          "licence": "*Yadoms is released under GPL v3 licence. All plugins, widgets and scripts developped are released under LGPL v3 licence."
         }
       },
       "secure": {
         "header": {
           "first": "Yadoms is",
-          "second": "SECURE!"
+          "second": "SECURE !"
         },
         "paragraph": "Keep ownership of your data <br> Because your privacy is important, Yadoms keeps your data in your house"
       },
       "cross-platform": {
         "header": {
           "first": "Yadoms is",
-          "second": "CROSS-PLATFORM!"
+          "second": "CROSS-PLATFORM !"
         },
         "paragraph": "Run on many devices <br>  You can run Yadoms server on many devices like an old Windows XP™ machine, a Linux machine, a raspberry PI even on a Mac."
       },
       "dashboard": {
         "header": {
-          "first": "Yadoms has",
-          "second": "DASHBOARD!"
+          "first": "Yadoms has a",
+          "second": "DASHBOARD !"
         },
         "paragraph": "Visualize your data, <br> Acquire,<br> Follow, <br> Analyze"
       },
       "automates": {
         "header": {
           "first": "Yadoms",
-          "second": "Automates!"
+          "second": "Automates !"
         },
-        "paragraph": "Build scenario to automate tasks like watering your garden or auto-close blinds when night is falling. you can also ask to Yadoms to send you an SMS if you forget to close garage door at night fall. With Yadoms, Automation is as simple as a puzzle game !"
+        "paragraph": "Build scenario to automate tasks like watering your garden or close blinds when night is falling. You can also ask to Yadoms to send you an SMS if you forget to close garage door at night fall. With Yadoms, Automation is simple !"
       }
     }
   },
@@ -65,33 +65,33 @@
   },
   "download": {
     "header": {
-      "part1" : "Download yadoms for you platform.",
+      "part1" : "Download yadoms for you platform",
       "part2" : "Latest version : "
     },
     "windows": {
       "paragraph": "Choose if you want installer version to use as a service or portable version"
     },
     "macOs": {
-      "paragraph": "This is an experimental package. You will have to make some skilled manipulation to make it works."
+      "paragraph": "This is an experimental package. You will have to make some skilled manipulation to make it works"
     },
     "linux": {
       "paragraph": "Download right version based on you Linux distribution"
     },
     "rapsberryPi": {
-      "paragraph": "Extract the packge on your PI, and have fun (please note that you have to install libpq5 first : sudo apt-get install libpq5)"
+      "paragraph": "Extract the package on your PI, and have fun (please note that you have to install libpq5 first : sudo apt-get install libpq5)"
     },
     "btn": {
       "installer": "installer",
       "portable": "portable",
       "package": "package",
-      "sdCradImgFr": "SD Card image(FR)",
-      "sdCradImgEn": "SD Card image(EN)"
+      "sdCradImgFr": "SD Card image (FR)",
+      "sdCradImgEn": "SD Card image (EN)"
     }
   },
   "questionResponse": {
     "header": {
       "part1": "Questions ?",
-      "part2": "Responses."
+      "part2": "Answers !"
     },
     "previousRelease": {
       "question": "You look for a previous release"
@@ -100,7 +100,7 @@
       "question": "Your package is not listed"
     },
     "bug": {
-      "question": "You find a bug"
+      "question": "You found a bug"
     },
     "btn": {
       "archive": "Consult archive",
