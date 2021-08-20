@@ -53,7 +53,7 @@ export function getLinuxButton(packageLink: string | undefined) {
 }
 
 export function getRaspberryPiButtons(frCardImageLink: string | undefined, enCardImageLink: string | undefined, packageLink: string | undefined) {
-    return ` <a href="${packageLink}" class="btn-primary" target="_blank" rel="noopener noreferrer">
+    return ` <a href="${packageLink}" class="btn-primary mb-2" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
                              fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -61,7 +61,7 @@ export function getRaspberryPiButtons(frCardImageLink: string | undefined, enCar
                         </svg>
                         <span data-i18n="download.btn.package">Package</span>
                     </a>
-                    <a href="${frCardImageLink}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                    <a href="${frCardImageLink}" class="btn-secondary mb-2" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
                              viewBox="0 0 20 20" fill="currentColor">
                             <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
@@ -70,7 +70,7 @@ export function getRaspberryPiButtons(frCardImageLink: string | undefined, enCar
                         </svg>
                         <span data-i18n="download.btn.sdCradImgFr">SD Card image(FR)</span>
                     </a>
-                    <a href="${enCardImageLink}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                    <a href="${enCardImageLink}" class="btn-secondary mb-1" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
                              viewBox="0 0 20 20" fill="currentColor">
                             <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
