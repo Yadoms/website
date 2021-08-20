@@ -7,7 +7,7 @@ const translator = new Translator({
     defaultLanguage: "en",
     detectLanguage: true,
     selector: "[data-i18n]",
-    debug: false,
+    debug: true,
     registerGlobally: "__",
     persist: false,
     persistKey: "preferred_language",
