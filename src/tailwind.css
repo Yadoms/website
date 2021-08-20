@@ -199,8 +199,8 @@
     .questions-response-card {
         @apply bg-gray-200;
         @apply flex flex-col;
-        @apply items-center max-w-sm;
-        @apply px-4 py-4 space-y-3;
+        @apply justify-end items-center max-w-sm;
+        @apply px-4 py-4 space-y-4;
         @apply rounded-tl-3xl rounded-br-3xl border-4 border-solid border-gray-500;
     }
     .questions-response-card-img {
