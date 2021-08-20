@@ -11,8 +11,9 @@ const translator = new Translator({
     registerGlobally: "__",
     persist: false,
     persistKey: "preferred_language",
-    filesLocation: "/new/i18n"
+    filesLocation: "/new/locales"
 });
+translatePage();
 
 getYadomsLatestRelease().then((latestReleaseInfos: LatestReleaseInfos) => {
     generateDownloadPage(latestReleaseInfos);
