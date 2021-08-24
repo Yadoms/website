@@ -4,7 +4,7 @@
   "description": "Yadoms website",
   "scripts": {
     "preparcel": "rm -rf dist .parcel-cache",
-    "parcel": "parcel $RUN src/index.html",
+    "parcel": "parcel $RUN src/*.html",
     "build": "RUN=build npm run parcel -- --no-cache --no-source-maps --public-url \"./\"",
     "dev": "RUN=serve npm run parcel -- --open",
     "build:ci": "npm run build"
