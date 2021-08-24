@@ -1,1 +1,1 @@
-export {getYadomsLatestRelease, LatestReleaseInfos, Assets} from './github-service'
+export {getYadomsLatestRelease, LatestReleaseInfos, Assets, getYadomsReleases} from './github-service'

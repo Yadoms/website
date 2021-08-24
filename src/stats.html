@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yadoms</title>
+    <link rel="stylesheet" href="./tailwind.css">
+
+</head>
+<body>
+    <div class="flex flex-col items-center">
+        <img src="img/yadoms.ico" alt="yadoms logo">
+        <h1 class="text-center">Yadoms statistics</h1>
+        <div class="px-4 lg:px-40 w-full">
+            <canvas id="yadomsStats"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        function getYadomsReleases() {
+            const url = 'https://api.github.com/repos/Yadoms/yadoms/releases';
+            return fetch(url).then(res => res.json())
+                .then(data => {
+                    let releasesInfos= [];
+                    data.map((ri) => {
+                        let releaseInfos = {
+                            tag_name: ri["tag_name"],
+                            published_at: ri["published_at"],
+                            assets: ri["assets"]?.map((d) => {
+                                return {
+                                    created_at: d['created_at'],
+                                    browser_download_url: d['browser_download_url'],
+                                    name: d['name'],
+                                    download_count: d['download_count']
+                                };
+                            })
+                        }
+                        releasesInfos.push(releaseInfos);
+                    });
+                    return releasesInfos;
+                })
+        }
+
+        let chartCategories = [];
+        let chartSeries = [];
+        let packageTypes = [];
+        let packageDataPerCategory = [];
+
+        const randomNum = () => Math.floor(Math.random() * (235 - 52 + 1) + 52);
+
+        const randomRGB = () => `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+
+        getYadomsReleases()
+            .then(releases => {
+                for(let release of releases) {
+                    let category = release.tag_name;
+                    for(let asset of release.assets) {
+                        platformFilterRegex = /^Yadoms-(\d*\.\d*\.\d*(-.*)?)-(.*)$/g;
+                        let match = platformFilterRegex.exec(asset.name);
+
+                        // Filter invalid files (patches...)
+                        if (!match || match.length !== 4)
+                            continue;
+
+                        const version = match[1];
+                        const packageType = match[3];
+
+                        // Filter 1.0.0 versions (naming is invalid)
+                        if (version.substring(0, 5) === "1.0.0")
+                            continue;
+
+                        // Filter obsoletes package types
+                        if (packageType === "RaspberryPI.tar.bz2")
+                            continue;
+
+                        if (chartCategories.indexOf(category) === -1) {
+                            chartCategories.push(category);
+                        }
+
+                        if (packageTypes.indexOf(packageType) === -1) {
+                            packageTypes.push(packageType);
+                            packageDataPerCategory[packageType] = [];
+                        }
+                        packageDataPerCategory[packageType][category] = asset.download_count;
+                    }
+                }
+
+                for (let packageType of packageTypes) {
+                    let chartDataForPacketType = [];
+                    for (let category of chartCategories) {
+                        chartDataForPacketType.push(packageDataPerCategory[packageType][category] || 0);
+                    }
+                    chartSeries.push({label: packageType, data: chartDataForPacketType, backgroundColor: randomRGB() });
+
+                }
+
+                const data = {
+                    labels: chartCategories,
+                    datasets: chartSeries
+                };
+                const config = {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        tooltips: {
+                            mode: 'label'
+                        },
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'right',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Downloads per versions'
+                            }
+                        },
+                        scales: {
+                            x: {
+                                stacked: true,
+                            },
+                            y: {
+                                stacked: true,
+                            }
+                        }
+
+                    }
+                };
+                const item = document.getElementById('yadomsStats');
+                const yadomsStaticsChart = new Chart(
+                    item,
+                    config
+                );
+            });
+    </script>
+</body>
+</html>
