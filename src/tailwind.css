@@ -63,7 +63,7 @@
         @apply container mx-auto;
         @apply flex flex-col;
         @apply items-center justify-center;
-        @apply p-6 space-y-8;
+        @apply p-10 space-y-12;
     }
     .features-header {
         @apply text-2xl text-center font-bold text-gray-900 sm:text-4xl;
@@ -71,14 +71,14 @@
     .feature-img-content-card {
         @apply flex flex-col xl:flex-row;
         @apply items-center;
-        @apply p-3 xl:space-x-14;
+        @apply p-3 xl:space-x-24;
     }
     .feature-content-img-card {
         @apply bg-white;
         @apply rounded-2xl;
         @apply flex flex-col-reverse xl:flex-row;
         @apply items-center;
-        @apply p-8 xl:space-x-14;
+        @apply p-8 xl:space-x-24;
     }
 
     .feature-img {
