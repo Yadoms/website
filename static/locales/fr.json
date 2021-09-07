@@ -1,4 +1,5 @@
 {
+  "home": "Accueil",
   "download-hero": "Téléchargement",
   "hero": {
     "headline": "Lassés d'avoir une application pour piloter vos stores, une autre pour vos lumières et encore une pour votre portail ? Yadoms propose une solution permettant de faire communiquer des équipements de marques différentes avec un seul et même logiciel",
@@ -103,9 +104,9 @@
       "question": "Vous avez trouvé un bug"
     },
     "btn": {
-      "archive": "Consulter l'archive",
-      "generate": "Générer un",
-      "issue": "Ouvrir un issue"
+      "archive": "Consulter les archives",
+      "generate": "Générer Yadoms",
+      "issue": "Signaler un bug"
     }
   }
 }

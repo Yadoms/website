@@ -1,4 +1,5 @@
 {
+  "home": "Home",
   "download-hero": "Download",
   "hero": {
     "headline": "Tired to have one application to drive your blinds, one other for your lights and one again for your gate ? Yadoms provides a solution that can make devices from different brands speak together and be drivable from only one software",
@@ -103,9 +104,9 @@
       "question": "You found a bug"
     },
     "btn": {
-      "archive": "Consult archive",
-      "generate": "Generate one",
-      "issue": "Open an issue"
+      "archive": "Consult archives",
+      "generate": "Build Yadoms",
+      "issue": "Report a bug"
     }
   }
 }
