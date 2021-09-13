@@ -164,8 +164,8 @@
         @apply py-4 space-x-3;
         @apply rounded-2xl border-solid border-4 border-bostonBlue shadow-lg;
         /*@apply hover:translate-y-0 md:hover:-translate-y-0.5;*/
-        @apply md:hover:scale-110 md:hover:z-20;
-        @apply transform transition;
+        /*@apply md:hover:scale-110 md:hover:z-20;*/
+        /*@apply transform transition;*/
     }
     .download-card-img {
         @apply h-48 p-8;
