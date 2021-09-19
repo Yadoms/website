@@ -54,7 +54,7 @@
     }
 
     .hero-supported-devices-logos-img {
-        @apply w-20 filter grayscale hover:filter-none;
+        @apply w-20 filter grayscale;
     }
     /************************/
     /******* Features *******/
