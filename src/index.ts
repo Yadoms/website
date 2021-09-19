@@ -22,11 +22,9 @@ const swiper = new Swiper(".supportedDeviceSwiper", {
             spaceBetween: 10
         }
     },
+    loop: true,
     autoplay: {
         delay: 1000,
-    },
-    pagination: {
-        clickable: true,
     },
     navigation: {
         nextEl: ".swiper-button-next",

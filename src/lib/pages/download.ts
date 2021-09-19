@@ -34,10 +34,14 @@ function getHeader(tagName: string): HTMLHeadingElement {
 function getWindowsMacOsContainer(latestReleaseInfos: LatestReleaseInfos): HTMLDivElement {
     const windowsDownloadLinks = getWindowsDownloadLinks(latestReleaseInfos);
     const windownsButtons = getWindownsButtons(windowsDownloadLinks.installerLink, windowsDownloadLinks.portableAssets);
-    const windowsCard = getDownloadCard('DonwloadWindows', {
-        path: 'img/Windows.svg',
-        alt: 'Windows'
-    }, 'Windows', 'Choose if you want installer version to use as a service or portable version', windownsButtons);
+    const windowsCard = getDownloadCard(
+        'DonwloadWindows',
+        {
+            path: 'img/Windows.svg',
+            alt: 'Windows'
+        }, 'Windows',
+        'Choose if you want installer version to use as a service or portable version',
+        windownsButtons);
 
     const windowsParagraph = windowsCard.getElementsByClassName('download-card-content-paragraph');
     windowsParagraph.item(0)?.setAttribute('data-i18n', 'download.windows.paragraph');
@@ -45,10 +49,15 @@ function getWindowsMacOsContainer(latestReleaseInfos: LatestReleaseInfos): HTMLD
     const macOsDownloadLink = getMacOsDownloadLink(latestReleaseInfos);
     const macOsButtons = getMacOsButton(macOsDownloadLink.packageLink);
 
-    const macOsCard = getDownloadCard('DonwloadMac', {
-        path: 'img/Apple_logo_black.svg',
-        alt: 'Apple'
-    }, 'Mac OSX', 'This is an experimental package. You will have to make some skilled manipulation to make it works.', macOsButtons);
+    const macOsCard = getDownloadCard(
+        'DonwloadMac',
+        {
+            path: 'img/Apple_logo_black.svg',
+            alt: 'Apple'
+        },
+        'Mac OSX',
+        'This is an experimental package. You will have to make some skilled manipulation to make it works.',
+        macOsButtons);
 
     const macOsParagraph = macOsCard.getElementsByClassName('download-card-content-paragraph');
     macOsParagraph.item(0)?.setAttribute('data-i18n', 'download.macOs.paragraph');
