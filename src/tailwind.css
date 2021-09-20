@@ -54,7 +54,7 @@
     }
 
     .hero-supported-devices-logos-img {
-        @apply w-20 filter grayscale;
+        @apply filter grayscale;
     }
     /************************/
     /******* Features *******/
@@ -219,5 +219,10 @@
     }
     .btn-secondary {
         @apply inline-block px-5 py-3 rounded-xl shadow bg-white border-solid border-4 border-bostonBlue hover:bg-gray-200 md:hover:-translate-y-0.5 md:hover:scale-110 transform transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-bostonBlue uppercase tracking-wider font-semibold text-sm sm:text-base;
+    }
+
+    .splide__slide img {
+        width : 100%;
+        height: auto;
     }
 }

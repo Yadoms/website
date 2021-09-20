@@ -1,37 +1,25 @@
 import {getYadomsLatestRelease, LatestReleaseInfos} from "./lib/service";
 import {generateDownloadPage, generateResiliencePage} from "./lib/pages";
 import Translator from '@andreasremdt/simple-translator';
-import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
 import './tailwind.css';
+import Splide from "@splidejs/splide";
 
-Swiper.use([Navigation, Pagination, Autoplay]);
-const swiper = new Swiper(".supportedDeviceSwiper", {
-    breakpoints: {
-        375: {
-            slidesPerView: 2,
-            spaceBetween: 10
-        },
-        // when window width is <= 499px
-        640: {
-            slidesPerView: 3,
-            spaceBetween: 1
-        },
-        // when window width is <= 999px
-        999: {
-            slidesPerView: 6,
-            spaceBetween: 10
+window.addEventListener('load', function () {
+    new Splide('.splide', {
+        type    : 'loop',
+        autoplay: true,
+        interval: 1250,
+        autoWidth: true,
+        rewind: true,
+        gap: 80,
+        pagination: false,
+        padding: {
+            left: 60,
+            right: 100
         }
-    },
-    loop: true,
-    autoplay: {
-        delay: 1000,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-
+    }).mount();
 });
+
 const translator = new Translator({
     defaultLanguage: "en",
     detectLanguage: true,
@@ -52,8 +40,7 @@ getYadomsLatestRelease().then((latestReleaseInfos: LatestReleaseInfos) => {
     generateResiliencePage();
 });
 
-function translatePage()
-{
+function translatePage() {
     translator.fetch(["fr", "en"]).then(() => {
         translator.translatePageTo();
     });

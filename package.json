@@ -36,8 +36,8 @@
   },
   "dependencies": {
     "@andreasremdt/simple-translator": "^2.0.3",
+    "@splidejs/splide": "^2.4.21",
     "parcel-reporter-static-files-copy": "^1.3.0",
-    "posthtml-include": "^1.7.1",
-    "swiper": "^6.0.0"
+    "posthtml-include": "^1.7.1"
   }
 }
