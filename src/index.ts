@@ -13,10 +13,11 @@ window.addEventListener('load', function () {
         rewind: true,
         gap: 80,
         pagination: false,
-        padding: {
-            left: 60,
-            right: 100
-        }
+        // padding: {
+        //     left: 60,
+        //     right: 100
+        // },
+        arrows: false,
     }).mount();
 });
 

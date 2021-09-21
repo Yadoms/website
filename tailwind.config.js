@@ -23,6 +23,7 @@ module.exports = {
             backgroundColor: ["active"],
             filter: ['hover'],
             zIndex: ['hover', 'active'],
+            fill: ['hover', 'focus'],
         },
     },
     plugins: [],
