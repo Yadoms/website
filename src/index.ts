@@ -29,7 +29,7 @@ const translator = new Translator({
     registerGlobally: "__",
     persist: false,
     persistKey: "preferred_language",
-    filesLocation: "/new/locales"
+    filesLocation: "/locales"
 });
 translatePage();
 
