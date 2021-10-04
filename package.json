@@ -1,6 +1,6 @@
 {
   "name": "yadoms-website",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Yadoms website",
   "scripts": {
     "preparcel": "rm -rf dist .parcel-cache",
