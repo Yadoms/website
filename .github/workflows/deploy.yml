@@ -2,14 +2,11 @@ name: Build and Publish yadoms Website
 on:
   push:
     branches:
-      - master
-      - develop
-      - feature/tailwindcss
+      - main
   pull_request:
     branches:
-      - master
+      - main
       - develop
-      - feature/tailwindcss
 jobs:
   deploy:
     name: Deploy
