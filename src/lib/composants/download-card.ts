@@ -10,24 +10,26 @@ export function generateDonwloadCard(asset: { path: string; alt: string }, heade
 }
 
 export function getWindownsButtons(installerLink: string | undefined, portableLink: string | undefined) {
-    return `<a href="${installerLink}" class="btn-primary mb-3" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
-                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                        </svg>
-                        <span data-i18n="download.btn.installer">Installer</span>
-                    
-                    </a>
-                    <a href="${portableLink}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
-                             viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
-                            <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M10 9v4m0 0l-2-2m2 2l2-2"/>
-                        </svg>
-                          <span data-i18n="download.btn.portable">Portable</span>
-                    </a>`;
+    return `        
+                    <div class="w-50 flex flex-col justify-between items-center">
+                        <a href="${installerLink}" class="btn-primary mb-3 w-full" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                            </svg>
+                            <span data-i18n="download.btn.installer">Installer</span>
+                        </a>
+                        <a href="${portableLink}" class="btn-secondary w-full" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
+                                 viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
+                                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M10 9v4m0 0l-2-2m2 2l2-2"/>
+                            </svg>
+                              <span data-i18n="download.btn.portable">Portable</span>
+                        </a>
+                    </div> `;
 }
 
 export function getMacOsButton(installerLink: string | undefined) {
@@ -70,7 +72,7 @@ export function getRaspberryPiButtons(frCardImageLink: string | undefined, enCar
                         </svg>
                         <span data-i18n="download.btn.sdCradImgFr">SD Card image(FR)</span>
                     </a>
-                    <a href="${enCardImageLink}" class="btn-secondary mb-1" target="_blank" rel="noopener noreferrer">
+                    <a href="${enCardImageLink}" class="btn-secondary mb-5" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
                              viewBox="0 0 20 20" fill="currentColor">
                             <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
