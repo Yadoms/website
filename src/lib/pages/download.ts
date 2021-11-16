@@ -20,7 +20,6 @@ function getHeader(tagName: string): HTMLHeadingElement {
     downloadPageHeader.className = `download-header`;
     downloadPageHeader.innerHTML = ` 
             <div data-i18n="download.header.part1">Download yadoms for your favourite platform.</div>
-<!--            <br class="4xl:hidden"/>-->
             <div class="text-bostonBlue-light mt-2">
                 <span data-i18n="download.header.part2">Latest version : </span>
                 <span
