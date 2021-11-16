@@ -22,7 +22,7 @@
         @apply sm:w-2/5;
     }
     .hero-presentation-content-header {
-        @apply text-4xl text-bostonBlue-light font-bold leading-none tracking-wide mb-2;
+        @apply text-6xl text-bostonBlue-light font-bold leading-none tracking-wide mb-2;
     }
     .hero-presentation-content-headline {
         @apply mt-2 mb-12 text-gray-400 sm:mr-4 sm:text-xl text-left;
