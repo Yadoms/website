@@ -19,14 +19,13 @@ function getHeader(tagName: string): HTMLHeadingElement {
     let downloadPageHeader = document.createElement('h1');
     downloadPageHeader.className = `download-header`;
     downloadPageHeader.innerHTML = ` 
-            <span data-i18n="download.header.part1">Download yadoms for you platform.</span>
-            <br class="4xl:hidden"/>
-            <span class="text-bostonBlue-light">
+            <div data-i18n="download.header.part1">Download yadoms for your favourite platform.</div>
+            <div class="text-bostonBlue-light mt-2">
                 <span data-i18n="download.header.part2">Latest version : </span>
                 <span
                     class="download-header-yadoms-version">${tagName}
                 </span>
-            </span>`;
+            </div>`;
 
     return downloadPageHeader;
 }
