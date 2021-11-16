@@ -151,7 +151,7 @@
         @apply text-2xl text-center font-bold text-gray-900 2xl:text-4xl;
     }
     .download-header-yadoms-version {
-        @apply bg-gray-300 box-border border-2 p-1 2xl:p-2 text-gray-800 rounded-2xl;
+        @apply bg-gray-300 box-border border-2 p-1 2xl:p-0.5 text-gray-800 rounded-xl;
     }
     .download-platforms-container {
         @apply flex flex-col xl:flex-row xl:space-x-3 space-y-3 xl:space-y-0;
