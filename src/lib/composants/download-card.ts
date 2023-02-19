@@ -33,7 +33,7 @@ export function getWindownsButtons(installerLink: string | undefined, portableLi
 }
 
 export function getMacOsButton(installerLink: string | undefined) {
-    return ` <a href="#${installerLink}" class="btn-primary mb-3" target="_blank" rel="noopener noreferrer">
+    return ` <a href="${installerLink}" class="btn-primary mb-3" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative -top-0.5"
                              fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

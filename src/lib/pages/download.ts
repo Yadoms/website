@@ -9,10 +9,10 @@ import {
 
 export function generateDownloadPage(latestReleaseInfos: LatestReleaseInfos): void {
     const downloadContainer = document.getElementById('DownloadContainer');
-    const header = getHeader(latestReleaseInfos.tag_name);
+    const latestTagName = getHeader(latestReleaseInfos.tag_name);
     const windowsMacOsContainer = getWindowsMacOsContainer(latestReleaseInfos);
     const linuxRaspberryContainer = getLinuxRaspberryContainer(latestReleaseInfos);
-    downloadContainer?.append(header, windowsMacOsContainer, linuxRaspberryContainer);
+    downloadContainer?.append(latestTagName, windowsMacOsContainer, linuxRaspberryContainer);
 }
 
 function getHeader(tagName: string): HTMLHeadingElement {
@@ -46,6 +46,7 @@ function getWindowsMacOsContainer(latestReleaseInfos: LatestReleaseInfos): HTMLD
     windowsParagraph.item(0)?.setAttribute('data-i18n', 'download.windows.paragraph');
 
     const macOsDownloadLink = getMacOsDownloadLink(latestReleaseInfos);
+    console.log(macOsDownloadLink.packageLink)
     const macOsButtons = getMacOsButton(macOsDownloadLink.packageLink);
 
     const macOsCard = getDownloadCard(
@@ -110,8 +111,8 @@ function getDownloadCard(htmlElementId: string, asset: { path: string; alt: stri
 
 
 function getWindowsDownloadLinks(latestReleaseInfos: LatestReleaseInfos): { installerLink: string | undefined, portableAssets: string | undefined } {
-    const installerAsset = latestReleaseInfos.assets.find(p => p.name.match('Yadoms-2.5.0-Windows.exe'));
-    const portableAsset = latestReleaseInfos.assets.find(p => p.name.match('Yadoms-2.5.0-Windows.zip'));
+    const installerAsset = latestReleaseInfos.assets.find(p => p.name.match(`Yadoms-${latestReleaseInfos.tag_name}-Windows.exe`));
+    const portableAsset = latestReleaseInfos.assets.find(p => p.name.match(`Yadoms-${latestReleaseInfos.tag_name}-Windows.zip`));
 
     return {
         installerLink: installerAsset?.browser_download_url,
@@ -120,7 +121,7 @@ function getWindowsDownloadLinks(latestReleaseInfos: LatestReleaseInfos): { inst
 }
 
 function getLinuxDownloadLink(latestReleaseInfos: LatestReleaseInfos): { packageLink: string | undefined } {
-    const packageAsset = latestReleaseInfos.assets.find(p => p.name.match('Yadoms-2.5.0-Linux.tar.gz'));
+    const packageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Yadoms-${latestReleaseInfos.tag_name}-Linux.tar.gz`));
 
     return {
         packageLink: packageAsset?.browser_download_url,
@@ -128,7 +129,7 @@ function getLinuxDownloadLink(latestReleaseInfos: LatestReleaseInfos): { package
 }
 
 function getMacOsDownloadLink(latestReleaseInfos: LatestReleaseInfos): { packageLink: string | undefined } {
-    const packageAsset = latestReleaseInfos.assets.find(p => p.name.match('Yadoms-2.5.0-Darwin.tar.gz'));
+    const packageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Yadoms-${latestReleaseInfos.tag_name}-Darwin.tar.gz`));
 
     return {
         packageLink: packageAsset?.browser_download_url,
@@ -138,9 +139,9 @@ function getMacOsDownloadLink(latestReleaseInfos: LatestReleaseInfos): { package
 function getRaspberryDownloadLinks(latestReleaseInfos: LatestReleaseInfos):
     { packageLink: string | undefined, frSdCardImageLink: string | undefined, enSdCardImageLink: string | undefined } {
 
-    const packageAsset = latestReleaseInfos.assets.find(p => p.name.match('Yadoms-2.5.0-RaspberryPI.tar.gz'));
-    const frSdCardImageAsset = latestReleaseInfos.assets.find(p => p.name.match('Yadoms-2.5.0-RaspberryPI-image-FR.zip'));
-    const enSdCardImageAsset = latestReleaseInfos.assets.find(p => p.name.match('Yadoms-2.5.0-RaspberryPI-image-EN.zip'));
+    const packageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Yadoms-${latestReleaseInfos.tag_name}-RaspberryPI.tar.gz`));
+    const frSdCardImageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Raspbian-EN-lite-yadoms.zip`));
+    const enSdCardImageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Raspbian-FR-lite-yadoms.zip`));
 
     return {
         packageLink: packageAsset?.browser_download_url,
