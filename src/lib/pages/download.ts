@@ -140,8 +140,8 @@ function getRaspberryDownloadLinks(latestReleaseInfos: LatestReleaseInfos):
     { packageLink: string | undefined, frSdCardImageLink: string | undefined, enSdCardImageLink: string | undefined } {
 
     const packageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Yadoms-${latestReleaseInfos.tag_name}-RaspberryPI.tar.gz`));
-    const frSdCardImageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Raspbian-EN-lite-yadoms.zip`));
-    const enSdCardImageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Raspbian-FR-lite-yadoms.zip`));
+    const frSdCardImageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Raspbian-FR-lite-yadoms.zip`));
+    const enSdCardImageAsset = latestReleaseInfos.assets.find(p => p.name.match(`Raspbian-EN-lite-yadoms.zip`));
 
     return {
         packageLink: packageAsset?.browser_download_url,
