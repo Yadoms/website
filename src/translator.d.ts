@@ -1,1 +1,0 @@
-declare module "@andreasremdt/simple-translator"
